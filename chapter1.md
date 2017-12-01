@@ -1,52 +1,73 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
+title       : The abc of R
+description : This course in the french version of <a href="https://github.com/datacamp/courses-intro-to-r-beta">The introduction of R</a>
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
+
+
+
 ---
-## A really bad movie
+## How it works
 
 ```yaml
-type: MultipleChoiceExercise
+type: NormalExercise
+key: a7f766d856
 lang: r
-xp: 50
+xp: 100
 skills: 1
-key: ede550c565
 ```
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+In the **editor** on the right you will have to type your code for solving the exercises. Now it just contains `3+4` and `demo("graphics")`. 
+
+Since understanding and structuring long parts of code is not always straight-forward, R makes use of the `#` sign to add comments. Just like Twitter! Comments are not run as R-code, so they will not influence your result. 
+
+The ouput of you R code is shown in the **console** in the lower right corner, while graphs will be shown in the upper right corner.
 
 `@instructions`
-- Adventure
-- Action
-- Animation
-- Comedy
-
+1. Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form R can thus be used as a calculator or to generate plots, but there's much more ;-).
+2. Use the arrows to browse through some cool visualizations generated with R, and shown here in upper right corner. Note that you can make the graph window larger, if you would like to have a closer look.
 `@hint`
-Have a look at the plot. Which color does the point with the lowest rating have?
+Just click the Submit Answer button on the right.
 
 `@pre_exercise_code`
 ```{r}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
 
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
+```
 
-library(ggplot2)
+`@sample_code`
+```{r eval=FALSE}
+# This  is the editor and the part below the white line is called the console.
 
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
+# The  hashtag is used to add comments
+
+# Show some demo graphs generated with R
+demo("graphics")
+
+# Calculate 3+4
+3+4
+```
+
+`@solution`
+```{r eval:FALSE}
+#Just click the Submit Answer button!
+
+# This  is the editor and the part below the white line is called the console.
+
+# The  hashtag is used to add comments
+
+# Calculate 3+4
+3+4
+
+# Show some demo graphs generated with R
+demo("graphics")
+
 ```
 
 `@sct`
-```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
-
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
+```{r eval=FALSE}
+DM.result <- TRUE
 ```
-
 ---
 ## More movies
 
