@@ -8,7 +8,7 @@ attachments :
 
 
 ---
-## How it works
+## Comment ça marche!
 
 ```yaml
 type: NormalExercise
@@ -17,12 +17,11 @@ lang: r
 xp: 100
 skills: 1
 ```
+Au niveau de l'**éditeur** à votre droite, vous pouvez taper votre code pour résoudre l'exercice. Dance notre cas nous avons `3 + 4` et `demo("graphics")`.
 
-In the **editor** on the right you will have to type your code for solving the exercises. Now it just contains `3+4` and `demo("graphics")`. 
+Pour mieux comprendre le code, il est possible de faire des commentaires explicatifs pour chaque ligne de code. Le commentaire doit être précédé par un `#`. Ainsi, il ne sera pus considéré comme un code à lire et à interpréter.
 
-Since understanding and structuring long parts of code is not always straight-forward, R makes use of the `#` sign to add comments. Just like Twitter! Comments are not run as R-code, so they will not influence your result. 
-
-The ouput of you R code is shown in the **console** in the lower right corner, while graphs will be shown in the upper right corner.
+Le output du code R est visualisé dans la **console** en bas à droite. Le graphe est visualisé en haut à droite.
 
 `@instructions`
 1. Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form R can thus be used as a calculator or to generate plots, but there's much more ;-).
