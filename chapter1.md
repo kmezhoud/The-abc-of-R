@@ -24,6 +24,8 @@ Pour mieux comprendre le code, il est possible de faire des commentaires explica
 Le output du code R est visualisé dans la **console** en bas à droite. Le graphe est visualisé en haut à droite.
 
 `@instructions`
+1. Click **Submit Answer** et regardez ...
+
 1. Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form R can thus be used as a calculator or to generate plots, but there's much more ;-).
 2. Use the arrows to browse through some cool visualizations generated with R, and shown here in upper right corner. Note that you can make the graph window larger, if you would like to have a closer look.
 `@hint`
