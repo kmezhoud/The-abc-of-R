@@ -158,25 +158,25 @@ test_output_contains("28 %% 6", incorrect_msg = "Regarder précisément comment 
 success_msg("Nice one!")
 ```
 --- type:MultipleChoiceExercise xp:50 skills:1 key:9d8819fb2e
-## R's pros and cons
+## Les avantages et les inconvénients de R
 
-As Filip explained in the video, there are things that make R the awesome and immensely popular language that it is today. On the other hand, there are also aspects about R that are less attractive. Which of the following statements are true regarding this statistical programming language developed by Ihaka and Gentleman in the nineties?
+ D'une part, il y a des caractéristiques qui rendent le language R est populaire. D'autre part, il y a d'autres aspects qui le rendent moins attractif. Quelles sont parmis les phrases suivantes qui semblent correctes pour le language R?
 
-1. As opposed to SAS and SPSS, R is completely open-source.
-2. R is open-source, but it's hard to share your code with others since R uses a command-line interface.
-3. It typically takes a long time for new and updated R packages to be released and made available to the public.
-4. R is easy to use, but this comes at the cost of limited graphical abilities.
-5. R works well with large data sets, if the code is properly written and the data fits into the working memory. 
+1. Par opposition à SAS et SPSS, R est complétement open-source.
+2. R est open-source, mais il est difficile de partager le code étant donnée qu'il faut une concole pour l'utiliser.
+3. Typiquement, cela prendre beaucoup de temps pour que les mise à jour des package R soit disponibles publiquement.
+4. R est facile à utiliser, mais cela limite les capacités à générer des graphes.
+5. R fonctionne très bien avec une large série de données, si le code est proprement écrit et les données convient à la mémoire du système.
 
 *** =instructions
-- statements (1) and (2) are correct; the others are false.
-- statements (1) and (4) are correct; the others are false.
-- statements (1) and (5) are correct; the others are false.
-- statements (2) and (4) are correct; the others are false.
-- statements (3) and (5) are correct; the others are false.
+- Phrases (1) et (2) sont correctes; les autres sont fausses.
+- Phrases (1) et (4) sont correctes; les autres sont fausses.
+- Phrases (1) et (5) sont correctes; les autres sont fausses.
+- Phrases (2) et (4) sont correctes; les autres sont fausses.
+- Phrases (3) et (5) sont correctes; les autres sont fausses.
 
 *** =hint
-Remember that your data has to fit in the working memory for R to be able to process it.
+Rappelez-vous que les données doivent convenir à la mémoire du système pour qu'elles puissent être traitées.
 
 *** =pre_exercise_code
 ```{r}
@@ -185,29 +185,29 @@ Remember that your data has to fit in the working memory for R to be able to pro
 
 *** =sct
 ```{r}
-msg1 = "Remember that the fact that R uses a command-line interface, does not make it hard to share code. On the contrary, sharing your results becomes very straightforward because you can easily share R scripts."
-msg2 = "R is the perfect tool for creating neat and insightful visualizations. Try again."
-msg3 = "Great! Head over to the next exercise and get your hands dirty!"
-msg4 = "R uses a command-line interface, which makes it very easy to share one's code. Also, R is very suitable for creating visualizations. Try again."
-msg5 = "It's fairly straightforward to write, maintain and share R packages. Try again."
+msg1 = "Le fait que R nécéssite une console n'affecte pas qu'il foit plus difficile de partéger son code. Au contraire, partager son code R, devient très facile et simple."
+msg2 = "R est l'outil parfait pour créer des visualisations soignées et perspicaces. Réessayer."
+msg3 = "Génial! Dirigez-vous vers l'exercice suivant!"
+msg4 = "R utilise une interface de ligne de commande, ce qui facilite le partage de son code. En outre, R est très approprié pour créer des visualisations. Réessayer."
+msg5 = "Il est assez simple d'écrire, de maintenir et de partager des paquets R. Réessayer."
 test_mc(3, feedback_msgs = c(msg1, msg2, msg3, msg4, msg5))
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:6b6fb4974c
-## Variable assignment (1)
+## Affectation de variable (1)
 
-A variable allows you store a value or an object in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. You use `<-` to assign a variable:
+Une variable permet au utilisateur de stocker une valeur ou un objet dans R. Ultérieurement, l'utilisateur pourrait utiliser ces variables pour accéder au valeur ou objet stockés dans la variable. Utiliser `<-` pour affecter une variable:
 
 ```
 my_variable <- 4
 ```
 
 *** =instructions
-Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
+Compléter le code dan l'éditeur sachant qu'il affecte la valeur 42 à la variabel `x`. Cliquer `Submit Answer`. Noter que si vous demandez à R d'imprimer `x`, la valeur 42 parait.
 
 *** =hint
-Look at how the value 4 was assigned to `my_variable` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Observer comment la valeur 4 est affectée à la variable `my_variable`. Faire exactement la même chose dans l'éditeur, mais affecter 42 à la variabel `x`.
 
 *** =pre_exercise_code
 ```{r}
@@ -216,19 +216,19 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 
 *** =sample_code
 ```{r}
-# Assign the value 42 to x
+# Affecter la valeur 42 à x
 x <- 
 
-# Print out the value of the variable x
+# imprimer la valeur de la variable x
 x
 ```
 
 *** =solution
 ```{r}
-# Assign the value 42 to x
+# Affecter la valeur 42 à x
 x <- 42
 
-# Print out the value of the variable x
+# Imprimer la valeur de la variable x
 x
 ```
 
@@ -236,26 +236,26 @@ x
 ```{r}
 test_error()
 test_object("x", 
-            undefined_msg = "Make sure to define a variable <code>x</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>x</code>.") 
-success_msg("Good job! Notice that R does not print the value of a variable to the console when you do the assignment. <code>x <- 42</code> did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+            undefined_msg = "Assurez-vous de définir la variable <code>x</code>.",
+            incorrect_msg = "Assurez-vous que l'affectation de la valeur à <code>x</code> est correcte.") 
+success_msg("Bon travail! Notez que R n'imprime pas la valeur d'une variable sur la console lorsque vous effectuez l'affectation. <code> x <- 42 </ code> n'a généré aucune sortie, car R suppose que vous aurez besoin de cette variable dans le futur. Sinon, vous n'auriez pas stocké la valeur dans une variable en premier lieu, non? Passez à l'exercice suivant!")
 ```
 
 
 
 
 --- type:NormalExercise xp:100 skills:1 key:a5b8028834
-## Variable assignment (2)
+## Affectation de variable (2)
 
-Suppose you have a fruit basket with five apples. You want to store the number of apples in a variable with the name `my_apples`. 
+Supposer que vous avez un panier de fruits avec 5 pommes. Vous voulez stocker le nombre de pomme dans une variable nommée `my_apples`
 
 *** =instructions
-- Using `<-`, assign the value 5 to `my_apples` below the first comment.
-- Type `my_apples` below the second comment. This will print out the value of `my_apples`.
-- After clicking _Submit Answer_, have a look at the console: the number 5 is printed, so R now links the variable `my_apples` to the value 5.
+- Utiliser `<-`, affecter la valeur 5 à `my_apples` en dessous du premier commentaire.
+- Taper `my_apples` en dessous du second commentaire. Cela va imprimer la valeur de `my_apples`.
+- Après cliquer **Submit Answer**, Regarder au niveau de la console: Le nombre 5 est imprimé. R lie la variable `my_apples` à la valeur 5.
 
 *** =hint
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Rappelr que si vous voulez affecter un nombre ou un objet à une variable, utilisez l'opérateur `<-`. Alternativement, vous pouvez utiliser `=`, mais `<-` est recommandé dans la communauté de R.
 
 *** =pre_exercise_code
 ```{r}
@@ -263,46 +263,46 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 *** =sample_code
 ```{r}
-# Assign the value 5 to the variable called my_apples
+# Affecter la valeur 5 à la variable nommée my_apples
 
 
-# Print out the value of the variable my_apples
+# Imprimer la valeur de la variable my_apples
 
 ```
 
 *** =solution
 ```{r}
-# Assign the value 5 to the variable called my_apples
+# Affecter la valeur 5 à la variable nommée my_apples
 my_apples <- 5
 
-# Print out the value of the variable my_apples
+# Imprimer la valeur de la variable my_apples
 my_apples
 ```
 
 *** =sct
 ```{r}
-test_object("my_apples", incorrect_msg = "Have you correctly assigned 5 to `my_apples`? Write `my_apples <- 5` on a new line in the script.")
-test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console? Simply type `my_apples` on a new line.")
-success_msg("Great! You could also use `=` for variable assignment, but `<-` is typically preferred.")
+test_object("my_apples", incorrect_msg = "Avez-vous correctement assigné 5 à `my_apples`? Ecrivez `my_apples <- 5` sur une nouvelle ligne dans la zone script.")
+test_output_contains("my_apples", incorrect_msg = "Avez-vous explicitement demandé à R d'imprimer la variable `my_apples` sur la console? Tapez simplement `my_apples` sur une nouvelle ligne.")
+success_msg("Génial! Vous pouvez aussi utiliser `=` pour l'assignation de variable, mais `<-` est généralement préféré.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a0cb1bea96
-## Variable assignment (3)
+## Affectation de variable (3)
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. You decide to create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way:
+Chaque panier de fruits savoureux a besoin d'oranges, vous décidez donc d'ajouter six oranges. Vous décidez de créer la variable `my_oranges` et lui assignez la valeur 6. Ensuite, vous voulez calculer combien de morceaux de fruits vous avez au total. Puisque vous avez donné des noms significatifs à ces valeurs, vous pouvez maintenant le coder de manière claire:
 
 ```
 my_apples + my_oranges
 ```
 
 *** =instructions
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Combine the variables `my_apples` and `my_oranges` into a new variable `my_fruit`, which is the total amount of fruits in your fruit basket.
+- Affecter à `my_oranges` la valeur 6.
+- Ajouter les variables `my_apples` et `my_oranges` et imprimer le resultat.
+- Combiner les variables `my_apples` et `my_oranges` dans une nouvelle variable `my_fruit`, qui est la totale des fruits dans el panier.
 
 *** =hint
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` est mla somme de `my_apples` et `my_oranges`. Vous pouvez utiliser l'opérateur `+` pour faire la somme et `<-` pour affecter la valeur à la variable `my_fruit`.
 
 *** =pre_exercise_code
 ```{r}
@@ -311,49 +311,51 @@ my_apples + my_oranges
 
 *** =sample_code
 ```{r}
-# Assign 5 to my_apples
+# Affecter 5 à my_apples
 my_apples <- 5
 
-# Assign 6 to my_oranges
+# Affecter 6 à my_oranges
 
 
-# Add my_apples and my_oranges: print the result
+# Ajouter my_apples et my_oranges: Imprimer le résultat
 
 
-# Add my_apples and my_oranges: assign to my_fruit
+# Ajouter my_apples et my_oranges: Affecter à my_fruit
 
 ```
 
 *** =solution
 ```{r}
-# Assign 5 to my_apples
+# Affecter 5 à my_apples
 my_apples <- 5
 
-# Assign 6 to my_oranges
+# Affecter 6 à my_oranges
 my_oranges <- 6
 
-# Add my_apples and my_oranges: print the result
+# Ajouter my_apples et my_oranges: Imprimer le résulat
 my_apples + my_oranges
 
-# Add my_apples and my_oranges: assign to my_fruit
+# Ajouter my_apples et my_oranges: Affecter à my_fruit
 my_fruit <- my_apples + my_oranges
 ```
 
 *** =sct
 ```{r}
-test_object("my_apples", incorrect_msg = "Do not change the assignment of the `my_apples` variable!")
+test_object("my_apples", incorrect_msg = "Ne changez pas l'affectation de la variable `my_apples`!")
 test_object("my_oranges")
 test_output_contains("my_apples + my_oranges",
-                     incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges` (second instruction). Try again.")
+                     incorrect_msg = "La sortie ne contient pas le résultat de la somme de `my_apples` et` my_oranges` (seconde instruction). Réessayer.")
 test_object("my_fruit")
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well.")
+success_msg("
+206/5000
+Joli! Le grand avantage de faire des calculs avec des variables est la réutilisabilité. Si vous changez simplement `my_apples` à 12 au lieu de 5 et relancez le script,` my_fruit` sera automatiquement mis à jour.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:6192f64167
-## The workspace
+## L'espace de travail
 
-If you assign a value to a variable, this variable is stored in the workspace. It's the place where all user-defined variables live. The command [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) lists the contents of this workspace. 
+Si vous attribuez une valeur à une variable, cette variable est stockée dans l'espace de travail. C'est l'endroit où vivent toutes les variables définies par l'utilisateur. La commande [`ls ()`] (http://www.rdocumentation.org/packages/base/functions/ls) répertorie le contenu de cet espace de travail.
 
 ```
 a <- 1
@@ -361,16 +363,17 @@ b <- 2
 ls()
 ```
 
-The first two lines create the variables `a` and `b`. Calling [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) now shows you that `a` and `b` are in the workspace. 
+les premières lignes créent les variables `a` et `b`. 
+The first two lines create the variables `a` and `b`. Appelant [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) nous montre que `a` et `b` sont dans l'espace de travail.
 
-You can also remove variables from the workspace. You do this with [`rm()`](http://www.rdocumentation.org/packages/base/functions/rm). `rm(a)`, for example, would remove `a` from the workspace again. `rm(list = ls())`, which is used in the beginning of your script, clears everything from the workspace.
+Vous pouvez aussi éliminer des variables de l'espace de travail. Vous pouvez faire cela avec la commande [`rm()`](http://www.rdocumentation.org/packages/base/functions/rm). `rm(a)`, par exemple efface la variables `a` de l'espace de travail. la commande `rm(list = ls())` est utilisée au début de votre script pour  tout effacer de votre espace de travail.
 
 *** =instructions
-- Create a variable, `horses`, equal to 3, and a variable `dogs`, equal to 7.
-- List the contents of your workspace with [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) to see that indeed, these two variables are in there.
+- Créer une variable, `horses`, égale à 3, et a une variable `dogs`, égale à 7.
+- Lister le contenu de votre espace de travail avec [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls), qui montre que les variables sont bien stockées.
 
 *** =hint
-All you need is a combination of [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) and [`rm()`](http://www.rdocumentation.org/packages/base/functions/rm) at the right time. Give it a try and let the feedback messages guide you.
+tout ce que vous avez besoin est [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) et [`rm()`](http://www.rdocumentation.org/packages/base/functions/rm). Essayez-les et laissez-vous guider par les messages de rétroaction.
 
 *** =pre_exercise_code
 ```{r}
@@ -379,77 +382,65 @@ All you need is a combination of [`ls()`](http://www.rdocumentation.org/packages
 
 *** =sample_code
 ```{r}
-# Clear the entire workspace
+# Effacer entièrement votre espace de travail
 rm(list = ls())
 
-# Create the variables horses and dogs
+# Créer les variables horses et dogs
 
 
-# List the contents of your workspace
+# lister le contenu de votre espace de travail
 
 
 ```
 
 *** =solution
 ```{r}
-# Clear the entire workspace
+# Effacer entièrement vote espace de travail
 rm(list = ls())
 
-# Create the variables horses and dogs
+# Créer les variables horses et dogs
 horses <- 3
 dogs <- 7
 
-# Inspect the contents of the workspace again
+# Inspecter une autre fois, le contenu de votre espace de travail
 ls()
 ```
 
 *** =sct
 ```{r}
-test_student_typed("rm(list = ls())", not_typed_msg = "Do not remove the line `rm(list = ls())`.")
+test_student_typed("rm(list = ls())", not_typed_msg = "Ne pas effacer la ligne `rm(list = ls())`.")
 test_object("horses")
 test_object("dogs")
 test_output_contains('c("dogs", "horses")',
-                     incorrect_msg = "Make sure to inspect the objects in your workspace after creating `horses` and `dogs`.")
-success_msg("Awesome! You can now build up and inspect your workspace, great!")
+                     incorrect_msg = "Assurez-vous d'inspecter les objets dans votre espace de travail après avoir créé  `horses` et `dogs`.")
+success_msg("Impressionnant! Vous pouvez maintenant construire et inspecter votre espace de travail, génial!")
 ```
 
-
---- type:VideoExercise lang:r xp:50 skills:1 key:9f9019501e
-## Basic Data Types
-
-*** =video_link
-//player.vimeo.com/video/138173888
-
-*** =video_hls
-//videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch1_2.master.m3u8
-
-
-
 --- type:NormalExercise lang:r xp:100 skills:1 key:1866cdd202
-## Discover Basic Data Types
+## Découvrir le type des données
 
-To get started, here are some of R's most basic data types:
+ici, il y a les 4 types de données qu'on peut avoir dans R:
 
-- Decimal values like `4.5` are called **numerics**.
-- Natural numbers like `4L` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**. Capital letters are important here; `true` and `false` are not valid.
-- Text (or string) values are called **characters**.
+- La valeur décimale `4.5` est nommée **numérique** ou  **numerics**.
+- Le nombre naturel `4L` est nommé **entier** ou **integer**. L'entier est aussi numérique.
+- Les valeur booliennes (`TRUE` or `FALSE`) sont nommées **logique** ou **logic**. Les lettres majuscules sont importantes; `true` and `false` ne sont pas booléens. 
+- texte (ou string) sont nommées **characters**.
 
-Note how the quotation marks on the right indicate that `"some text"` is of type character.
+Noter que le texte est mis entre double quotes `"some text"`.
 
 *** =instructions
-Change the value of the:
+Changer la valeur de:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"forty-two"`. Note that the quotation marks indicate that `"forty-two"` is a character.
-- `my_logical` variable to `FALSE`.
+- La variable `my_numeric` à `42`.
+- La variable `my_character` à `"forty-two"`. Noter que les double quotes indiquent que `"forty-two"` est une caractère.
+- La variable `my_logical` à `FALSE`.
 
 *** =hint 
-Replace the values in the script with the values that are provided in the exercise.
+Remplacer les valeurs dans le script avec les valeurs fournies dans l'exercice.
 ```
 my_numeric <- 42
 ```
-assigns the value 42 to the variable `my_numeric`. 
+Affecter la valeur 42 à la variable `my_numeric`. 
 
 *** =pre_exercise_code
 ```{r}
@@ -458,54 +449,53 @@ assigns the value 42 to the variable `my_numeric`.
 
 *** =sample_code
 ```{r}
-# What is the answer to the universe?
+# Quelle est la réponse de "universe"?
 my_numeric <- 42.5
 
-# The quotation marks indicate that the variable is of type character
+# Le doubles quotes indiquent que la variable est de type caractère
 my_character <- "some text"
 
-# Change the value of my_logical
+# Changer la valeur de my_logical
 my_logical <- TRUE
 ```
 
 *** =solution
 ```{r}
-# What is the answer to the universe?
+# Quelle est la réponse de "universe"?
 my_numeric <- 42
 
-# The quotation marks indicate that the variable is of type character
+# Les doubles quotes indiquent que la variable est de type caractère
 my_character <- "forty-two"
 
-# Change the value of my_logical
+# Changer la valeur de my_logical
 my_logical <- FALSE
 ```
 
 *** =sct
 ```{r}
 test_object("my_numeric", 
-            incorrect_msg = "Make sure that you assign the correct value to `my_numeric.`")
+            incorrect_msg = "Soyez sure que vous affectez correctement une valeur à `my_numeric.`")
 test_object("my_character",
-            incorrect_msg = paste("Make sure that you assign the correct value to `my_character`.",
-                                  "Do not forget the quotes and beware of capitalization! R is case sensitive!"))
+            incorrect_msg = paste("Soyez sure que vus affectez correctement la valeur à `my_character`.",
+                                  "Ne pas oublier les doubles quotes et attention aux majuscules! R est sensible à la ponctuation!"))
 test_object("my_logical",
-            undefined_msg = "Please make sure to define a variable `my_logical`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_logical`.") 
-success_msg("Great work! Continue to the next exercise.")
+            undefined_msg = "Prière de faire attention à la définition de la variable `my_logical`.",
+            incorrect_msg = "Soyez sure que vous affectez correctement la valeur à `my_logical`.") 
+success_msg("Bon travail! Continuez à l'exercice suivant.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c52153af0b
-## Back to Apples and Oranges
+## Retour aux pommes et aux oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did! The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. 
-
-However, if you try to add a numeric and a character string, R will complain.
+Dans l'exercice précédent, nous avons additionné les variables numériques `my_apples`et `my_oranges` avec l'opérateur `+`.
+Par contre, si nous voulons additionner une variable nuémrique avec un caractère, R va se plaindre. 
 
 *** =instructions
-- Click _Submit Answer_ and read the error message. Make sure you understand why this did not work.
-- Adjust `my_oranges <- "six"` such that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit. Click _Submit Answer_ again.
+- Cliquer **Submit Answer**  et liser le message d'erreur. Essayer de comprendre pourquoi cela ne marche pas.
+- Adjuster `my_oranges <- "six"` comme que R connait que vous avez 6 oranges avec une corbeille de fruit contenat 11 pièces. Cliquer **Submit Answer**.
 
 *** =hint
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Notice how the quotation marks are used to indicate that `"six"` is a character.
+Vous avez affecté une valeur numérique `6` à la variable `my_orange` au lieu d'une valeur carcatère `"six"`. Noter comment les doubles quotes sont utilisées pour indiquer que `"six"` est une carcatère.
 
 *** =pre_exercise_code
 ```{r}
@@ -514,64 +504,64 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 *** =sample_code
 ```{r}
-# Assign a value to the variable my_apples and print it out
+# Affecter la valeur à la variable my_apples  et l'imprimer
 my_apples <- 5
 my_apples       
 
-# Assign a value to the variable my_oranges and print it out
+# Affecter la valeur à la variable my_oranges et l'imprimer
 my_oranges <- "six" 
 my_oranges 
 
-# New variable that contains the total amount of fruit
+# Nouvelles variables qui contiennent le total des fruits
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
 
 *** =solution
 ```{r}
-# Assign a value to the variable my_apples and print it out
+# Affecter la valeur à la variable my_apples et l'imprimer
 my_apples <- 5  
 my_apples  
 
-# Assign a value to the variable my_oranges and print it out
+# Affecter la valeur à la variable my_oranges et l'imprimer
 my_oranges <- 6
 my_oranges 
 
-# New variable that contains the total amount of fruit
+# Nouvelles variable qui contient le total du nombre de fruits
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
 
 *** =sct
 ```{r}
-test_object("my_apples", incorrect_msg = "Don't change the code that assigns 5 to `my_apples`.")
-test_object("my_oranges", incorrect_msg = "Change the assignment of the `my_oranges` variable such that the code runs without errors.")
+test_object("my_apples", incorrect_msg = "Ne pas changer le code qui affecte 5 à `my_apples`.")
+test_object("my_oranges", incorrect_msg = "Changer l'affectation de la variable `my_oranges` comme il le faut, sans erreur.")
 test_object("my_fruit", 
-            undefined_msg = "Please make sure to define a variable `my_fruit`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
-test_output_contains("my_fruit", incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`.")
+            undefined_msg = "Prière, soyez sure de définir la variable `my_fruit`.",
+            incorrect_msg = "Faites attention que vous avez la valeur correct à la variable`my_fruit`.")
+test_output_contains("my_fruit", incorrect_msg = "le output ne contient pas le résultat de la somme de `my_apples` et `my_oranges`.")
 success_msg("Awesome, keep up the good work!")
 ```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:7806ca24d2
-## What's that data type?
+## Quel est ce type de données?
 
-When you added the variables containing `5` and `"six"`, you got an error due to a mismatch in data types. You can avoid such embarrassing situations by checking the data type of a variable beforehand:
+Lorsque vous avez ajouté les variables contenant `5` et` "six" `, vous avez une erreur due à une discordance dans les types de données. Vous pouvez éviter ces situations embarrassantes en vérifiant préalablement le type de données d'une variable:
 
 ```
 class(my_var)
 ```
 
-In the workspace (you can see what it contains by typing [`ls()`](http://www.rdocumentation.org/packages/base/functions/ls) in the console), some variables have already been defined. Which statement concerning these variables are correct?
+Dans l'espace de travail (vous pouvez voir ce qu'il contient en tapant [`ls ()`] (http://www.rdocumentation.org/packages/base/functions/ls) dans la console), certaines variables ont déjà été définies. Quelle est la phrase concernant ces variables est correcte?
 
 *** =instructions
-- `a`'s class is `integer`, `b` is a `character`, `c` is a `boolean`.
-- `a`'s class is `character`, `b` is a `character` as well, `c` is a `logical`.
-- `a`'s class is `numeric`, `b` is a `string`, `c` is a `logical`.
-- `a`'s class is `numeric`, `b` is a `character`, `c` is a `logical`.
+- Les classes de `a` est `integer`, `b` est `character`, et `c` est `boolean`.
+- Les classes de `a` est `character`, `b` est `character`, et `c` est `logical`.
+- Les classes de `a` est `numeric`, `b` est `string`, et `c` est `logical`.
+- Les classes de `a` est `numeric`, `b` est `character`, et `c` est `logical`.
 
 *** =hint
-You can find out the data type of the `a` variable for example by typing `class(a)`. You can do similar things for `b` and `c`.
+Vous pouvez trouver le type de données de la variable `a` par exemple en tapant` class (a) `. Vous pouvez faire des choses similaires pour `b` et` c`.
 
 *** =pre_exercise_code
 ```{r}
@@ -582,33 +572,33 @@ c <- FALSE
 
 *** =sct
 ```{r}
-msg1 <- "`boolean` is not the class for logical values. Try again."
-msg2 <- "`a` is of the class `numeric`, give it another go."
-msg3 <- "`string` is not a class in R. `character` is!"
-msg4 <- "Nice one. Let's step it up a notch and start coercing variables!"
+msg1 <- "`boolien n'est pas la classe d'une valeur logique. ré-essayer."
+msg2 <- "`a` est de classe numérique, Donner lui une autre valeur."
+msg3 <- "`string` n'est pas une classes dans R. `character` est une classe dans R!"
+msg4 <- "Joli. Allons-y d'un cran et commençons à contraindre les variables!"
 test_mc(correct = 4, feedback_msgs = c(msg1, msg2, msg3, msg4))
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c75fe45544
-## Coercion: Taming your data
+## Coertion: Apprivoiser vos données (contrainte, pression)
 
-As Filip explained in the video, coercion to transform your data from one type to another is perfectly possible. Next to the [`class()`](http://www.rdocumentation.org/packages/base/functions/class) function and the `is.*()` functions, you can use the `as.*()` functions to force data to change types.
+La coertion est possible poyr transformer un type de donnée à un autre. la fonction `is.*()` permet de vérifier le type de donnée. Mais la fonction `as.*()` permet de forcer de changer de type de donnée. L'astérisque `*` est une variable qui doit ^être remplacer par les 4 type de données `numeric`, `character`, `ìnterger`, `logical`.
 
-Take this example:
+Voici un exemple:
 
 ```
 var <- "3"
 var_num <- as.numeric(var)
 ```
 
-`var`, a character string, is converted into a numeric using [`as.numeric()`](http://www.rdocumentation.org/packages/base/functions/numeric). The resulting numeric is stored as `var_num`.
+`var`, est une chaine de caractère (`" "`), elle est convertie à une variable numérique en utilisant [`as.numeric()`](http://www.rdocumentation.org/packages/base/functions/numeric). Le résultat est stocké dans `var_num`.
 
 *** =instructions
-- Convert `var`, a logical, to a character. Assign to resulting character string to the variable `var_char`.
-- Inspect the class of `var_char` by using [`class()`](http://www.rdocumentation.org/packages/base/functions/class) on it.
+- Convertir une variable logique (`logical`) `var`, à une variable `charcater` . Affecter le résultat à la variable `var_char`.
+- Inspecter la classe de `var_char` en utilisant [`class()`](http://www.rdocumentation.org/packages/base/functions/class).
 
 *** =hints
-Use the [`as.character()`](http://www.rdocumentation.org/packages/base/functions/character) function to convert `var` to a character.
+Utiliser la fonction [`as.character()`](http://www.rdocumentation.org/packages/base/functions/character) pour convertir `var` à  `character`.
 
 *** =pre_exercise_code
 ```{r}
@@ -616,41 +606,41 @@ Use the [`as.character()`](http://www.rdocumentation.org/packages/base/functions
 
 *** =sample_code
 ```{r}
-# Definition of var
+# Definir var
 var <- TRUE
 
-# Convert var to a character: var_char
+# Convertir var au character: var_char
 
 
-# Display the class of var_char
+# imprimer la classe de var_char
 
 
 ```
 
 *** =solution
 ```{r}
-# Definition of var
+# Definir var
 var <- TRUE
 
-# Convert var to a character: var_char
+# Convertir var à une character: var_char
 var_char <- as.character(var)
 
-# Display the class of var_char
+# Imprimer la classe de var_char
 class(var_char)
 ```
 
 *** =sct
 ```{r}
 test_error()
-msg <- "Do not remove or change the definition of the variable `var`."
+msg <- "Ne pas supprimer ou modifier la définition de la variable `var`."
 test_object("var", undefined_msg = msg, incorrect_msg = msg)
 test_function("as.character", "x",
-              not_called_msg = "Make sure to call the function [`as.character()`](http://www.rdocumentation.org/packages/base/functions/character) to convert `var` to a character.",
-              incorrect_msg = "Have you passed the correct variable to the function [`as.character()`](http://www.rdocumentation.org/packages/base/functions/character)?")
+              not_called_msg = "Assurez-vous d'appeler la fonction [`as.character ()`] (http://www.rdocumentation.org/packages/base/functions/character) pour convertir `var` en caractère.",
+              incorrect_msg = "Avez-vous passé la bonne variable à la fonction [`as.character ()`] (http://www.rdocumentation.org/packages/base/functions/character)?")
 test_object("var_char")
 test_function("class", "x", 
-              not_called_msg = "Make sure to call the function <code>class()</code> to inspect the class of <code>var_char</code>.",
-              incorrect_msg = "Have you passed the correct variable to the function <code>class()/<code>?")
+              not_called_msg = "Soyez sure dans l'usage de la fonction <code>class()</code> pour inspecter la classe de <code>var_char</code>.",
+              incorrect_msg = "Avez-vous passé la bonne variable à la fonction <code> class () / <code>?")
 success_msg("Bellissimo!")
 ```
 
