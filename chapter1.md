@@ -28,7 +28,7 @@ Au niveau de la zone `Script`, nous avons des lines vertes, initiées par des ha
 
 Le output du code R écrit dans la zone `Script` est visualisé dans la `Console` en bas à droite.
 Les graphes et le spots sont visualisés en haut à droite à côté de la zone `Script`. Exécuter le commande **demo("graphics")** pour voire quelques plots.
-Utiliser les flèchettes pour naviguer sur les graphes générer avec R sur votre fen^être à droite en haut. Noter que vous pouvez élargir votre fenêtre pour avoir une meilleure vue. 
+Utiliser les flèchettes pour naviguer sur les graphes générer avec R sur votre fenêtre à droite en haut. Noter que vous pouvez élargir votre fenêtre pour avoir une meilleure vue. 
 
 `@instructions`
 1. Click **Submit Answer** et regardez au niveau de la console l'exécution du code R: La solution `7` apparait pour la somme de `3` et `4`. A sa forme basique R peut être utiliser comme une calculatrice ou pour générer des plots. Mais en réalité, il peut faire mieux que cela ;-).
@@ -582,7 +582,7 @@ test_mc(correct = 4, feedback_msgs = c(msg1, msg2, msg3, msg4))
 --- type:NormalExercise lang:r xp:100 skills:1 key:c75fe45544
 ## Coertion: Apprivoiser vos données (contrainte, pression)
 
-La coertion est possible poyr transformer un type de donnée à un autre. la fonction `is.*()` permet de vérifier le type de donnée. Mais la fonction `as.*()` permet de forcer de changer de type de donnée. L'astérisque `*` est une variable qui doit ^être remplacer par les 4 type de données `numeric`, `character`, `ìnterger`, `logical`.
+La coertion est possible poyr transformer un type de donnée à un autre. la fonction `is.*()` permet de vérifier le type de donnée. Mais la fonction `as.*()` permet de forcer de changer de type de donnée. L'astérisque `*` est une variable qui doit être remplacer par les 4 type de données `numeric`, `character`, `ìnterger`, `logical`.
 
 Voici un exemple:
 
