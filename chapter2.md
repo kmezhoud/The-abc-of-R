@@ -431,18 +431,17 @@ success_msg("Oops, Il semble perdre de l'argent comme vous. Il est temps de pens
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:6112e74425
-## Selection by index (1)
+## Selection par index (1)
 
-After you figured that roulette is not your forte, you decide to compare your performance at the beginning of the week to your performance at the end of the week. You did have a couple of Margarita cocktails at the end of the week...
+Notre objectif est de sélectionner des éléments spécifiques du vecteur. Pour sélectionner des éléments d'un vecteur (et des matrices plus récentes, des blocs de données, ...), vous pouvez utiliser des crochets. Entre les crochets, vous indiquez quels éléments sélectionner. Par exemple, pour sélectionner le premier élément du vecteur, vous devez taper `poker_vector[1]`. Pour sélectionner le second élément du vecteur, vous tapez `taper_vector[2]`, etc. Notez que le premier élément d'un vecteur a l'index 1, et non 0 comme dans beaucoup d'autres langages de programmation.
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector.
 
 *** =instructions
-- Assign the poker results of Wednesday to the variable `poker_wednesday`.
-- Assign the roulette results of Friday to the variable `roulette_friday`.
+- Affecter le résulat du poker  de mercredi à la variable `poker_wednesday`.
+- Affecter le résultat de la roulette de vendredi à la variable `roulette_friday`.
 
 *** =hint
-Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
+Mercredi est le troisième élément de `poker_vector`, il est sélectionner par l'opération `poker_vector[3]`.
 
 *** =pre_exercise_code
 ```{r}
@@ -451,48 +450,48 @@ Wednesday is the third element of `poker_vector`, and can thus be selected with 
 
 *** =sample_code
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Poker results of Wednesday: poker_wednesday
+# Le résulat du poker de mercredi: poker_wednesday
 
 
-# Roulette results of Friday: roulette_friday
+# le résulat de la roulette de vendredi: roulette_friday
 
 ```
 
 *** =solution
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Poker results of Wednesday: poker_wednesday
+# Le résulat du poker de mercredi: poker_wednesday
 poker_wednesday <- poker_vector[3]
 
-# Roulette results of Friday: roulette_friday
+# le résulat de la roulette de vendredi: roulette_friday
 roulette_friday <- roulette_vector[5]
 ```
 
 *** =sct
 ```{r}
 
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Ne changer rien des définitions et noms de `poker_vector` et `roulette_vector`."
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_wednesday",
-            incorrect_msg = "It looks like `poker_wednesday` does not contain the correct value of `poker_vector`.")
+            incorrect_msg = "Il semble que `poker_wednesday` ne contient pas la valeur juste de `poker_vector`.")
 test_object("roulette_friday",
-            incorrect_msg = "It looks like `roulette_friday` does not contain the correct value of `roulette_vector`.")
-success_msg("Great! R also makes it possible to select multiple elements from a vector at once, remember? Put the theory to practice in the next exercise!")
+            incorrect_msg = "Il semble que `roulette_friday` ne contient pas la valeur juste de `roulette_vector`.")
+success_msg("Génial! R permet également de sélectionner plusieurs éléments d'un vecteur à la fois, souvenez-vous? Mettez la théorie à la pratique dans l'exercice suivant!")
 ```
 
 
