@@ -1,5 +1,6 @@
 title            : The abc of R
-description      : Le cours est une traduction intégrale du cours <a href="https://github.com/datacamp/courses-intro-to-r-beta">Introduction to R (beta)</a> de <a href="https://github.com/datacamp">DataCamp</a>
+description      : This course in the french version of <a href="https://github.com/datacamp/courses-intro-to-r-beta">The introduction of R</a>.
+                   Ce cours est une traduction intégrale du cours <a href="https://github.com/datacamp/courses-intro-to-r-beta">Introduction to R (beta)</a> de <a href="https://github.com/datacamp">DataCamp</a>
 university       : DataCamp
 difficulty_level : 2
 time_needed      : 1 hour

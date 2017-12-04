@@ -1,6 +1,7 @@
 ---
-title       : The abc of R
-description : This course in the french version of <a href="https://github.com/datacamp/courses-intro-to-r-beta">The introduction of R</a>
+title_meta  : Chapter 1
+title       : Initiation
+description : Initiation au language R
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
