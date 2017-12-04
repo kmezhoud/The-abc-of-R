@@ -130,11 +130,12 @@ success_msg("Très bien! Pour vérifier le contenu de vos vecteurs, rappelez-vou
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ebb5aae2ff
-## Naming a vector (1)
+## Nommer un vecteur (1)
 
-As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is essential. 
+Pour mieux analyser les doonées, il est important d'avoir une idée claire sur les données. Savoir chaque élement à quoi correspond est essentiel.
 
-In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. Remember the [`names()`](http://www.rdocumentation.org/packages/base/functions/names) function to name the elements of a vector?
+Dans l'execice précéden, nous avons créer des vecteurs de chaque type de jeu. Chaque vecteur contient des élements correspondants au gains/pertes pour chaque jour de la semaine. Mais les vecteurs n'indiquent pas quel jour de la semaine est associé chaque élément. ça serait meilleur si le vecteur indique aussi les jours de la semaines.
+la fonction [`names()`](http://www.rdocumentation.org/packages/base/functions/names) nomine les éléments d'un vecteur. Par exemple:
 
 ```
 some_vector <- c("Johnny", "Poker Player")
@@ -142,10 +143,10 @@ names(some_vector) <- c("Name", "Profession")
 ```
 
 *** =instructions
-`poker_vector` has already been named with the days of the week. Do the same thing for `roulette_vector`. Beware: R is case sensitive!
+`poker_vector` est déjà nominé par les jour de la semaine. faites la même chose pour `roulette_vector`. Attentien est sensible à la casse!
 
 *** =hint
-Assign `c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")` to `names(roulette_vector)`.
+Affecter `c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")` à `names(roulette_vector)`.
 
 *** =pre_exercise_code
 ```{r}
@@ -153,61 +154,59 @@ Assign `c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")` to `names(rou
 
 *** =sample_code
 ```{r}
-# Poker winnings from Monday to Friday
+# Vecteur du jeu de Poker de lundu au vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# Vecteur du jeu de la Roulette de lundi au vendredi
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Add names to poker_vector
+# Ajouter des noms (names) au poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Add names to roulette_vector
+# Ajouter des noms (names) au roulette_vector
 
 ```
 
 *** =solution
 ```{r}
-# Poker winnings from Monday to Friday
+# Vecteur du jeu de Poker de lundu au vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# Vecteur du jeu de la Roulette de lundi au vendredi
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Add names to poker_vector
+# Ajouter des noms (names) au poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Add names to roulette_vector
+# Ajouter des noms (names) au roulette_vector
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the values inside `%s`; they were already coded for you."
+msg <- "Ne pas changer les valeurs à l'intérieur de `%s`; c'est fait pour vous."
 test_object("poker_vector", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", incorrect_msg = sprintf(msg, "roulette_vector"))
-msg <- "Make sure that you assign the correct names vector to `%s`. The names of the day should start with a capital letter!"
+msg <- "être sure que vous avez bien choisi les noms à l'intérieur de `%s`. Les noms des jours doivent commencer par une lettre juscule!"
 test_object("poker_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "roulette_vector"))
-success_msg("Well done!")
+success_msg("Bien fait!")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:5c026ed9fb
-## Naming a vector (2)
+## Nommer un vecteur (2)
 
-If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents!)
-
-In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, there is a more efficient way to do this, namely, to assign the days of the week vector to a variable! 
-
-Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it. This variable, `days_vector`, has already been coded for you.
+Dans l'exercice précédent, il était ennuieu de taper et retaper les jours de la semaines. IL est possible de créer un vecteur avec les jour de la semaine et l'utiliser mainte fois. 
+Créer une variable contenant les jours de la semaines. ainsi, il est possible de l'utiliser plusieurs fois.
+Le variable `days_vector` est définie dans la zone script.
 
 *** =instructions
-- Use the variable `days_vector` to set the names of `poker_vector`.
-- Use the variable `days_vector` to set the names of `roulette_vector`.
+- Utiliser la variable `days_vector` pour attribuer des noms au  `poker_vector`.
+- Utiliser la variable `days_vector` pour attribuer des noms au `roulette_vector`.
 
 *** =hint
-You can use `names(poker_vector) <- ` to set the names of the variable `poker_vector`.
+Vous pouvez utiliser `names(poker_vector) <- ` pour attribuer des noms à la variable `poker_vector`.
 
 *** =pre_exercise_code
 ```{r}
@@ -216,51 +215,51 @@ You can use `names(poker_vector) <- ` to set the names of the variable `poker_ve
 
 *** =sample_code
 ```{r}
-# Poker winnings from Monday to Friday
+# Vecteur du jeu de Poker de lundu au vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# Vecteur du jeu de la Roulette de lundi au vendredi
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Create the variable days_vector
+# Créer la variable days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
  
-# Use days_vector to name poker_vector
+# Utiliser days_vector pour nommer  poker_vector
 
 
-# Use days_vector to name roulette_vector
+# Utiliser days_vector pour nommer roulette_vector
 ```
 
 *** =solution
 ```{r}
-# Poker winnings from Monday to Friday
+# Vecteur du jeu de Poker de lundu au vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# Vecteur du jeu de la Roulette de lundi au vendredi
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Create the variable days_vector
+# Créer la variable days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Use days_vector to name poker_vector
+# Utiliser days_vector pour nommer  poker_vector
 names(poker_vector) <- days_vector
 
-# Use days_vector to name roulette_vector
+# Utiliser days_vector pour nommer roulette_vector
 names(roulette_vector) <- days_vector
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the values inside `%s`; they were already coded for you."
+msg <- "Ne pas changer les valeurs dans `%s`; c'est fait pour vous."
 test_object("poker_vector", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", incorrect_msg = sprintf(msg, "roulette_vector"))
 test_object("days_vector", incorrect_msg = sprintf(msg, "days_vector"))
 
-msg <- "Make sure that you assign `days_vector` to the names of `%s`. Use the `names()` function."
+msg <- "être sure Make sure de vient affecter `days_vector` au noms de `%s`. Utiliser la fonction `names()`."
 test_object("poker_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "roulette_vector"))
 
-success_msg("Nice one! A word of advice: try to avoid code duplication at all times.")
+success_msg("Joli! Un conseil: essayez d'éviter la duplication de code à tout moment.")
 ```
 
 --- type:VideoExercise lang:r xp:50 skills:1 key:b47466f033
@@ -274,11 +273,15 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:6b17fc50b9
-## Calculate your earnings
+## Calculer les gains
 
+Il est possible de faire un calcul arithmétique avec les vecteurs. Par example, sommer deux vecteurs, faire de la multiplication ou autre opération.
+`c(2,4,6) * 2 est égale à c(4,8,12)`. Chaque élément va être multiplier par 2. `c(2,4,6) - c(1,5,2) = c(1,-1, 4)`. 
+
+Maintenant pour savoir le profit journalié des gains pour les deux jeux, il est possible de faire la somme des deux vecteurs.
 Now that you understand how R does arithmetic calculations with vectors, it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day.
 
-Remember that vector calculations happen element-wise; the following three statements are completely equivalent:
+Rapelle: les opérations sur les vecteurs se font élément par élément. ces trois écriture sont équivalentes:
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -287,11 +290,11 @@ c(5, 7, 9)
 ```
 
 *** =instructions
-- Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined). `total_daily` should be a vector with 5 values.
-- Print out `total_daily`.
+- Affecter à la variable `total_daily` combien y a t il de gain/perte avec les deux jeux (pocker et roulette) pour chaque jour. `total_daily` doit ^être un vecteur de 5 valeurs.
+- Imprimer `total_daily`.
 
 *** =hint
-Similar to the previous exercise, assign the sum of two vectors to a new variable, `total_daily`.
+Affecter la somme des deux vecteurs à la nouvelle variable `total_daily`.
 
 *** =pre_exercise_code
 ```{r}
@@ -300,45 +303,45 @@ Similar to the previous exercise, assign the sum of two vectors to a new variabl
 
 *** =sample_code
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Calculate your daily earnings: total_daily
+# Calculer les entrée journalière: total_daily
 
 
-# Print out total_daily
+# Imprimer total_daily
 ```
 
 *** =solution
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Calculate your daily earnings: total_daily
+# Calculer les entrée journalière: total_daily
 total_daily <- poker_vector + roulette_vector
 
-# Print out total_daily
+# Imprimer total_daily
 total_daily
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Ne pas changer des définitions et les noms de `poker_vector` and `roulette_vector`."
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("total_daily", 
-            incorrect_msg = "Make sure that you assign the sum of `poker_vector` and `roulette_vector` to `total_daily`. Simply use `+`.")
-test_output_contains("total_daily", incorrect_msg = "Don't forget to print out `total_daily`.")
-success_msg("Great! Continue to the next exercise.")
+            incorrect_msg = "être sureque vous avez affecté la somme de `poker_vector` et `roulette_vector` au `total_daily`. Utiliser `+`.")
+test_output_contains("total_daily", incorrect_msg = "Ne pas oublier d'imprimer `total_daily`.")
+success_msg("Génial, passer à l'exercice suivant")
 ```
 
 
