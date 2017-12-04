@@ -1,6 +1,7 @@
 --- 
 title_meta  : Chapter 2
-title       : Ce chapitre va traiter la notion de vecteurs chez R. A la fin , l'utilisateur est capable de créer et nommer un vecteur, sélectioonner des élements et comparer plusieurs vecteurs.
+title       : Les vecteurs
+description : Ce chapitre va traiter la notion de vecteurs chez R. A la fin , l'utilisateur est capable de créer et nommer un vecteur, sélectioonner des élements et comparer plusieurs vecteurs.
 attachments : 
   slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch2_slides.pdf
   
