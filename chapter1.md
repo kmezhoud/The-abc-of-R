@@ -475,13 +475,13 @@ my_logical <- FALSE
 *** =sct
 ```{r}
 test_object("my_numeric", 
-            incorrect_msg = "Soyez sure que vous affectez correctement une valeur à `my_numeric.`")
+            incorrect_msg = "Soyez sûrque vous affectez correctement une valeur à `my_numeric.`")
 test_object("my_character",
-            incorrect_msg = paste("Soyez sure que vus affectez correctement la valeur à `my_character`.",
+            incorrect_msg = paste("Soyez sûrque vus affectez correctement la valeur à `my_character`.",
                                   "Ne pas oublier les doubles quotes et attention aux majuscules! R est sensible à la ponctuation!"))
 test_object("my_logical",
             undefined_msg = "Prière de faire attention à la définition de la variable `my_logical`.",
-            incorrect_msg = "Soyez sure que vous affectez correctement la valeur à `my_logical`.") 
+            incorrect_msg = "Soyez sûrque vous affectez correctement la valeur à `my_logical`.") 
 success_msg("Bon travail! Continuez à l'exercice suivant.")
 ```
 
@@ -538,7 +538,7 @@ my_fruit
 test_object("my_apples", incorrect_msg = "Ne pas changer le code qui affecte 5 à `my_apples`.")
 test_object("my_oranges", incorrect_msg = "Changer l'affectation de la variable `my_oranges` comme il le faut, sans erreur.")
 test_object("my_fruit", 
-            undefined_msg = "Prière, soyez sure de définir la variable `my_fruit`.",
+            undefined_msg = "Prière, soyez sûrde définir la variable `my_fruit`.",
             incorrect_msg = "Faites attention que vous avez la valeur correct à la variable`my_fruit`.")
 test_output_contains("my_fruit", incorrect_msg = "le output ne contient pas le résultat de la somme de `my_apples` et `my_oranges`.")
 success_msg("Awesome, keep up the good work!")
@@ -640,7 +640,7 @@ test_function("as.character", "x",
               incorrect_msg = "Avez-vous passé la bonne variable à la fonction [`as.character ()`] (http://www.rdocumentation.org/packages/base/functions/character)?")
 test_object("var_char")
 test_function("class", "x", 
-              not_called_msg = "Soyez sure dans l'usage de la fonction <code>class()</code> pour inspecter la classe de <code>var_char</code>.",
+              not_called_msg = "Soyez sûrdans l'usage de la fonction <code>class()</code> pour inspecter la classe de <code>var_char</code>.",
               incorrect_msg = "Avez-vous passé la bonne variable à la fonction <code> class () / <code>?")
 success_msg("Bellissimo!")
 ```

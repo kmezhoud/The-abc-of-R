@@ -62,7 +62,7 @@ logical_vector <- c(TRUE, FALSE, TRUE)
 ```{r}
 msg <- "Ne pas changer comment `numeric_vector` et `character_vector` sont crées!"
 lapply(c("numeric_vector", "character_vector"), test_object, undefined_msg = msg, incorrect_msg = msg)
-test_object("logical_vector", incorrect_msg = "être sure que vous avez affecté corrcetement la valeur à `logical_vector`. l'ordre est important!")
+test_object("logical_vector", incorrect_msg = "être sûrque vous avez affecté corrcetement la valeur à `logical_vector`. l'ordre est important!")
 success_msg("Parfait! Pratiquons un peu plus avec la création de vecteurs.")
 ```
 
@@ -123,7 +123,7 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 test_object("poker_vector", 
             incorrect_msg = "Ne pas changer comment `poker_vector` est défini.")
 test_object("roulette_vector", 
-            incorrect_msg = paste("Etre sure que vous avez bien affecté les valeurs correctes à `roulette_vector`.",
+            incorrect_msg = paste("Etre sûrque vous avez bien affecté les valeurs correctes à `roulette_vector`.",
                                   "Les pertes sont précédées par le signe `-`."))
 success_msg("Très bien! Pour vérifier le contenu de vos vecteurs, rappelez-vous que vous pouvez toujours taper simplement la variable dans la console et appuyer sur Entrée. Passez à l'exercice suivant!")
 ```
@@ -187,7 +187,7 @@ names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 msg <- "Ne pas changer les valeurs à l'intérieur de `%s`; c'est fait pour vous."
 test_object("poker_vector", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", incorrect_msg = sprintf(msg, "roulette_vector"))
-msg <- "être sure que vous avez bien choisi les noms à l'intérieur de `%s`. Les noms des jours doivent commencer par une lettre juscule!"
+msg <- "être sûrque vous avez bien choisi les noms à l'intérieur de `%s`. Les noms des jours doivent commencer par une lettre juscule!"
 test_object("poker_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "roulette_vector"))
 success_msg("Bien fait!")
@@ -255,7 +255,7 @@ test_object("poker_vector", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", incorrect_msg = sprintf(msg, "roulette_vector"))
 test_object("days_vector", incorrect_msg = sprintf(msg, "days_vector"))
 
-msg <- "être sure Make sure de vient affecter `days_vector` au noms de `%s`. Utiliser la fonction `names()`."
+msg <- "être sûrMake sûrde vient affecter `days_vector` au noms de `%s`. Utiliser la fonction `names()`."
 test_object("poker_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "poker_vector"))
 test_object("roulette_vector", eq_condition = "equal", incorrect_msg = sprintf(msg, "roulette_vector"))
 
@@ -346,19 +346,19 @@ success_msg("Génial, passer à l'exercice suivant")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a9a1a50a31
-## Calculate total winnings: sum()
+## Calculer les gains totaux: sum()
 
-Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a (very very very) tiny chance you have lost money over the week in total? 
-
-You can answer this question using the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) function. As mentioned in the video, it calculates the sum of all elements of a vector.
+En se basant sur l'exercice précédent, il parait qu'il y a des jours bons et d'autres mauvais.Mais comment savoir au total s'il y a une perte ou gain d'argent?
+ 
+Pour répondre à cette question, utiliser la fonction [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) pour calculer la somme de tous les élements de chaque vecteur.
 
 *** =instructions
-- Calculate the total amount of money that you have won/lost with poker and assign it to the variable `total_poker`.
-- Do the same thing for roulette and assign the result to `total_roulette`.
-- Use `+` to sum the `total_poker` and `total_roulette`, which is the sum of all gains and losses of the week. Simply print the result to the console.
+- Calculez le montant total d'argent que vous avez gagné / perdu avec le poker et attribuez-le à la variable `total_poker`.
+- Faites la même chose pour la roulette et assignez le résultat à `total_roulette`.
+- Utiliser `+` pour sommer `total_poker` et `total_roulette`, qui est la somme de tous les gains et pertes de la semaine. Imprimer le résultat sur la console.
 
 *** =hint
-Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) function to get the total of the `poker_vector`. Do the same thing for `roulette_vector`.
+Utiliser la fonction [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) pour avoir la total de `poker_vector`. Faites la même chose pour la `roulette_vector`.
 
 *** =pre_exercise_code
 ```{r}
@@ -367,56 +367,56 @@ Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) fun
 
 *** =sample_code
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Total winnings with poker: total_poker
+# Les gains totaux avec le Poker: total_poker
 
 
-# Total winnings with roulette: total_roulette
+# Les gains totaux  avec la Roulette: total_roulette
 
 
-# Total winnings overall: print out the result
+# Les gains totaux: Imprimer le résultat
 
 ```
 
 *** =solution
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Total winnings with poker: total_poker
+# Les gains totaux avec le Poker: total_poker
 total_poker <- sum(poker_vector)
 
-# Total winnings with roulette: total_roulette
+# Les gains totaux  avec la Roulette: total_roulette
 total_roulette <-  sum(roulette_vector)
 
-# Total winnings overall: print out the result
+# Les gains totaux: Imprimer le résultat
 total_roulette + total_poker
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "Ne pas changer les définitions et les noms de `poker_vector` et `roulette_vector`."
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("total_poker", 
-            undefined_msg = "Please make sure to define a variable `total_poker`.",
-            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`.")
+            undefined_msg = "Prière d'être sûrde bien définir `total_poker`.",
+            incorrect_msg = "être sûrd'affecter à `total_poker` la somme des éléments de `poker_vector`.")
 test_object("total_roulette",
-            undefined_msg = "Please make sure to define a variable `total_roulette`.",
-            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`.")
-test_output_contains("total_poker + total_roulette", incorrect_msg = "Print the sum of `total_poker` and `total_roulette` to the console.")
-success_msg("Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis...")
+            undefined_msg = "Prière d'être sûr de la definition de la variable `total_roulette`.",
+            incorrect_msg = "être sûr Make sûr d'affecter à la variable `total_roulette` la somme des éléments de `roulette_vector`.")
+test_output_contains("total_poker + total_roulette", incorrect_msg = "Imprimer la somme de `total_poker` et de `total_roulette` au niveau de la console.")
+success_msg("Oops, Il semble perdre de l'argent comme vous. Il est temps de penser et adapter à une autre stratégie! Cela exige une analyse approfondie ...")
 ```
 
 
@@ -789,10 +789,10 @@ test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", 
-            undefined_msg = "Please make sure to define a variable `selection_vector`.",
+            undefined_msg = "Please make sûrto define a variable `selection_vector`.",
             incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Remember that R uses element wise operations for vectors.")
 test_object("poker_profits",
-            undefined_msg =  "Please make sure to define a variable `poker_profits`.",
+            undefined_msg =  "Please make sûrto define a variable `poker_profits`.",
             incorrect_msg =  "It looks like `poker_profits` does not contain the correct result. Remember that R uses element wise operations for vectors.")
 success_msg("Great! Move on to the Matrices chapter!")
 ```
