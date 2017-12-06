@@ -1,7 +1,7 @@
 --- 
-title_meta  : Chapter 3
-title       : Matrices
-description : In this chapter you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices and to understand how you can do basic computations with them. You will analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May the force be with you!
+title_meta  : Chapitre 3
+title       : Les Matrices
+description : Dans ce chapitre, vous apprendrez à travailler avec des matrices dans R. À la fin du chapitre, vous pourrez créer des matrices et comprendre comment vous pouvez faire des calculs de base avec ces matrices. Vous analyserez les chiffres du box-office de Star Wars pour illustrer l'utilisation des matrices dans R. 
 attachments : 
   slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch3_slides.pdf
   
@@ -14,29 +14,68 @@ attachments :
 *** =video_hls
 //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch3_1.master.m3u8
 
+---
+## C'est quoi une matrice?
+
+Une matrice est une collection d'éléments du même type de données (numérique, caractère ou logique), qui est organisée en un nombre fixe de lignes et de colonnes. Une matrice est appelée bidimensionnelle. 
+
+Vous pouvez construire une matrice avec la fonction `matrix`, par exemple: `matrix (1: 9, byrow = TRUE, nrow = 3)`.
+
+Le premier argument est la collection d'éléments que R arrangera dans les lignes et les colonnes de la matrice. Ici, nous utilisons `1: 9` qui construit le vecteur` c (1,2,3,4,5,6,7,8,9) `. 
+
+L'argument `byrow` indique que la matrice est remplie par les lignes. Si nous voulons que le vecteur soit rempli par les colonnes, il suffit de placer `bycol = TRUE` ou` byrow = FALSE`.
+
+Le troisième argument `nrow` indique que la matrice doit avoir trois lignes.
+
+*** =instructions
+
+1. Construire une matrice avec 3 lignes contenant les numéros 1 jusqu'à 9 dans l'éditeur, Cliquer sur le bouton **Submit Answer** et regarder la sortie dans la console. Astuce, utilisez: `matrix (1: 9, byrow = TRUE, nrow = 3)`.
+
+*** =hint
+Lisez attentivement la mission, la réponse est déjà donnée ;-).
+
+*** =sample_code
+```{r eval=FALSE}
+# Construction d'une matrice avec 3 lignes contenant les nombres 1 jusqu'à 9
+```
+
+*** =solution
+```{r eval=FALSE}
+matrix(1:9, byrow=TRUE, nrow=3)
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- code_test("matrix(1:9, byrow=TRUE, nrow=3)")
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:834a0e546c
-## Analyzing matrices, you shall (1)
+## Construire une matrice (1)
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you!
+Dans les exercices suivants, vous analyserez les chiffres du box-office de la franchise Star Wars.
 
-As a reminder, look at this line of code that constructs a matrix with numbers 1 through 9, filled row by row:
+Rappel: regardez cette ligne de code qui construit une matrice avec les numéros 1 à 9, remplie ligne par ligne:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the script, a vector `box` is defined that represents the box office numbers from the first three Star Wars movies. The first, third and fifth element correspond to the US box office revenue for the movies, the second, fourth and sixth element represent the non-US box office revenue.
+Dans le script, un vecteur `box` représente les chiffres du box-office des trois premiers films Star Wars. Le premier, le troisième et le cinquième élément correspondent au chiffre d'affaires du box-office américain pour les  3 films. Les deuxième, quatrième et sixième éléments représentent les recettes au box-office non-US.
 
 *** =instructions
-Construct a matrix `star_wars_matrix`:
+Construire une matrice `star_wars_matrix`:
 
-- Each row represents a movie.
-- The first column is for the US box office revenue, and the second column for the non-US box office revenue. 
-- Use the function `matrix()` with `box` as the first input, and the additional arguments `nrow` and `byrow`.
+- Chaque ligne représente un film
+- La première colonne concerne le chiffre d'affaires du box-office américain et la deuxième colonne le chiffre d'affaires du box-office non-américain.
+- Utilisez la fonction `matrix ()` avec `box` comme première entrée, et les arguments supplémentaires` nrow` et `byrow`.
 
 *** =hint
-Set `nrow` to `3` and `byrow` to `TRUE` inside `matrix()`.
+Définissez `nrow` à` 3` et `byrow` à` TRUE` dans `matrix ()`.
 
 *** =pre_exercise_code
 ```{r}
@@ -45,26 +84,26 @@ Set `nrow` to `3` and `byrow` to `TRUE` inside `matrix()`.
 
 *** =sample_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 box <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 
-# Create star_wars_matrix
+# Créer star_wars_matrix
 
 ```
 
 *** =solution
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 box <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 
-# Create star_wars_matrix
+# Créer star_wars_matrix
 star_wars_matrix <- matrix(box, nrow = 3, byrow = TRUE) 
 ```
 
 *** =sct
 ```{r}
 test_error()
-msg <- "Do not change or remove the definition of `box`!"
+msg <- "Ne changez pas et ne supprimez pas la définition de `box`!"
 test_object("box", undefined_msg = msg, incorrect_msg = msg)
 
 # TODO: Fix in testwhat
@@ -74,26 +113,26 @@ test_what(
     dim(get("star_wars_matrix", get_solution_env())), 
     dim(get("star_wars_matrix", .GlobalEnv))),
   feedback = 
-    paste("Be sure to use the `byrow` and `nrow` arguments of the function `matrix()`",
-          "to form a matrix of the correct dimensions: 3 rows and 2 columns."))
+    paste("Veillez à utiliser les arguments `byrow` et` nrow` de la fonction `matrix ()`",
+          "pour former une matrice des dimensions correctes: 3 lignes et 2 colonnes."))
 
 test_correct({
   test_object("star_wars_matrix",
-              undefined_msg = "Please make sure to define a variable `star_wars_matrix`.",
-              incorrect_msg = "Did you assign the correct matrix containing the vector that holds all three movies to `star_wars_matrix`?")
+              undefined_msg = "Assurez-vous de définir une variable `star_wars_matrix`.",
+              incorrect_msg = "Avez-vous assigné la matrice correcte contenant le vecteur qui contient les trois films à `star_wars_matrix`?")
 }, {
   test_function("matrix", "data")
   test_function("matrix", "nrow")
   test_function("matrix", "byrow")
 })
-success_msg("Great job!")
+success_msg("Bon travail!")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:0dfb4c5e70
-## Analyzing matrices, you shall (2)
+## Construire une matrice (2)
 
-Instead of as a single vector, the box office numbers for the three Star Wars movies are represented as three vectors. Remember the [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function to paste together different vectors as if they were rows of a matrix? Take this example, that pastes together 2 vectors as if they were rows of a matrix:
+Au lieu d'un seul vecteur, les numéros du box-office pour les trois films Star Wars sont représentés comme trois vecteurs. Souvenez-vous de la fonction [`rbind ()`] (http://www.rdocumentation.org/packages/base/functions/cbind) pour lier ensemble différents vecteurs comme s'ils étaient des lignes d'une matrice. Prenons cet exemple, qui lie deux vecteurs comme s'ils étaient des rangées d'une matrice:
 
 ```
 a <- c(1, 2, 3)
@@ -101,13 +140,13 @@ b <- c(4, 5, 6)
 rbind(a, b)
 ```
 
-Try a similar thing on the astronomical Star Wars numbers!
+Essayez la même chose sur les chiffres de Star Wars!
 
 *** =instructions
-Again, construct the matrix `star_wars_matrix` with one row for each movie.
+Encore une fois, construisez la matrice `star_wars_matrix` avec une ligne pour chaque film.
 
 *** =hint
-Simply pass the three vectors to the [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function.
+Passez simplement les trois vecteurs à la fonction [`rbind ()`] (http://www.rdocumentation.org/packages/base/functions/cbind).
 
 *** =pre_exercise_code
 ```{r}
@@ -116,35 +155,35 @@ Simply pass the three vectors to the [`rbind()`](http://www.rdocumentation.org/p
 
 *** =sample_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Create star_wars_matrix
+# Créer star_wars_matrix
 
 ```
 
 *** =solution
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Create star_wars_matrix
+# Créer star_wars_matrix
 star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 ```
 
 *** =sct
 ```{r}
 test_error()
-msg = "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg = "Ne changez rien aux variables du box-office `new_hope`,` empire_strikes` et `return_jedi`!"
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 
-# Fix untill testwhat gets updated again
+# Corriger jusqu'à ce que le test soit mis à jour à nouveau
 # TODO: Fix in testwhat
 test_object("star_wars_matrix", eval = FALSE)
 test_what(
@@ -152,28 +191,28 @@ test_what(
     dim(get("star_wars_matrix", get_solution_env())), 
     dim(get("star_wars_matrix", .GlobalEnv))),
   feedback = 
-    paste("Be sure to use the the function `rbind()` with 3 arguments: `new_hope`,",
-          "`empire_strikes` and `return_jedi`. You should end up with a matrix",
-          "of the correct dimensions: 3 rows and 2 columns."))
+    paste("Assurez-vous d'utiliser la fonction `rbind ()` avec 3 arguments: `new_hope`,",
+          "`empire_strikes` et` return_jedi`. Vous devriez vous retrouver avec une matrice",
+          "des correctes dimensions : 3 rangées et 2 colonnes."))
 
 
 
 test_correct({
   test_object("star_wars_matrix",
-            incorrect_msg = "Did you assign the correct matrix containing the vector that holds all three movies to `star_wars_matrix`?")
+            incorrect_msg = "Avez-vous assigné la matrice correcte contenant le vecteur qui contient les trois films à `star_wars_matrix`?")
 }, {
-  test_function("rbind", not_called_msg = "You should use the [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function to create the matrix.")
+  test_function("rbind", not_called_msg = "Vous deviez utiliser la fonction [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) pour créer la matrice.")
 })
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("Bon travail! Continuez par l'exercice suivant.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ca3dbb8a9f
-## Naming a matrix
+## Nommer une matrice
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix later. 
+Pour vous aider à vous souvenir de ce qui est stocké dans `star_wars_matrix`, vous souhaitez ajouter les noms des films pour les lignes. Non seulement cela vous aide à lire les données, mais il est également utile de sélectionner certains éléments de la matrice plus tard.
 
-Similar to vectors, you can add names for the rows and the columns of a matrix
+Similaire aux vecteurs, vous pouvez ajouter des noms pour les lignes et les colonnes d'une matrice
 
 ```
 rownames(my_matrix) <- row_names_vector
@@ -181,12 +220,12 @@ colnames(my_matrix) <- col_names_vector
 ```
 
 *** =instructions
-- Two vectors containing the row names and column names have been created for you: `movie_names` and `col_titles`.
-- Name the rows of `star_wars_matrix` with `movie_names`.
-- Name the columns of `star_wars_matrix` with the pre-defined `col_titles`.
+- Deux vecteurs contenant les noms de lignes et les noms de colonnes ont été créés pour vous: `movie_names` et` col_titles`.
+- Nommez les lignes de `star_wars_matrix` avec` movie_names`.
+- Nommez les colonnes de `star_wars_matrix` avec les` col_titles` prédéfinis.
 
 *** =hint
-To name the rows, start with `rownames(star_wars_matrix) <-`; can you finish the command?
+Pour nommer les lignes, commencez par `rownames(star_wars_matrix) <-`; pouvez-vous terminer la commande?
 
 *** =pre_exercise_code
 ```{r}
@@ -195,76 +234,76 @@ To name the rows, start with `rownames(star_wars_matrix) <-`; can you finish the
 
 *** =sample_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 
-# Build col_names_vector and row_names_vector
+# Construire col_names_vector et row_names_vector
 movie_names <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 col_titles <- c("US", "non-US")
 
-# Add row names to star_wars_matrix
+# Ajouter des noms de lignes à star_wars_matrix
 
 
-# Add column names to star_wars_matrix
+# Ajouter les noms de colonnes à star_wars_matrix
 
 ```
 
 *** =solution
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 
-# Build col_names_vector and row_names_vector
+# Construire col_names_vector et row_names_vector
 movie_names <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 col_titles <- c("US", "non-US")
 
-# Add row names to star_wars_matrix
+# Ajouter des noms de lignes à star_wars_matrix
 rownames(star_wars_matrix) <- movie_names
 
-# Add column names to star_wars_matrix
+# Ajouter les noms de colonnes à star_wars_matrix
 colnames(star_wars_matrix) <- col_titles
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg = "Ne changez rien aux variables du box-office `new_hope`,` empire_strikes` et `return_jedi`!"
 lapply(c("new_hope", "empire_strikes", "return_jedi"), test_object, undefined_msg = msg, incorrect_msg = msg)
-msg <- "Do not change anything about the creation of `star_wars_matrix`."
+msg <- "Ne changez rien à propos de la création de `star_wars_matrix`."
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-msg <- paste("Do not change or remove the vectors `col_names_vector` and `row_names_vector`;",
-             "you can use them to name the columns and rows of `star_wars_matrix`.")
+msg <- paste("Ne modifiez pas et ne supprimez pas les vecteurs `col_names_vector` et` row_names_vector`;",
+             "vous pouvez les utiliser pour nommer les colonnes et les lignes de `star_wars_matrix`.")
 lapply(c("movie_names", "col_titles"), test_object, undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", eq_condition = "equal",
-            incorrect_msg = paste("Did you set the row and column names of `star_wars_matrix` correctly?",
-                                  "Have another look at your code."))
-success_msg("Great! You're on your way of becoming an R jedi!")
+            incorrect_msg = paste("Avez-vous défini correctement les noms de lignes et de colonnes de `star_wars_matrix`?",
+                                  "Jetez un autre coup d'oeil à votre code."))
+success_msg("Génial! Vous êtes sur le point de devenir un R Men!")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:3b60b1a49a
-## Calculating the worldwide box office 
+## Calculer le box-office mondial
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+La chose la plus importante pour un film afin de devenir une légende instantanée à Tinseltown est les chiffres du box-office qu'il peut atteindre  dans le monde entier.
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column.
+Pour calculer le total des recettes au guichet des trois films Star Wars, vous devez faire la somme de la colonne des revenus américains et de la colonne des revenus non américains.
 
-In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+Avec R, la fonction [`rowSums ()`] (http://www.rdocumentation.org/packages/base/functions/colSums) calcule les totaux pour chaque ligne d'une matrice. Cette fonction crée un nouveau vecteur:
 
 ```
 sum_of_rows_vector <- rowSums(my_matrix)
 ```
 
 *** =instructions
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+Calculez les chiffres du box-office mondial pour les trois films et placez-les dans le vecteur nommé «global_vector».
 
 *** =hint
-The ['rowSums'](http://www.rdocumentation.org/packages/base/functions/colSums) function will calculate the total box office for each row of the `star_wars_matrix`, if you supply `star_wars_matrix` as an argument to that function by putting it between the parentheses.
+La fonction ['rowSums'] (http://www.rdocumentation.org/packages/base/functions/colSums) calcule le total du box-office pour chaque ligne de `star_wars_matrix`, si vous fournissez` star_wars_matrix` comme argument à cette fonction en le mettant entre les parenthèses.
 
 *** =pre_exercise_code
 ```{r}
@@ -273,7 +312,7 @@ The ['rowSums'](http://www.rdocumentation.org/packages/base/functions/colSums) f
 
 *** =sample_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -281,13 +320,13 @@ star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 rownames(star_wars_matrix) <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 colnames(star_wars_matrix) <- c("US", "non-US")
 
-# Calculate the worldwide box office: worldwide_vector
+# Calculez le box-office mondial: worldwide_vector
 
 ```
 
 *** =solution
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -295,22 +334,22 @@ star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 rownames(star_wars_matrix) <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 colnames(star_wars_matrix) <- c("US", "non-US")
 
-# Calculate the worldwide box office: worldwide_vector
+# Calculez le box-office mondial: worldwide_vector
 worldwide_vector <- rowSums(star_wars_matrix)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the construction and naming of `star_wars_matrix`!"
+msg = "Ne changez rien à la construction et au nommage de `star_wars_matrix`!"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
 test_function("rowSums", "x", 
-              not_called_msg = "Have you used the function `rowSums()</code?",
-              incorrect_msg = "Did you use the [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function on the correct vector?")
+              not_called_msg = "Avez-vous utilisé la fonction `rowSums()</code?",
+              incorrect_msg = "Avez-vous utilisé la fonction [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) sur le vecteur aproprié?") 
 
 test_object("worldwide_vector",
-            incorrect_msg = "Have you specified `worldwide_vector` correctly?")
-success_msg("Well done! Continue to the next exercise.")
+            incorrect_msg = "Avez-vous spécifier correctement `worldwide_vector`?")
+success_msg("Bien fait! passer à l'exercice suivant.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4e0c938d72
