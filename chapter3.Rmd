@@ -847,15 +847,15 @@ Comme `2 * my_matrix` multiplie chaque élément de `my_matrix` par 2, `my_matri
 
 Après avoir regardé le résultat de l'exercice précédent, le patron de StarWarsStudios souligne que les prix des billets ont augmenté au fil du temps avec un dollar par film. Il demande à refaire l'analyse en fonction des prix que vous pouvez trouver dans `ticket_prices_matrix` (source: imagination).
 
-_Those who are familiar with linear algebra: this is not the standard matrix multiplication for which you should use `%*%` in R._
+_Ceux qui sont familiés avec l'algèbre linéaire: ce n'est pas la multiplication standard de la matrice pour laquelle vous devriez utiliser `%*%` dans R._
 
 *** =instructions
-- Assign to `visitors` the matrix with your estimated number of Non-US and US visitors (in millions) for the three movies. Use ticket_prices_matrix` this time to take into account the movie-specific ticket prices.
-- Subset `visitors` so that you keep only the US visitors, and calculate the average number of this column. You have to use [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) here; this R function gives you the average of a numerical vector. Store the result in a variable `average_us_visitors`.
+- Affecter au `visitors` la matrice avec vos estimations de visiteurs US et non-US (in millions) pour les trois films. Utilisez cette fois `ticket_prices_matrix`  pour prendre en considération les prix spécifiques des tickets pour chaque film.
+- extraire la sous-matrice `visitors` pour ne laisser que les visiteurs américains, et calculer la moyenne de cette colonne. vous devriez utiliser [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean); cette fonction vous calcule la moyenne du vecteur numérique. Affecter le résultat dans la variable `average_us_visitors`.
 
 *** =hint
-- You can use the function [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) to calculate the average of the inputs to the function.
-- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- Vous pouvez utilisé la fonction [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) pour calculer la moyenne des inputs de la fonction.
+- POur avoir le nombre de visiteur au US, sélectionner la première colonne de `visitors` en utilisant `visitors[ ,1]`.
 
 *** =pre_exercise_code
 ```{r}
@@ -864,47 +864,47 @@ _Those who are familiar with linear algebra: this is not the standard matrix mul
 
 *** =sample_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en million (!)
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
-# Definition of ticket_prices_matrix
+# La définition de  ticket_prices_matrix
 ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles)) 
 
-# Estimated number of visitors
+# Nombre de visiteurs estimés
 
 
-# Average number of US visitors
+# La moyenne de nombre de visiteurs américains
 
 
 ```
 
 *** =solution
 ```{r}
-# Star Wars box office in millions (!) 
-# Construct matrix 
+# Box-office de Star Wars en million (!) 
+# Construire la matrix 
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, dimnames = list(movie_names,col_titles))
 
-# Estimated number of visitors
+# Nombre de visiteurs estimés
 visitors <- star_wars_matrix / ticket_prices_matrix
 
-# Average number of US visitors
+# La moyenne de nombre de visiteurs américains
 average_us_visitors <- mean(visitors[ ,1])
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variables!"
+msg <- "Ne changez rien sur les variables prédéfinies!"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("ticket_prices_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("visitors", incorrect_msg = "It looks like `visitors` does not contain the correct value. Remember that you can divide two matrices.")
-test_object("average_us_visitors", incorrect_msg = "It looks like `average_us_visitors` does not contain the average of the US visitors. Use [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) in combination with a subset of `visitors`.")
-success_msg("It's a fact: the R force is with you! You are now ready for the final exercise on matrices!")
+test_object("visitors", incorrect_msg = "Il semble que `visitors` ne contienne pas la valeur correcte. Rappelez-vous que vous pouvez diviser deux matrices.")
+test_object("average_us_visitors", incorrect_msg = "Il semble que `average_us_visitors` ne contienne pas la moyenne des visiteurs américains. Utilisez [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) en combinaison avec la sous-matrice `visitors`.")
+success_msg("Vous êtes maintenant prêt pour l'exercice final sur les matrices!")
 ```
 
