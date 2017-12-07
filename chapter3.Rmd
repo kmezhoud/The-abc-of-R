@@ -593,18 +593,18 @@ De même, pour sélectionner tous les éléments de la colonne `j`,
 m[,j]
 ```
 
-will help you out. Notice that the result of these subsetting operators are also vectors, but they're typically contain more than 1 element.
+Notez que le résultat de ces opérateurs de sous-ensemble sont également des vecteurs, mais ils contiennent généralement plus de 1 élément.
 
 *** =instructions
-- Select all US box office revenue from `star_wars_matrix`, so the entire first column.
-- Extract all the revenue information for "A New Hope", so the entire first row.
+- Sélectionnez tous les revenus du box-office américain de `star_wars_matrix`, donc toute la première colonne.
+- Extraire toutes les informations sur les revenus pour "A New Hope", donc toute la première rangée.
 
 *** =hint
-- To select the first row from `star_wars_matrix`, you can use `star_wars_matrix[1,]`.
+- Pour sélectionner la première ligne de `star_wars_matrix`, vous pouvez utiliser` star_wars_matrix [1,] `.
 
 *** =pre_exercise_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -615,57 +615,59 @@ colnames(star_wars_matrix) <- c("US", "non-US")
 
 *** =sample_code
 ```{r}
-# star_wars_matrix is already defined in your workspace
 
-# Select all US box office revenue
+127/5000
+# star_wars_matrix est déjà défini dans votre espace de travail
+
+# Sélectionnez toutes les recettes du box-office américain
 
 
-# Select revenue for "A New Hope"
+# Selectionner le revenue pour "A New Hope"
 
 
 ```
 
 *** =solution
 ```{r}
-# star_wars_matrix is already defined in your workspace
+# star_wars_matrix est déjà défini dans votre espace de travail
 
-# Select all US box office revenue
+# Sélectionnez toutes les recettes du box-office américain
 star_wars_matrix[,1]
 
-# Select revenue for "A New Hope"
+# Selectionner le revenue pour "A New Hope"
 star_wars_matrix[1,]
 ```
 
 *** =sct
 ```{r}
 
-msg <- "Do not remove or override `star_wars_matrix`, it has already been defined for you!"
+msg <- "Ne supprimez pas ou ne remplacez pas `star_wars_matrix`, il a déjà été défini pour vous!"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have another look at the %s instruction. Are you sure you selected the correct element(s)?"
+msg <- "Jetez un autre coup d'oeil à l'instruction% s. Etes-vous sûr de avoir sélectionné le (s) élément (s) correct (s)?"
 test_output_contains("star_wars_matrix[,1]", incorrect_msg = sprintf(msg, "first"))
 test_output_contains("star_wars_matrix[1,]", incorrect_msg = sprintf(msg, "second"))
-success_msg("Great! Continue to the next exercise.")
+success_msg("Génial! Continuez par l'exercice suivant.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:32d3cedaba
-## Create submatrices
+## Créer des sous-matrices
 
-Last but not least, you can create submatrices from larger matrices. If a vector is not sufficient to store the information you want to select, you need to create a new matrix. If you want to create a submatrix that comprises rows 1 and 4 and columns 2 and 3 of a matrix `m`, to following call will help you out:
+vous pouvez créer des sous-matrices à partir de matrices plus grandes. Si un vecteur n'est pas suffisant pour stocker les informations que vous souhaitez sélectionner, vous devez créer une nouvelle matrice. Si vous voulez créer une sous-matrice qui comprend les lignes 1 et 4 et les colonnes 2 et 3 d'une matrice `m`, l'appel suivant vous aidera:
 
 ```
 m[c(1,4), c(2,3)]
 ```
 
 *** =instructions
-Select all revenue figures for "A New Hope" and "Return of the Jedi" from `star_wars_matrix`.
+Selectionner tous les evenues pour "A New Hope" et "Return of the Jedi" de `star_wars_matrix`.
 
 *** =hint
-No hint on this one, you're on your own here!
+Aucun indice sur celui-ci, vous êtes seul ici!
 
 *** =pre_exercise_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -676,17 +678,17 @@ colnames(star_wars_matrix) <- c("US", "non-US")
 
 *** =sample_code
 ```{r}
-# star_wars_matrix is already defined in your workspace
+# star_wars_matrix est déjà défini dans votre espace de travail
 
-# All figures for "A New Hope" and "Return of the Jedi"
+# Tous les chiffres pour "A New Hope" et "Return of the Jedi"
 
 ```
 
 *** =solution
 ```{r}
-# star_wars_matrix is already defined in your workspace
+# star_wars_matrix est déjà défini dans votre espace de travail
 
-# All figures for "A New Hope" and "Return of the Jedi"
+# Tous les chiffres pour "A New Hope" et "Return of the Jedi"
 star_wars_matrix[c(1,3), c(1,2)]   # option 1
 star_wars_matrix[c(1,3), ]         # option 2
 ```
@@ -694,32 +696,32 @@ star_wars_matrix[c(1,3), ]         # option 2
 *** =sct
 ```{r}
 
-msg <- "Do not remove or override `star_wars_matrix`, it has already been defined for you!"
+msg <- "Ne supprimez pas ou ne remplacez pas `star_wars_matrix`, il a déjà été défini pour vous!"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("star_wars_matrix[c(1,3), c(1,2)]", 
-                     incorrect_msg = "Hmm, that's not totally correct. Make sure you end up with another matrix, containing 4 elements in total.")
-success_msg("Nice one! You could have used both `star_wars_matrix[c(1,3), c(1,2)]` and `star_wars_matrix[c(1,3), ]` to solve this exercise. Not defining any index for a dimension, is actually keeping all the indices for that dimension.")
+                     incorrect_msg = "Hmm, ce n'est pas tout à fait correct. Assurez-vous de vous retrouver avec une autre matrice, contenant 4 éléments au total.")
+success_msg("Joli! Vous auriez pu utiliser `star_wars_matrix [c (1,3), c (1,2)]` et `star_wars_matrix [c (1,3),]` pour résoudre cet exercice. Ne pas définir d'index pour une dimension, gardez tous les indices pour cette dimension.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a6e32664a3
-## Alternative ways of subsetting
+## Des moyens alternatifs de sous-ensembles
 
-Just as with vectors, you can also subset matrices using names and logical vectors. Of course, you can only subset by name if the matrix you're working with actually has names associated with it. Logical vectors on the other hand, can always be used to select the element(s) of interest.
+Tout comme pour les vecteurs, vous pouvez également sous-créer des matrices en utilisant des noms et des vecteurs logiques. Bien sûr, vous ne pouvez utiliser le nom que si la matrice avec laquelle vous travaillez a des noms associés. D'un autre côté, les vecteurs logiques peuvent toujours être utilisés pour sélectionner le ou les éléments d'intérêt.
 
 *** =instructions
-- Select the US revenues for "A New Hope" and "The Empire Strikes Back".
-- Select the last two rows and both columns from `star_wars_matrix`.
+- Sélectionnez les revenus américains pour "A New Hope" et "The Empire Strikes Back".
+- Sélectionnez les deux dernières lignes et les deux colonnes de `star_wars_matrix`.
 
 *** =hint
-To select the US revenue for "Return of The Jedi", you can use the following command:
+Pour sélectionner les revenus américains "Return of The Jedi", vous pouvez utilisé la commande suivante:
 ```
 star_wars_matrix["Return of the Jedi", "US"]
 ```
 
 *** =pre_exercise_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -730,40 +732,40 @@ colnames(star_wars_matrix) <- c("US", "non-US")
 
 *** =sample_code
 ```{r}
-# star_wars_matrix is already defined in your workspace
+# star_wars_matrix est déjà défini dans votre espace de travail
 
-# Select the US revenues for "A New Hope" and "The Empire Strikes Back"
+# Sélectionnez les revenus américains pour "A New Hope" et "The Empire Strikes Back"
 
 
-# Select the last two rows and both columns
+# Sélectionnez les deux dernières lignes et les deux colonnes
 
 
 ```
 
 *** =solution
 ```{r}
-# star_wars_matrix is already defined in your workspace
+# star_wars_matrix est déjà défini dans votre espace de travail
 
-# Select the US revenues for "A New Hope" and "The Empire Strikes Back"
+# Sélectionner les revenus américains pour "A New Hope" et "The Empire Strikes Back"
 star_wars_matrix[c("A New Hope", "The Empire Strikes Back"), "US"]
 
-# Select the last two rows and both columns
+# Sélectionner les deux dernières lignes et les deux colonnes
 star_wars_matrix[c(FALSE, TRUE, TRUE), c(TRUE, TRUE)]
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not remove or override `star_wars_matrix`, it has already been defined for you!"
+msg <- "Ne supprimez pas ou ne remplacez pas `star_wars_matrix`, il a déjà été défini pour vous!"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have another look at the %s instruction. Are you sure you selected the correct element(s) using the correct methods?"
+msg <- "Jetez un autre coup d'oeil à l'instruction %s. Etes-vous sûr de avoir sélectionné le(s) élément(s) correct(s) en utilisant les méthodes correctes?"
 test_output_contains("star_wars_matrix[c(\"A New Hope\", \"The Empire Strikes Back\"), \"US\"]", incorrect_msg = sprintf(msg, "first"))
 test_output_contains("star_wars_matrix[c(FALSE, TRUE, TRUE), c(TRUE, TRUE)]", incorrect_msg = sprintf(msg, "second"))
-success_msg("Awesome! Remember that you can combine subsetting by indices, by names and using logical vectors: you can for example select the rows using indices, but the columns using a vector of `TRUE`s and `FALSE`s. You name it, R can handle it!")
+success_msg("Impressionnant! Rappelez-vous que vous pouvez combiner des sous-ensembles par indices, par noms et en utilisant des vecteurs logiques: vous pouvez par exemple sélectionner les lignes en utilisant des index, mais les colonnes en utilisant un vecteur de `TRUE`s et` FALSE`s")
 ```
 
 
 --- type:VideoExercise lang:r xp:50 skills:1 key:f49d1498f5
-## Matrix Arithmetic
+## Matrice arithmétique
 
 *** =video_link
 //player.vimeo.com/video/141163423
@@ -772,20 +774,20 @@ success_msg("Awesome! Remember that you can combine subsetting by indices, by na
 //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch3_3.master.m3u8
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c099d6de31
-## Arithmetic with matrices (1)
+## Arithmétique avec des matrices (1)
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+Semblables à ce que vous avez appris avec les vecteurs, les opérateurs standards comme `+`, `-`,` / `,` * `, etc. fonctionnent de manière élémentaire sur les matrices de R.
 
-As a newly-hired data analyst for StarWarsStudios, it is your job is to find out how many visitors went to each movie for each geographical area. 
+En tant qu'analyste de données nouvellement recruté pour StarWarsStudios, votre travail consiste à déterminer combien de visiteurs sont allés à chaque film pour chaque zone géographique.
 
-You already have the total revenue figures in `star_wars_matrix`. Assume that the price of a ticket was 5 dollars. Box office numbers divided by the ticket price gives you the number of visitors.
+Vous avez déjà le total des revenus dans `star_wars_matrix`. Supposons que le prix d'un billet était de 5 dollars. Les chiffres du guichet divisé par le prix du billet vous donne le nombre de visiteurs.
 
 *** =instructions
-- Assign the matrix with the estimated number of Non-US and US visitors (in millions) for the three movies to `visitors`.
-- Print the resulting variable to the console.
+- Affectez la matrice avec le nombre estimé de visiteurs non américains et américains (en millions) pour les trois films à "visitors".
+- Imprimer la variable résultante sur la console.
 
 *** =hint
-The number of visitors is the revenue (which is stored in `star_wars_matrix`) divided by the price of ticket (assumed to be $5).
+Le nombre de visiteurs est le revenu (qui est stocké dans `star_wars_matrix`) divisé par le prix du billet (supposé être de 5 $).
 
 *** =pre_exercise_code
 ```{r}
@@ -794,7 +796,7 @@ The number of visitors is the revenue (which is stored in `star_wars_matrix`) di
 
 *** =sample_code
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -802,16 +804,16 @@ star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 rownames(star_wars_matrix) <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 colnames(star_wars_matrix) <- c("US", "non-US")
 
-# Estimation of visitors
+# Estimation des visiteurs
 
-  
-# Print the estimate to the console
+
+# Estimation des visiteurs
 
 ```
 
 *** =solution
 ```{r}
-# Star Wars box office in millions (!)
+# Box-office de Star Wars en millions (!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -819,31 +821,31 @@ star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi)
 rownames(star_wars_matrix) <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 colnames(star_wars_matrix) <- c("US", "non-US")
 
-# Estimation of visitors
+# Estimation des visiteurs
 visitors <- star_wars_matrix / 5
 
-# Print the estimate to the console
+# Estimation des visiteurs
 visitors
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not remove or override `star_wars_matrix`, it has already been defined for you!"
+msg <- "Ne supprimez pas ou ne remplacez pas `star_wars_matrix`, il a déjà été défini pour vous!"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("visitors",
-            incorrect_msg = "It looks like `visitors` does not contain the correct value. Remember that operations on matrices are element-wise.")
+            incorrect_msg = "Il semble que `visiteurs` ne contienne pas la valeur correcte. Rappelez-vous que les opérations sur les matrices sont des éléments.")
 test_output_contains("visitors", 
-                     incorrect_msg = "Don't forget to also print the variable `visitors` to the console.")
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in theaters! Continue to the next exercise.");
+                     incorrect_msg = "N'oubliez pas d'imprimer également la variable `visiteurs` sur la console.")
+success_msg("Génial! Que vous disent ces résultats? Un nombre stupéfiant de 92 millions de personnes sont allés voir A New Hope dans les théâtres! Continuez à l'exercice suivant.");
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:57d4c926e3
-## Arithmetic with matrices (2)
+## Arithmétique avec des matrices (2)
 
-Just like `2 * my_matrix` multiplies every element of `my_matrix` by 2, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+Comme `2 * my_matrix` multiplie chaque élément de `my_matrix` par 2, `my_matrix1 * my_matrix2` crée une matrice avec chaque élément est le produit des éléments correspondants dans `my_matrix1` et `my_matrix2`. 
 
-After looking at the result of the previous exercise, the boss of StarWarsStudios points out that the ticket prices went up over time with one dollar per movie. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
+Après avoir regardé le résultat de l'exercice précédent, le patron de StarWarsStudios souligne que les prix des billets ont augmenté au fil du temps avec un dollar par film. Il demande à refaire l'analyse en fonction des prix que vous pouvez trouver dans `ticket_prices_matrix` (source: imagination).
 
 _Those who are familiar with linear algebra: this is not the standard matrix multiplication for which you should use `%*%` in R._
 
