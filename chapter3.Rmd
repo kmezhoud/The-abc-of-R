@@ -14,7 +14,10 @@ attachments :
 *** =video_hls
 //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch3_1.master.m3u8
 
----
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:222f614c02
+
 ## C'est quoi une matrice?
 
 Une matrice est une collection d'éléments du même type de données (numérique, caractère ou logique), qui est organisée en un nombre fixe de lignes et de colonnes. Une matrice est appelée bidimensionnelle. 
@@ -502,7 +505,9 @@ success_msg("Formidable!")
 *** =video_hls
 //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch3_2.master.m3u8
 
----
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:f240fbc65e
+
 ## Sélectionner un élément de la matrice
 
 Semblable aux vecteurs, utilisez les crochets `[]` pour sélectionner un ou plusieurs éléments d'une matrice. Alors que les vecteurs ont 1 dimension, les matrices ont 2 dimensions, utilisez donc une virgule pour séparer ce qui doit être sélectionné des lignes et celui des colonnes. Par exemple:

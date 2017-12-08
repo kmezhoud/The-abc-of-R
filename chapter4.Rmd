@@ -1,6 +1,6 @@
 ---
-title_meta  : Chapter 4
-title       : Factors
+title_meta  : Chapitre 4
+title       : Les facteurs
 description : Very often, data falls into a limited number of categories.In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 attachments :
   slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch4_slides.pdf
@@ -15,6 +15,42 @@ attachments :
 //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch4_1.master.m3u8
 
 
+--- type:NormalExercise lang:r xp:100 skills:1 key:64aeb6c030
+## C'est quoi un facteur (1)
+
+Le terme **facteur** fait référence à un type de données statistiques utilisé pour stocker des variables classées par catégories. La différence entre une variable catégorique et une variable continue est qu'une variable catégorique peut appartenir à un ** nombre limité de catégories **. Par contre, une variable continue peut correspondre à un nombre infini de valeurs. 
+
+Il est important que R sache s'il s'agit d'une variable continue ou catégorique. Ceci, puisque les modèles statistiques que vous allez développer dans le futur traitent les deux d'une manière différente. (Vous verrez plus tard pourquoi c'est le cas).
+
+Un bon exemple d`une variable catégorique est la variable «Genre». Comme vous le savez, maintenant, un individu humain peut être soit "Male" ou "Female". Ainsi "Male" et "Female" sont ici les (deux seules) valeurs de la variable catégorique "Gender", et chaque observation peut être affectée soit à la valeur "Male" de "Female".
+
+*** =instructions
+
+1. Affecter à la variable `theory` une valeur `"R uses factors for categorical variables!"`
+
+*** =hint
+Juste cliquer sur le button 'Run Code' et regarder ce qui se passe à la console.
+
+*** =sample_code
+```{r eval=FALSE}
+# Assignez à la variable `theory` ce dont il consiste ce chapitre!
+```
+
+*** =solution
+```{r eval=FALSE}
+#Assignez à la variable `theory` ce dont il consiste ce chapitre!
+theory <- "R uses factors for categorical variables!"
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
 --- type:NormalExercise lang:r xp:100 skills:1 key:36ba783482
 ## Vector to factor
 
@@ -67,7 +103,6 @@ test_function("str", "object",
               incorrect_msg = "Have you correctly passed `hand_factor` to [`str()`](http://www.rdocumentation.org/packages/utils/functions/str)?")
 success_msg("Great! If you want to find out more about the [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) function, do not hesitate to type `?factor` in the console.");
 ```
-
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:56d9d5409e
 ## Factor levels
