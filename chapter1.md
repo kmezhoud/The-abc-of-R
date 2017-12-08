@@ -5,19 +5,8 @@ description : Initiation au language R
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
-
-
-
----
+--- type:NormalExercise lang:r xp:100 skills:1 key:a7f766d856
 ## Comment ça marche!
-
-```yaml
-type: NormalExercise
-key: a7f766d856
-lang: r
-xp: 100
-skills: 1
-```
 
 L'interface `DataCamp` est composée de 4 zones: Exercice, Instructions, Script et Console. Les zones Exercice et Instruction sont à lire et à suivre.
 

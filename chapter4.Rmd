@@ -16,7 +16,7 @@ attachments :
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:64aeb6c030
-## C'est quoi un facteur (1)
+## C'est quoi un facteur? (1)
 
 Le terme **facteur** fait référence à un type de données statistiques utilisé pour stocker des variables classées par catégories. La différence entre une variable catégorique et une variable continue est qu'une variable catégorique peut appartenir à un ** nombre limité de catégories **. Par contre, une variable continue peut correspondre à un nombre infini de valeurs. 
 
@@ -51,57 +51,94 @@ DM.result <- closed_test("theory","c('R uses factors for categorical variables!'
 ```{r eval=FALSE}
 
 ```
---- type:NormalExercise lang:r xp:100 skills:1 key:36ba783482
-## Vector to factor
 
-In the following exercises, we'll be working with handedness as a categorical variable that can be either "Left" or "Right". In general, you're either left-handed or you're right-handed (not both), so this complies with the conditions of a categorical variable.
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). The first thing you do is creating a vector that contains all the observations that belong to a limited number of categories. For example, `hand_vector` contains the handedness of 5 different individuals. Next, you pass this vector to the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor).
+--- type:NormalExercise lang:r xp:100 skills:1 key:e47a1d6a40
+## C'est quoi un facteur? (2)
+
+Pour créer des facteurs, vous utilisez la fonction `factor ()`. La première chose à faire est de créer un vecteur contenant toutes les observations appartenant à un nombre limité de catégories. Par exemple, le vecteur de genre contient le sexe de 5 individus différents: `gender.vector <- c (" Homme "," Femme "," Femme "," Homme "," Homme ")`.
+
+Il est clair, qu'il y a 2 catégories, ou en termes de language R ** des «factors levels» **, ici: «Male» et «Female». 
+
+La fonction `factor ()` code le vecteur comme facteur: `factor.gender.vector <- factor(gender.vector)`.
 
 *** =instructions
-- Assign to `hand_factor` the character vector `hand_vector` converted to a factor. Look at the console and note that R prints out the factor levels below the actual values.
-- Have a look at the underlying structure of `hand_factor` using [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).
+
+1. Affectez à `factor.gender.vector` le vecteur de caractères` gender.vector` converti en ** facteur **. Regardez la console et notez que R imprime les niveaux de facteur en dessous des valeurs réelles.
 
 *** =hint
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `hand_vector`. Have a look at the assignment, the answer is already there somewhere...
-
-*** =pre_exercise_code
-```{r}
-# no pec
-```
+Cliquez simplement sur le bouton `Run Code` et regardez la console.
 
 *** =sample_code
-```{r}
-# Definition of hand_vector
-hand_vector <- c("Right", "Left", "Left", "Right", "Left")
+```{r eval=FALSE}
+gender.vector <- c("Male","Female","Female","Male","Male")
 
-# Convert hand_vector to a factor: hand_factor
+factor.gender.vector <-
 
-
-# Display the structure of hand_factor
+factor.gender.vector
 ```
 
 *** =solution
-```{r}
-# Definition of hand_vector
-hand_vector <- c("Right", "Left", "Left", "Right", "Left")
+```{r eval=FALSE}
+gender.vector <- c("Male","Female","Female","Male","Male")
 
-# Convert hand_vector to a factor: hand_factor
-hand_factor <- factor(hand_vector)
+factor.gender.vector <- factor(gender.vector) 
 
-# Display the structure of hand_factor
-str(hand_factor)
+factor.gender.vector
 ```
 
 *** =sct
-```{r}
-test_error()
-test_object("hand_factor",
-            incorrect_msg = "Did you correctly convert `hand_vector` to a factor and assign the result to `hand_factor`?")
-test_function("str", "object",
-              not_called_msg = "Make sure to use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to show the structure of `hand_factor`",
-              incorrect_msg = "Have you correctly passed `hand_factor` to [`str()`](http://www.rdocumentation.org/packages/utils/functions/str)?")
-success_msg("Great! If you want to find out more about the [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) function, do not hesitate to type `?factor` in the console.");
+```{r eval=FALSE}
+DM.result <- closed_test( "factor.gender.vector", "factor(gender.vector)" )
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:a457bd1de9
+## C'est quoi un facteur? (3)
+
+Il existe deux types de variables catégorielles: une ** nominale ** et ** ordinale **.
+
+Une variable nominale est une variable catégorique sans ordre implicite. Cela signifie qu'il est impossible de dire que l'un vaut plus que l'autre. Pensez par exemple à la variable catégorielle `hair.color.vector`, avec les catégories` "Ginger", "Blonde", "Brunette" `et` "Gray" `. Ici, il est impossible de dire que l'un se tient au-dessus ou au-dessous de l'autre. (Note: certains d'entre vous pourraient être en désaccord ;-)).
+
+En revanche, les variables ordinales ont un ordre naturel, considérons par exemple la variable catégorique `temperature.vector` avec les catégories:` "Basse" `,` "Moyenne" `et` "Haute" `. Ici, il est facile de voir que «Moyenne» est au-dessus de «Basse», et que «Haute» est au-dessus de «Moyenne».
+
+*** =instructions
+
+1. Cliquez sur "Submit Answer" pour vérifier comment R contracte et imprime les variables nominales et ordinales. Ne vous inquiétez pas si vous ne comprenez pas encore tout le code, nous y reviendrons.
+
+*** =hint
+Cliquez simplement sur le bouton "Submit Answer" et regardez la console. Remarquez comment R indique l'ordre des niveaux de facteur pour les variables catégoriques ordinales.
+
+*** =sample_code
+```{r eval=FALSE}
+hair.color.vector <- c("Blonde","Blonde","Brunette","Ginger","Grey","Brunette")
+temperature.vector <- c("High","Low","High","Low","Medium")
+
+factor.hair.color.vector  <- factor(hair.color.vector)
+factor.temperature.vector <- factor( temperature.vector,order=TRUE,levels=c("Low","Medium","High") )
+
+factor.temperature.vector
+factor.hair.color.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+# Cliquer sur "Submit Answer" et regarder dans la console
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- TRUE
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:56d9d5409e
