@@ -20,18 +20,18 @@ Le output du code R écrit dans la zone `Script` est visualisé dans la `Console
 Les graphes et le spots sont visualisés en haut à droite à côté de la zone `Script`. Exécuter le commande **demo("graphics")** pour voire quelques plots.
 Utiliser les flèchettes pour naviguer sur les graphes générer avec R sur votre fenêtre à droite en haut. Noter que vous pouvez élargir votre fenêtre pour avoir une meilleure vue. 
 
-`@instructions`
+*** =instructions
 1. Click **Submit Answer** et regardez au niveau de la console l'exécution du code R: La solution `7` apparait pour la somme de `3` et `4`. A sa forme basique R peut être utiliser comme une calculatrice ou pour générer des plots. Mais en réalité, il peut faire mieux que cela ;-).
 
-`@hint`
+*** =hint
 Juste cliquer sur le boutton `Submit Answer`
 
-`@pre_exercise_code`
+*** =pre_exercise_code
 ```{r}
 
 ```
 
-`@sample_code`
+*** =sample_code
 ```{r eval=FALSE}
 # Juste cliquer sur le boutton `Submit Answer` pour soumettre la/les commandes
 
@@ -46,7 +46,7 @@ Juste cliquer sur le boutton `Submit Answer`
 # demo("graphics")
 ```
 
-`@solution`
+*** =solution
 ```{r eval:FALSE}
 # Juste cliquer sur le boutton `Submit Answer` pour soumettre la/les commandes
 
@@ -62,9 +62,10 @@ Juste cliquer sur le boutton `Submit Answer`
 
 ```
 
-`@sct`
+*** =sct
 ```{r eval=FALSE}
 DM.result <- TRUE
+success_msg("Bien!")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:9d8a3d0b88
