@@ -33,9 +33,11 @@ Juste cliquer sur le boutton `Submit Answer`
 
 `@sample_code`
 ```{r eval=FALSE}
+# Juste cliquer sur le boutton `Submit Answer` pour soumettre la/les commandes
+
 # C'est l'éditeur des commandes et la partie en bas est la console R où on exécute les commandes.
 
-# les hashtag sont utilisées pour ajouter des commentaires explicatives des commandes
+# Les hashtag sont utilisées pour ajouter des commentaires explicatives des commandes
 
 # Calculer 3 + 4
 3 + 4
@@ -46,16 +48,16 @@ Juste cliquer sur le boutton `Submit Answer`
 
 `@solution`
 ```{r eval:FALSE}
-#Juste cliquer sur le boutton `Submit Answer` pour soummetre la/les commandes
+# Juste cliquer sur le boutton `Submit Answer` pour soumettre la/les commandes
 
-# C'est l'éditeur et la partie en bas est la console 
+# C'est l'éditeur des commandes et la partie en bas est la console R où on exécute les commandes.
 
-# Le hashtag est utilisé pour ajouter des commentaires
+# Les hashtag sont utilisées pour ajouter des commentaires explicatives des commandes
 
 # Calculer 3 + 4 
 3 + 4 
 
-# Visualiser quelques graphes générés par R
+# Visualiser quelques graphes demonstratives générés par R
 # demo("graphics")
 
 ```
