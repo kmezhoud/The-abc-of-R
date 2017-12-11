@@ -64,7 +64,7 @@ Juste cliquer sur le boutton `Submit Answer`
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- TRUE
+test_output_contains("3 + 5", incorrect_msg = 'Faux, répétez.')
 success_msg("Bien!")
 ```
 
@@ -339,9 +339,8 @@ test_object("my_oranges")
 test_output_contains("my_apples + my_oranges",
                      incorrect_msg = "La sortie ne contient pas le résultat de la somme de `my_apples` et` my_oranges` (seconde instruction). Réessayer.")
 test_object("my_fruit")
-success_msg("
-206/5000
-Joli! Le grand avantage de faire des calculs avec des variables est la réutilisabilité. Si vous changez simplement `my_apples` à 12 au lieu de 5 et relancez le script,` my_fruit` sera automatiquement mis à jour.")
+success_msg("Bien! Le grand avantage de faire des calculs avec des variables est la réutilisabilité. Si vous changez simplement `my_apples` à 12 au lieu de 5 et relancez le script,` my_fruit` sera automatiquement mis à jour.")
+
 ```
 
 
@@ -590,7 +589,7 @@ var_num <- as.numeric(var)
 - Convertir une variable logique (`logical`) `var`, à une variable `charcater` . Affecter le résultat à la variable `var_char`.
 - Inspecter la classe de `var_char` en utilisant [`class()`](http://www.rdocumentation.org/packages/base/functions/class).
 
-*** =hints
+*** =hint
 Utiliser la fonction [`as.character()`](http://www.rdocumentation.org/packages/base/functions/character) pour convertir `var` à  `character`.
 
 *** =pre_exercise_code

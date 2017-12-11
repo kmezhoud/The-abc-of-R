@@ -580,6 +580,8 @@ non.us.some
 names  <- c("star.wars.matrix","non.us.all","non.us.some")
 values <- c("star.wars.matrix","mean( star.wars.matrix[,2] )","mean( star.wars.matrix[1:2,2] )") 
 DM.result <- closed_test(names,values)
+success_msg("Bien! Passez à l'exercice suivant")
+
 ```
 
 *** =pre_exercise_code

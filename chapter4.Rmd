@@ -45,6 +45,7 @@ theory <- "R uses factors for categorical variables!"
 *** =sct
 ```{r eval=FALSE}
 DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
+success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
 *** =pre_exercise_code
@@ -90,6 +91,7 @@ factor.gender.vector
 *** =sct
 ```{r eval=FALSE}
 DM.result <- closed_test( "factor.gender.vector", "factor(gender.vector)" )
+success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
 *** =pre_exercise_code
@@ -134,6 +136,7 @@ factor.hair.color.vector
 *** =sct
 ```{r eval=FALSE}
 DM.result <- TRUE
+success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
 *** =pre_exercise_code

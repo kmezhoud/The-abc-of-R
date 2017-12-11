@@ -794,5 +794,5 @@ test_object("selection_vector",
 test_object("poker_profits",
             undefined_msg =  "Assurez-vous de définir une variable `poker_profits`.",
             incorrect_msg =  "Il semble que `poker_profits` ne contienne pas le bon résultat. Rappelez-vous que R utilise des opérations élémentaires pour les vecteurs. ")
-success_msg ("Great! Passez au chapitre des Matrices!")
+success_msg("Great! Passez au chapitre des Matrices!")
 ```
