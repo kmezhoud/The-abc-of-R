@@ -463,7 +463,7 @@ speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
 
 *** =solution
 ```{r}
-# Definition of speed_factor
+# Definition of speed_factor and speed_factor
 speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
                        ordered = TRUE, levels = c("Slow", "Fast", "Ultra-fast"))
 
