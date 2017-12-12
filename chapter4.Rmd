@@ -147,9 +147,9 @@ success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:56d9d5409e
-## Factor levels
+## Les niveaux de facteurs
 
-When you first get a data set, you will often notice that it contains factors with specific factor levels. Of course, you can also change these factor levels. You can either do this with the [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels) function, after you defined the factor, or using the `labels` argument inside [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). The following options are equivalent:
+En Biologie, il est souvent possible d'avoir des facteurs expérimentals à plusieurs niveaux (fort/faible, aigus/chronique, grand/petit). Il est possible de modifier les niveaux de facteur avec la fonction [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels). Ou bien, utiliser l'argument `labels`à l'intérieur de la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). Les deux options suivantes sont équilaventes.
 
 ```
 my_vector <- c("L", "S", "L", "M", "M")
@@ -164,16 +164,16 @@ my_factor <- factor(my_vector,
                     labels = c("Small", "Medium", "Large"))
 ```
 
-In the first option, you have to pass the levels in alphabetical order. To not make mistakes, you better use the second option, but that's up to you!
+Dans la première option, vous devez passer les niveaux dans l'ordre alphabétique. Pour ne pas faire d'erreur, il vaut mieux utiliser la deuxième option, mais c'est à vous de décider!
 
-You performed a street questionnaire, and recorded the respondents' handedness using the letters "R" and "L". This information is stored in a vector `survey_vector`, which is already coded on the right.
+Vous avez rempli un questionnaire de rue et enregistré la rectitude des répondants en utilisant les lettres «R» et «L». Cette information est stockée dans un vecteur `survey_vector`, qui est déjà codé sur votre droite.
 
 *** =instructions
-- Convert the character vector `survey_vector` into a factor vector, `survey_factor`, with the levels "Right" and "Left".
-- Print `survey_factor` to inspect its contents.
+- Convertir le vecteur `survey_vector` de type caractère à un vecteur de type facteur `survey_vector`, avec les niveaux "Right" et "Left".
+- Imprimer `survey_factor` et inspecter son contenu.
 
 *** =hint
-If you're using the first approach outlined above, mind the order in which you have to type in the factor levels.
+Si vous utilisez la première approche décrite ci-dessus, faites attention à l'ordre dans lequel vous devez entrer les niveaux de facteur.
 
 *** =pre_exercise_code
 ```{r}
@@ -182,51 +182,51 @@ If you're using the first approach outlined above, mind the order in which you h
 
 *** =sample_code
 ```{r}
-# Definition of survey_vector
+# Définition de survey_vector
 survey_vector <- c("R", "L", "L", "R", "R")
 
-# Encode survey_vector as a factor with the correct names: survey_factor
+# Encoder survey_vector en facteur avec le nom: survey_factor
 
-# also possible (second solution if any)
+# Encore possible (solution 2)
 
 
-# Print survey_factor
+# Imprimer survey_factor
 
 ```
 
 *** =solution
 ```{r}
-# Definition of survey_vector
+# Définition de survey_vector
 survey_vector <- c("R", "L", "L", "R", "R")
 
-# Encode survey_vector as a factor with the correct names: survey_factor
+# Encoder survey_vector en facteur avec le nom: survey_factor
 survey_factor <- factor(survey_vector, levels = c("R", "L"), labels = c("Right", "Left"))
 
-# also possible (second solution if any)
+# Encore possible (solution 2)
 survey_factor_2 <- factor(survey_vector, levels = c("L", "R"), labels = c("Left", "Right")) 
 
-# Print survey_factor
+# Imprimer survey_factor
 survey_factor
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the definition of `survey_vector`!"
+msg <- "Ne changez pas la définition de `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have you correctly converted `survey_vector` to a factor? Make sure to correctly specify the new factor levels (R is case sensitive!)."
+msg <- "Avez-vous correctement converti `survey_vector` en un facteur? Assurez-vous de spécifier correctement les nouveaux niveaux de facteur (R est sensible à la casse!)."
 test_object("survey_factor")
 test_object("survey_factor", eq_condition = "equal", undefined_msg = msg)
-test_output_contains("survey_factor", incorrect_msg = "Don't forget to print `survey_factor`!")
-success_msg("Wonderful! Proceed to the next exercise.")
+test_output_contains("survey_factor", incorrect_msg = "N'oubliez pas d'imprimer `survey_factor`!")
+success_msg("Formidable! Passez à l'exercice suivant.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e09996c475
-## Nominal versus Ordinal, Unordered versus Ordered
+## Nominal contre Ordinal, Unordered contre Ordered
 
-Remember that there are two types of categorical variables? On the one hand there's the _nominal categorical variable_, which does not have an implied order. The _ordinal categorical variable_, on the other hand, does have a natural ordering.
+Rappelez-vous qu'il existe deux types de variables catégoriques? d'une part, il y a _la variable catégorique nominale_, dont les niveaux ne suivent pas un ordre. Et _la variable catégorique ordinale_, dont les niveaux peuvent être ordonnés.
 
-By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms a vector into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+Par défaut, la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforme le vecteur à un facteur SANS ordre. Pour créer un facteur avec ordre, il faut préciser les niveaux et leur ordre dans les arguments `ordered` et `levels` de la fonction `factor()`.
 
 ```
 factor(some_vector,
@@ -234,15 +234,15 @@ factor(some_vector,
        levels = c("Level_1", "Level_2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+En plaçant l'argument `ordered` à `TRUE`, vous indiquez que le facteur est ordonné. Avec l'argument `levels` vous donnez les valeurs du facteur dans le bon ordre.
 
 *** =instructions
-- Convert `animal_vector` to a factor, `animal_factor`. Make it an ordered factor if that's appropriate.
-- Encode `temperature_vector` as a factor called `temperature_factor`. Again, order this factor if that makes sense.
-- Print out both factors and compare the outputs.
+- Convertir `animal_vector` à un facteur sous l'object `animal_factor`. Rendez-le ordonné si c'est approprié.
+- Encoder `temperature_vector` à un facteur nommé `temperature_factor`. Rendre-le si cela a un sens.
+- Imprimez les deux facteurs et comparer les outputs.
 
 *** =hint
-`animal_factor` should not be ordered; `temperature_factor` should!
+`animal_factor` ne doit pas être ordonné; `temperature_factor` peut être ordonné!
 
 *** =pre_exercise_code
 ```{r}
@@ -251,69 +251,69 @@ By setting the argument `ordered` to `TRUE`, you indicate that the factor is ord
 
 *** =sample_code
 ```{r}
-# Definition of animal_vector and temperature_vector
+# Définition de animal_vector et temperature_vector
 animal_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
 temperature_vector <- c("High", "Low", "High", "Low", "Medium")
 
-# Convert animal_vector to a factor: animal_factor
+# Convertir animal_vector à un facteur: animal_factor
 
 
-# Encode temperature_vector as a factor: temperature_factor
+# Encoder temperature_vector à un facteur: temperature_factor
 
 
-# Print out animal_factor and temperature_factor
+# Imprimer animal_factor et temperature_factor
 
 ```
 
 *** =solution
 ```{r}
-# Definition of animal_vector and temperature_vector
+# Définition de animal_vector et temperature_vector
 animal_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
 temperature_vector <- c("High", "Low", "High", "Low", "Medium")
 
-# Convert animal_vector to a factor: animal_factor
+# Convertir animal_vector à un facteur: animal_factor
 animal_factor <- factor(animal_vector)
 
-# Encode temperature_vector as a factor: temperature_factor
+# Encoder temperature_vector à un facteur: temperature_factor
 temperature_factor <- factor(temperature_vector, ordered = TRUE, levels = c("Low", "Medium", "High"))
 
-# Print out animal_factor and temperature_factor
+# Imprimer animal_factor et temperature_factor
 animal_factor
 temperature_factor
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change or remove the code that defines `animal_vector` and `temperature_vector`!"
+msg <- "Ne modifiez pas ou ne supprimez pas le code qui définit `animal_vector` et` temperature_vector`!"
 test_object("animal_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("animal_factor", eq_condition = "equal",
-            incorrect_msg = "Have you correctly converted `animal_vector` to a factor? You shouldn't order this factor!")
+            incorrect_msg = "Avez-vous correctement converti `animal_vector` en un facteur? Vous ne devriez pas commander ce facteur!")
 
 test_object("temperature_factor", eq_condition = "equal",
-            incorrect_msg = "Have you correctly encoded `temperature_vector` as a factor? In this case, an ordered factor makes sense!")
+            incorrect_msg = "Avez-vous correctement encodé `temperature_vector` comme facteur? Dans ce cas, un facteur ordonné a du sens!")
 
-msg <- "Don't forget to print out both `animal_factor` and `temperature_factor`."
+msg <- "Ne pas oublier d'imprimer à la fois `animal_factor` et` temperature_factor`."
 test_output_contains("animal_factor", incorrect_msg = msg)
 test_output_contains("temperature_factor", incorrect_msg = msg)
 
-success_msg("Awesome! You correctly figured out that `animal_factor` shouldn't be ordered while `temperature_factor` should.")
+success_msg("Impressionnant! Vous avez correctement compris que `animal_factor` ne devrait pas être ordonné alors que` temperature_factor` devrait l'être.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f6eb0a5c5f
-## Left better than right?
+## La gauche est mieux la droite 
 
-In `survey_factor` you have a two-level factor, containing "Left" and "Right". But how does R value these relatively to each other? In other words, who does R think is better, left or right?
+Dans `survey_factor` vous avez un facteur à deux niveaux, contenant "Left" et "Right". Mais comment R les valorise-t-elle les uns par rapport aux autres? En d'autres termes, qui pense que R est meilleur, à gauche ou à droite?
 
 *** =instructions
-- Select the first element from `survey_factor` and store it in the variable `right`.
-- Select the second element form `survey_factor` and store it in the variable `left`.
-- Using the greater than sign, find out whether `right` is greater than `left`.
+- Selecter le premier élément de `survey_factor` et enregistre le dans la variable `right`.
+- Selecter le deuxième élément de `survey_factor` et enregistre le dans la variable `left`.
+- En utilisant le signe supérieur `>`, trouverUsing the greater than sign, trouver si `right` est plus grand que `left`.
 
 *** =hint
-You can subset factors exactly the same as you subset vectors: using square brackets. To select the fourth element from `survey_factor`, you can type `survey_factor[4]`.
+Pour sélectionner le quatrième élément de `survey_factor`, vous pouvez taper` survey_factor[4] `.
 
 *** =pre_exercise_code
 ```{r}
@@ -322,68 +322,68 @@ You can subset factors exactly the same as you subset vectors: using square brac
 
 *** =sample_code
 ```{r}
-# Definition of survey_vector and survey_factor
+# Définition de survey_vector et survey_factor
 survey_vector <- c("R", "L", "L", "R", "R")
 survey_factor <- factor(survey_vector, levels = c("R", "L"), labels = c("Right", "Left"))
 
-# First element from survey_factor: right
+# Premier élément de survey_factor: right
 
 
-# Second element from survey_factor: left
+# Second élément de survey_factor: left
 
 
-# Right 'greater than' left?
+# à droite 'est supérieur à ' left?
 
 ```
 
 *** =solution
 ```{r}
-# Definition of survey_vector and survey_factor
+# Définition de survey_vector et survey_factor
 survey_vector <- c("R", "L", "L", "R", "R")
 survey_factor <- factor(survey_vector, levels = c("R", "L"), labels = c("Right", "Left"))
 
-# First element from survey_factor: right
+# Premier élément de survey_factor: right
 right <- survey_factor[1]
 
-# Second element from survey_factor: left
+# Second élément de survey_factor: left
 left <- survey_factor[2]
 
-# Right 'greater than' left?
+# à droite 'est supérieur à ' left?
 right > left
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the first lines that define `survey_vector` and `survey_factor`."
+msg = "Ne changez rien sur les premières lignes qui définissent `survey_vector` et` survey_factor`."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("survey_factor", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("survey_factor[1] > survey_factor[2]", incorrect_msg = "Make sure to correctly perform the comparison between right and left; we want the battle of dexterity be sorted once and for all!")
-success_msg("Phew, it seems that R is neutral ;-).")
+test_output_contains("survey_factor[1] > survey_factor[2]", incorrect_msg = "Assurez-vous d'effectuer correctement la comparaison entre la droite et la gauche; nous voulons que la bataille de dextérité soit triée une fois pour toutes!")
+success_msg("Ouf, il semble que R est neutre ;-).")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:d65e71390a
-## Ordered factors
+## Les facteurs ordonnés
 
-Sometimes you will deal with factors that do have a natural ordering between its categories. In this case, we have to tell R about it.
+Parfois, vous allez traiter des facteurs qui ont un ordre naturel entre ses catégories. Dans ce cas, nous devons en parler à R.
 
-Suppose you're leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"Slow"`, `"OK"` or `"Fast"`, and save the results in `speed_vector`.
+Supposons que vous dirigiez une équipe de recherche composée de cinq analystes de données et que vous souhaitiez évaluer leur performance. Pour ce faire, vous suivez leur vitesse, évaluez chaque analyste comme `"Slow"`, `"OK"` ou `"Fast"` et sauvegardez les résultats dans `speed_vector`.
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordening. You already know how to do this. Here's a template to define an ordered factor once more:
+`speed_vector` devrait être converti en un facteur ordinal puisque ses catégories ont une ordination naturelle. Vous savez déjà comment faire cela. Voici un modèle pour définir un facteur ordonné une fois de plus:
 
 ```
 factor(some_vector, ordered = TRUE, levels = c("Level_1", "Level_2", ...))
 ```
 
 *** =instructions
-- Use the example code above to define `speed_factor`, that contains the speed information as an ordered factor. You can start from `speed_vector`, which is already created for you.
-- Print `speed_factor` to the console.
-- Use [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) to generate a summary of `speed_factor`: automagically, R prints the factor levels in the right order.
+- Utilisez l'exemple de code ci-dessus pour définir `speed_factor`, qui contient les informations de vitesse en tant que facteur ordonné. Vous pouvez commencer par `speed_vector`, qui est déjà créé pour vous.
+- Imprimez `speed_factor` à la  console.
+- Utilisez [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) pour générer le résumé de `speed_factor`: automagiquement, R imprime les niveaux de facteur dans le bon ordre.
 
 *** =hint
-- Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`.
-- The argument `ordered` should be set to `TRUE` since there is a natural ordering.
-- The argument `levels` should be equal to `c("Slow", "OK", "Fast")`.
+- Utilisez la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) pour créer `factor_speed_vector` basé sur `speed_character_vector`.
+- L'argument `ordered` doit être précisé comme `TRUE` étant donné que le facteur a des niveaux ordonnable.
+- L'argument `levels`  être égale à `c("Slow", "OK", "Fast")`.
 
 *** =pre_exercise_code
 ```{r}
@@ -392,55 +392,55 @@ factor(some_vector, ordered = TRUE, levels = c("Level_1", "Level_2", ...))
 
 *** =sample_code
 ```{r}
-# Create speed_vector
+# Créer speed_vector
 speed_vector <- c("OK", "Slow", "Slow", "OK", "Fast")
 
-# Convert speed_vector to ordered speed_factor
+# Convertir speed_vector à ordered speed_factor
 
 
-# Print speed_factor
+# Imprimer speed_factor
 
 
-# Summarize speed_factor
+# Résumer (Summarize) speed_factor
 
 ```
 
 *** =solution
 ```{r}
-# Create speed_vector
+# Créer speed_vector
 speed_vector <- c("OK", "Slow", "Slow", "OK", "Fast")
 
-# Convert speed_vector to ordered speed_factor
+# Convertir speed_vector à ordered speed_factor
 speed_factor <- factor(speed_vector, ordered = TRUE, levels = c("Slow", "OK", "Fast"))
 
-# Print speed_factor
+# Imprimer speed_factor
 speed_factor
 
-# Summarize speed_factor
+# Résumer (Summarize) speed_factor
 summary(speed_factor)
 ```
 
 *** =sct
 ```{r}
 test_error()
-msg <- "Do not change anything about the command that defines `speed_vector`."
+msg <- "Ne changez rien à propos de la commande qui définit `speed_vector`."
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
 test_correct({
   test_object("speed_factor", eq_condition = "equal",
-              incorrect_msg = "Make sure that you assigned the correct factor to `speed_factor`. Pay attention to the correct order of the `levels` argument.")
+              incorrect_msg = "Assurez-vous que vous avez converti `speed_factor` à un facteur. Faites attention à l'ordre dans l'argument `levels`.")
 },{
   test_function("factor", "x")
   test_function("factor", "levels")
   test_function("factor", "ordered")
 })
-test_output_contains("summary(speed_factor)", incorrect_msg = "Don't forget to summarise `speed_factor`. Use [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary).")
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.");
-success_msg("A job well done! Continue to the next exercise.")
+test_output_contains("summary(speed_factor)", incorrect_msg = "Ne pas oublier de résumer `speed_factor`. Utiliser [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary).")
+success_msg("Génial! Jetez un oeil à la console. Il est maintenant indiqué que les Niveaux ont en effet un ordre associé, avec le signe `<`. Continuez à l'exercice suivant.");
+success_msg("Un travail bien fait! Continuez à l'exercice suivant.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e23011c42b
-## Comparing ordered factors
+## Comparaison de facteurs ordonnés
 
 'Data analyst number two' is having a bad day at work. He enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
 
