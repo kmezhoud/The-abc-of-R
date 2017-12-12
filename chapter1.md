@@ -373,7 +373,7 @@ tout ce que vous avez besoin est [`ls()`](http://www.rdocumentation.org/packages
 
 *** =sample_code
 ```{r}
-# Effacer entièrement vote espace de travail
+# Effacer entièrement votre espace de travail
 rm(list = ls())
 
 # Créer les variables horses et dogs
@@ -386,7 +386,7 @@ rm(list = ls())
 
 *** =solution
 ```{r}
-# Effacer entièrement vote espace de travail
+# Effacer entièrement votre espace de travail
 rm(list = ls())
 
 # Créer les variables horses et dogs

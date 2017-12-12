@@ -34,17 +34,19 @@ Juste cliquer sur le button 'Run Code' et regarder ce qui se passe à la console
 *** =sample_code
 ```{r eval=FALSE}
 # Assignez à la variable `theory` ce dont il consiste ce chapitre!
+
 ```
 
 *** =solution
 ```{r eval=FALSE}
-#Assignez à la variable `theory` ce dont il consiste ce chapitre!
+# Assignez à la variable `theory` ce dont il consiste ce chapitre!
 theory <- "R uses factors for categorical variables!"
 ```
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
+DM.result <- TRUE
+#DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
 success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
@@ -130,7 +132,7 @@ factor.hair.color.vector
 
 *** =solution
 ```{r eval=FALSE}
-# Cliquer sur "Submit Answer" et regarder dans la console
+DM.result <- TRUE
 ```
 
 *** =sct
@@ -185,6 +187,8 @@ survey_vector <- c("R", "L", "L", "R", "R")
 
 # Encode survey_vector as a factor with the correct names: survey_factor
 
+# also possible (second solution if any)
+
 
 # Print survey_factor
 
@@ -197,7 +201,9 @@ survey_vector <- c("R", "L", "L", "R", "R")
 
 # Encode survey_vector as a factor with the correct names: survey_factor
 survey_factor <- factor(survey_vector, levels = c("R", "L"), labels = c("Right", "Left"))
-survey_factor_2 <- factor(survey_vector, levels = c("L", "R"), labels = c("Left", "Right")) # also possible
+
+# also possible (second solution if any)
+survey_factor_2 <- factor(survey_vector, levels = c("L", "R"), labels = c("Left", "Right")) 
 
 # Print survey_factor
 survey_factor
