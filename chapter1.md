@@ -443,7 +443,7 @@ Affecter la valeur 42 à la variable `my_numeric`.
 # Quelle est la réponse de "universe"?
 my_numeric <- 42.5
 
-# Le doubles quotes indiquent que la variable est de type caractère
+# Les doubles quotes indiquent que la variable est de type caractère
 my_character <- "some text"
 
 # Changer la valeur de my_logical
@@ -503,7 +503,7 @@ my_apples
 my_oranges <- "six" 
 my_oranges 
 
-# Nouvelle variable qui contiennent le total des fruits
+# Nouvelle variable qui contient le total du nombre de fruits
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
