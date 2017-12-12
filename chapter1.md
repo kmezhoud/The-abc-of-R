@@ -54,17 +54,16 @@ Juste cliquer sur le boutton `Submit Answer`
 
 # Les hashtag sont utilisées pour ajouter des commentaires explicatives des commandes
 
-# Calculer 3 + 4 
-3 + 4 
+# Calculer 3 + 4
+3 + 4
 
-# Visualiser quelques graphes demonstratives générés par R
+# Visualiser quelques graphes demonstratives generés par R
 # demo("graphics")
-
 ```
 
 *** =sct
 ```{r eval=FALSE}
-test_output_contains("3 + 5", incorrect_msg = 'Faux, répétez.')
+test_output_contains("3 + 4", incorrect_msg = 'Faux, répétez.')
 success_msg("Bien!")
 ```
 
@@ -210,10 +209,10 @@ Observer comment la valeur 4 est affectée à la variable `my_variable`. Faire e
 *** =sample_code
 ```{r}
 # Affecter la valeur 42 à x
-x <- 
+
 
 # imprimer la valeur de la variable x
-x
+
 ```
 
 *** =solution
@@ -305,7 +304,7 @@ my_apples + my_oranges
 *** =sample_code
 ```{r}
 # Affecter 5 à my_apples
-my_apples <- 5
+
 
 # Affecter 6 à my_oranges
 
