@@ -379,7 +379,7 @@ rm(list = ls())
 # Créer les variables horses et dogs
 
 
-# lister le contenu de votre espace de travail
+# Lister le contenu de votre espace de travail
 
 
 ```
@@ -393,7 +393,7 @@ rm(list = ls())
 horses <- 3
 dogs <- 7
 
-# lister le contenu de votre espace de travail
+# Lister le contenu de votre espace de travail
 ls()
 ```
 
