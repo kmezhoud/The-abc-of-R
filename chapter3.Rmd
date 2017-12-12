@@ -44,6 +44,7 @@ Lisez attentivement la mission, la réponse est déjà donnée ;-).
 
 *** =solution
 ```{r eval=FALSE}
+# Construction d'une matrice avec 3 lignes contenant les nombres 1 jusqu'à 9
 matrix(1:9, byrow=TRUE, nrow=3)
 ```
 
@@ -538,15 +539,18 @@ Vous pouvez utiliser la fonction `mean ()` pour calculer la moyenne des entrées
 *** =sample_code
 ```{r eval=FALSE}
 # Le box-Office de Star Wars: En millions (!)
-# Construire la matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
+
+# Construire la matrice: 
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
 col.titles     <-  c("US","non-US")
 star.wars.matrix  <- matrix(box.office.all, nrow=3, byrow=TRUE,  
                          dimnames=list(movie.names,col.titles)) 
 
+# Imprimer la matrice
 star.wars.matrix 
 
+# Calculer la moyenne des revenues provonant des non-US pour les 3 films et leur moyenne seulement pour les deux derniers films
 non.us.all  <-     #Votre code ici
 non.us.some <-     #Votre code ici
 
@@ -557,20 +561,22 @@ non.us.some
 
 *** =solution
 ```{r eval=FALSE}
-# Le box-Office de Star Wars: En millions (!) 
-# Construire la matrix: 
+# Le box-Office de Star Wars: En millions (!)
+
+# Construire la matrice: 
 box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
 col.titles     <-  c("US","non-US")
 star.wars.matrix  <- matrix(box.office.all, nrow=3, byrow=TRUE,  
                          dimnames=list(movie.names,col.titles)) 
-
+# Imprimer la matrice
 star.wars.matrix 
 
+# Calculer la moyenne des revenues provonant des non-US pour les 3 films et leur moyenne seulement pour les deux derniers films
 non.us.all  <- mean( star.wars.matrix[,2] )
 non.us.some <- mean( star.wars.matrix[1:2,2] )
 
-# Imprimer les deux moyennes
+# Imprimer les deux moyennes à la console:
 non.us.all
 non.us.some
 ```
@@ -627,13 +633,12 @@ colnames(star_wars_matrix) <- c("US", "non-US")
 *** =sample_code
 ```{r}
 
-127/5000
 # star_wars_matrix est déjà défini dans votre espace de travail
 
 # Sélectionnez toutes les recettes du box-office américain
 
 
-# Selectionner le revenue pour "A New Hope"
+# Selectionner le revenu pour "A New Hope"
 
 
 ```
@@ -645,7 +650,7 @@ colnames(star_wars_matrix) <- c("US", "non-US")
 # Sélectionnez toutes les recettes du box-office américain
 star_wars_matrix[,1]
 
-# Selectionner le revenue pour "A New Hope"
+# Selectionner le revenu pour "A New Hope"
 star_wars_matrix[1,]
 ```
 
@@ -745,10 +750,10 @@ colnames(star_wars_matrix) <- c("US", "non-US")
 ```{r}
 # star_wars_matrix est déjà défini dans votre espace de travail
 
-# Sélectionnez les revenus américains pour "A New Hope" et "The Empire Strikes Back"
+# Sélectionner les revenus américains pour "A New Hope" et "The Empire Strikes Back"
 
 
-# Sélectionnez les deux dernières lignes et les deux colonnes
+# Sélectionner les deux dernières lignes et les deux colonnes
 
 
 ```

@@ -524,17 +524,17 @@ Utilisez le vecteur `c (2,3,4)` entre crochets pour sélectionner les éléments
 
 *** =sample_code
 ```{r}
-# Casino winnings from Monday to Friday
+# Les gains de lundi à vendredi
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Mid-week poker results: poker_midweek
+# Résultats de poker en milieu de semaine: poker_midweek
 
 
-# End-of-week roulette results: roulette_endweek
+# Résultats de la roulette à la fin de la semaine: roulette_endweek
 
 
 ```
@@ -551,7 +551,7 @@ names(roulette_vector) <- days_vector
 # Résultats de poker en milieu de semaine: poker_midweek
 poker_midweek <- poker_vector[c(2, 3, 4)]
 
-# Résultats de la roulette de fin de semaine: roulette_endweek
+# Résultats de la roulette à la fin de la semaine: roulette_endweek
 roulette_endweek <- roulette_vector[c(4,5)]
 ```
 
