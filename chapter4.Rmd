@@ -442,15 +442,14 @@ success_msg("Un travail bien fait! Continuez à l'exercice suivant.")
 --- type:NormalExercise lang:r xp:100 skills:1 key:e23011c42b
 ## Comparaison de facteurs ordonnés
 
-'Data analyst number two' is having a bad day at work. He enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
-
-The fact that `speed_factor` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using a well-known operator: `>`.
+"L'analyste des données numéro deux"  passe une mauvaise journée au travail. Il entre dans votre bureau et commence à se plaindre que "l'analyste de données numéro cinq" ralentit l'ensemble du projet. Puisque vous savez que "l'analyste de données numéro deux" a la réputation d'être un malin, vous décidez d'abord de vérifier si sa déclaration est vraie.
+Le fait que `speed_factor` soit maintenant ordonné, nous permet de comparer différents éléments (les analystes de données dans ce cas). Vous pouvez simplement le faire en utilisant l'opérateur supérieur `>`.
 
 *** =instructions
-Check whether data analyst 2 is faster than data analyst 5. Simply print out the result, which should be a logical.
+Vérifiez si "l'analyste de données 2" est plus rapide que "l'analyste de données 5". Imprimez le résultat. Il devrait être logique.
 
 *** =hint
-`vector[1] > vector[2]` checks whether the first element of vector is larger than the second element.
+`vector[1] > vector[2]` vérifie si le premier élément du vecteur est plus grand que le second.
 
 *** =pre_exercise_code
 ```{r}
@@ -459,30 +458,30 @@ Check whether data analyst 2 is faster than data analyst 5. Simply print out the
 
 *** =sample_code
 ```{r}
-# Definition of speed_vector and speed_factor
+# Définition de speed_vector et speed_factor
 speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
                        ordered = TRUE, levels = c("Slow", "Fast", "Ultra-fast"))
 
-# Compare data analyst 2 with data analyst 5
+# Comparer "data analyst 2" et "data analyst 5"
 
 ```
 
 *** =solution
 ```{r}
-# Definition of speed_factor and speed_factor
+# Définition de speed_vector et speed_factor
 speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
                        ordered = TRUE, levels = c("Slow", "Fast", "Ultra-fast"))
 
-# Compare data analyst 2 with data analyst 5
+# Comparer "data analyst 2" et "data analyst 5"
 speed_factor[2] > speed_factor[5]
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the command that defines `speed_factor`!"
+msg <- "Ne changez rien à propos de la commande qui définit `speed_factor`!"
 test_object("speed_factor", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("speed_factor[2] > speed_factor[5]",
-                     incorrect_msg = paste("Have you correctly compared data analyst 2 to data analyst 5?",
-                                           "Use subsetting in combination with the `>` operator."))
-success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down!")
+                     incorrect_msg = paste("Avez-vous simplement comparé l'analyste de données 2 à l'analyste de données 5?",
+                                           "Utilisez le sous-ensemble avec l'opérateur `>`."))
+success_msg("Bellissimo! Que vous dit le résultat? L'analyste de données deux se plaint de l'analyste de données cinq alors qu'en fait c'est lui qui ralentit tout!")
 ```
