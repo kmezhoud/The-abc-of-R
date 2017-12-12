@@ -211,7 +211,7 @@ Observer comment la valeur 4 est affectée à la variable `my_variable`. Faire e
 # Affecter la valeur 42 à x
 
 
-# imprimer la valeur de la variable x
+# Imprimer la valeur de la variable x
 
 ```
 
@@ -324,7 +324,7 @@ my_apples <- 5
 # Affecter 6 à my_oranges
 my_oranges <- 6
 
-# Ajouter my_apples et my_oranges: Imprimer le résulat
+# Ajouter my_apples et my_oranges: Imprimer le résultat
 my_apples + my_oranges
 
 # Ajouter my_apples et my_oranges: Affecter à my_fruit
@@ -373,7 +373,7 @@ tout ce que vous avez besoin est [`ls()`](http://www.rdocumentation.org/packages
 
 *** =sample_code
 ```{r}
-# Effacer entièrement votre espace de travail
+# Effacer entièrement vote espace de travail
 rm(list = ls())
 
 # Créer les variables horses et dogs
@@ -393,7 +393,7 @@ rm(list = ls())
 horses <- 3
 dogs <- 7
 
-# Inspecter une autre fois, le contenu de votre espace de travail
+# lister le contenu de votre espace de travail
 ls()
 ```
 
@@ -503,7 +503,7 @@ my_apples
 my_oranges <- "six" 
 my_oranges 
 
-# Nouvelles variables qui contiennent le total des fruits
+# Nouvelle variable qui contiennent le total des fruits
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
@@ -518,7 +518,7 @@ my_apples
 my_oranges <- 6
 my_oranges 
 
-# Nouvelles variable qui contient le total du nombre de fruits
+# Nouvelle variable qui contient le total du nombre de fruits
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
@@ -597,23 +597,23 @@ Utiliser la fonction [`as.character()`](http://www.rdocumentation.org/packages/b
 
 *** =sample_code
 ```{r}
-# Definir var
+# Définir var
 var <- TRUE
 
-# Convertir var au character: var_char
+# Convertir var au type caractère: var_char
 
 
-# imprimer la classe de var_char
+# Imprimer la classe de var_char
 
 
 ```
 
 *** =solution
 ```{r}
-# Definir var
+# Définir var
 var <- TRUE
 
-# Convertir var à une character: var_char
+# Convertir var au type caractère: var_char
 var_char <- as.character(var)
 
 # Imprimer la classe de var_char
