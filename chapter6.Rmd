@@ -1,5 +1,5 @@
 --- 
-title_meta  : Chapter 6
+title_meta  : Chapter 5
 title       : Data Frames
 description : Most data sets you will be working with will be stored as a data frame. By the end of this chapter, you will be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables.
 attachments : 
