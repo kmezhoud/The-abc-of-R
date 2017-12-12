@@ -551,8 +551,8 @@ star.wars.matrix  <- matrix(box.office.all, nrow=3, byrow=TRUE,
 star.wars.matrix 
 
 # Calculer la moyenne des revenues provonant des non-US pour les 3 films et leur moyenne seulement pour les deux derniers films
-non.us.all  <-     #Votre code ici
-non.us.some <-     #Votre code ici
+non.us.all  <-     
+non.us.some <-     
 
 # Imprimer les deux moyennes à la console:
 non.us.all
