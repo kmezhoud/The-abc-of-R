@@ -317,7 +317,7 @@ test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("type_factor", incorrect_msg = "Auriez-vous bien crée `type_factor`? Utilisez la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) sur `type`.")
-test_object("planets_df", incorrect_msg = "Auriez-vous bien crée `planets_df`? Utilisez `type_factor` au lieu de `type` et configurez `stringsAsFactors` à `FALSE` inside [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame).")
+test_object("planets_df", incorrect_msg = "Auriez-vous bien crée `planets_df`? Utilisez `type_factor` au lieu de `type` et configurez `stringsAsFactors` à `FALSE` dans [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame).")
 test_output_contains("str(planets_df)", incorrect_msg = "Ne pas oublier d'afficher la structure de `planets_df`.")
 
 success_msg("Rendez-vous au prochain exercice.")
@@ -325,7 +325,7 @@ success_msg("Rendez-vous au prochain exercice.")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a80ae7fbe8
-## Rename the data frame columns
+## Renommer les colonnes d'une data frame
 
 As a data frame is actually a list containing same-length vectors under the hood, it's possible to name and rename data frames just as you did with lists. To create a data frame and name it in one and the same call you can use:
 
@@ -670,10 +670,15 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/c
 # planets_df is pre-loaded in your workspace
 
 # Planets that are smaller than planet Earth: small_planets_df
+ # option 1
+ 
+ # option 2
 
 
 # Planets that rotate slower than planet Earth: slow_planets_df
-
+ # option 1
+ 
+ # option 2
 ```
 
 *** =solution
@@ -681,12 +686,16 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/c
 # planets_df is pre-loaded in your workspace
 
 # Planets that are smaller than planet Earth: small_planets_df
-small_planets_df <- planets_df[planets_df$diameter < 1, ]        # option 1
-small_planets_df  <- subset(planets_df, subset = diameter < 1)   # option 2
+# option 1
+small_planets_df <- planets_df[planets_df$diameter < 1, ] 
+# option 2
+small_planets_df  <- subset(planets_df, subset = diameter < 1)  
 
 # Planets that rotate slower than planet Earth: slow_planets_df
-slow_planets_df <- planets_df[abs(planets_df$rotation) > 1, ]      # option 1
-slow_planets_df <- subset(planets_df, subset = abs(rotation) > 1)  # option 2
+# option 1
+slow_planets_df <- planets_df[abs(planets_df$rotation) > 1, ]
+# option 2
+slow_planets_df <- subset(planets_df, subset = abs(rotation) > 1) 
 ```
 
 *** =sct
@@ -818,6 +827,7 @@ Just play with the [`order()`](http://www.rdocumentation.org/packages/base/funct
 *** =sample_code
 ```{r}
 # Just play around with the order function in the console to see how it works!
+# Some examples:
 ```
 
 *** =solution
