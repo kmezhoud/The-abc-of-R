@@ -14,22 +14,72 @@ attachments :
 *** =video_hls
 //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch6_1.master.m3u8
 
---- type:NormalExercise lang:r xp:100 skills:1 key:d4ddcf9a7d
-## Have a look at your data set
 
-Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. 
+--- type:NormalExercise lang:r xp:100 skills:1 key:5c5feafab0
+## Présentation de la "Data Frame"
 
-There are several ways to do this in R. The function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame (or any R object you pass to it). Unoriginally, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set. You can also use the function [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim) to show the dimensions of your data set.
+Selon le chapitre précédent, une matrice peut contenir des éléments de même type. C'était le cas des données de Star Wars qui avaient seulemnt des éléments numériques.
+Cependant, dans d'autres enquêtes, il est souvent possible d'avoir des informations de types:
+- "êtes-vous marié?" ou des question de type "Vrais/faux" (boolien)
+- "quel est votre opignon sur un produit?" (chaîne de cacractère)
+- "donner un niveau d'appéciation à un service" (facteurs à plusieurs niveaux)
 
-In this exercise, you'll be working with the `mtcars` dataset, that is available in R by default.
+Les données issues de ces trois questions sont de types différentes. Sachant d'une matrice ne peut contenir d'un seul type de donnée, comment va-t-on stocker ces données pour les analyser?
+l'avantage de la Data Frame, c'est qu'elle accepte plusieurs types de variables.
+Chaque variable est montée dans une colonne et les lignes vont contenir les observations.
+Au final une data frame est un tableau à plusieurs variables de types différents.
+D'une manière générale, les tableaux importés d'autre logiciels (SAS, SPSS, Excel) sont des data frame.
+
+
 
 *** =instructions
-- Print the first observations of the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data set.
-- Use the [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) function to display the last observations.
-- Finally, display the overall dimensions of the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data frame with [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim).
+
+1. Cliquer sur  "Submit Answer" et observer à la console l'example de data frame.
 
 *** =hint
-You'll need [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) to show the first observations in [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+Juste cliquer sur "Run"!
+
+*** =sample_code
+```{r eval=FALSE}
+# Exemple de données sous forme de data frame
+mtcars 
+```
+
+*** =solution
+```{r eval=FALSE}
+# Exemple de données sous forme de data frame
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- TRUE
+success_msg("Passez à l'exercice suivant")
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:d4ddcf9a7d
+## Consulter votre Data Frame (1)
+
+Il est commun de travailler avec une lage série de donnée. Si vous avez un tableau non visible sur une seul page, il est nécéssaire de le visualiser en partie pour comprendre sa structure et sa contenance. 
+La fonction [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) permet de voir les cinq premiers lignes de la data frame.
+La fonction [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) permet de voir les cinq derniers lignes de la data frame.
+La fonction [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim) permet de voir les dimensions de la data frame.
+
+
+Dans cet exercice vous allez travailler avec le jeu de donné 'mcars' qui existe par defaut dans R.
+
+*** =instructions
+- Imprimer la première observation des données [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+- Utiliser la fonction [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) pour afficher les dernières observations.
+- Afficher les dimensions du tableau [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) avec la fonction [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim).
+
+*** =hint
+Vous avez besoin de [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) pour voir les premières observations de [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
 *** =pre_exercise_code
 ```{r}
@@ -38,42 +88,43 @@ You'll need [`head()`](http://www.rdocumentation.org/packages/utils/functions/he
 
 *** =sample_code
 ```{r}
-# Print the first observations of mtcars
+# Imprimer les premières observations de mtcars
 
 
-# Print the last observations of mtcars
+# Imprimer les dernières observations de mtcars
 
 
-# Print the dimensions of mtcars
+# Imprimer les dimensions de mtcars
 ```
 
 *** =solution
 ```{r}
-# Print the first observations of mtcars
+# Imprimer les premières observations de mtcars
 head(mtcars)
 
-# Print the last observations of mtcars
+# Imprimer les dernières observations de mtcars
 tail(mtcars)
 
-# Print the dimensions of mtcars
+# Imprimer les dimensions de mtcars
 dim(mtcars)
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_function("head", "x", incorrect_msg = "Have you specified the correct parameter in the [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) function? Make sure to pass it a data set you want to inspect, `mtcars` in this case.")
-test_function("tail", "x", incorrect_msg = "Have you specified the correct parameter in the [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) function? Make sure to pass it a data set you want to inspect, `mtcars` in this case.")
-test_output_contains("dim(mtcars)", incorrect_msg = "Don't forget to also call the [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim) function on `mtcars`!")
+test_function("head", "x", incorrect_msg = "Avez-vous spécifier les bons paramétres dans la fonction [`head()`](http://www.rdocumentation.org/packages/utils/functions/head)? Assurez-vous de lui transmettre le jeu de données `mtcars`.")
+test_function("tail", "x", incorrect_msg = "Avez-vous spécifier les bons paramétres dans la fonction [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) ? Assurez-vous de lui transmettre le jeu de données `mtcars`.")
+test_output_contains("dim(mtcars)", incorrect_msg = "N'oublier pas la fonction [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim)!")
 
-success_msg("Wonderful! So, do you now have a good idea about what we have in the data set? For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!")
+success_msg("OK! vous avez maintenant une idée sur le jeu de données 'mcars'. taper 'mcars' dans la console pour afficher tous les données. Et passer à l'exercice suivant.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c8f389fdbd
-## Have a look at the structure
+## Consulter votre Data Frame (2)
 
-Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. For a data frame it tells you:
+Il existe d'autres fonctions qui peuvent donner un aperçu rapide sur les données.
+- La fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) perme de voir la structure de 'mcars':
 
 - The total number of observations (e.g. 32 car types)
 - The total number of variables (e.g. 11 car features)
@@ -81,13 +132,14 @@ Another method that is often used to get a rapid overview of your data is the fu
 - The data type of each variable (e.g. num for car features)
 - The first observations
 
-Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function will often be the first thing that you do when receiving a new data set or data frame. It is a great way to get more insight in your data set before diving into the real analysis.
+L'un des premiers réflexe à avoir quand vous avez un nouveau jeu de donnée est de voir sa structure avec la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).
 
 *** =instructions
-Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.
+Explorer la structure de [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). 
+
 
 *** =hint
-Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function with [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) as input!
+Utiliser la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) avec [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) comme une "input"!
 
 *** =pre_exercise_code
 ```{r}
@@ -96,43 +148,41 @@ Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) fu
 
 *** =sample_code
 ```{r}
-# Investigate the structure of the mtcars data set
+# Explorer la structure du jeu de données mtcars
 ```
 
 *** =solution
 ```{r}
-# Investigate the structure of the mtcars data set
+# Explorer la structure du jeu de données mtcars
 str(mtcars)
 ```
 
 *** =sct
 ```{r}
-test_function("str","object",incorrect_msg = "Make sure to check the structure of the `mtcars` data set.")
-test_output_contains("str(mtcars)", incorrect_msg = "Make sure that you use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on `mtcars`.")
-success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
+test_function("str","object",incorrect_msg = "Soyez sûr d'explorer les données `mtcars`.")
+test_output_contains("str(mtcars)", incorrect_msg = "Soyez sûr d'utiliser la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) sur `mtcars`.")
+success_msg("Bon travail! Pouvez-vous trouver toutes les informations énumérées dans l'introduction de cet exercice? Continuez à l'exercice suivant.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f09c0189ac
-## Creating a data frame (1)
+## Créer une data frame (1)
 
-Since using built-in data sets is not even half the fun of creating your own data sets, the next exercises are based on your personally developed data set. So put your jet pack on because it is time for some good old fashioned space exploration! 
+Nous allons construire une data frame décrivants les propriétés de huit planètes solaires. Les variables sont les suivantes:
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+- Le type de la planète (terrestre ou gazuse)
+- Le diamètre de la planète par rapport au diamètre de la Terre.
+- La rotation de la planète à travers le soleil par rapport à celle de la Terre.
+- Si la planète a des anneaux ou non (VRAI ou FAUX).
 
-- The type of the planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
-
-After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `planets`, `type`, `diameter`, `rotation` and `rings`. Can you correctly use the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function to create a data set from this information?
+Après avoir fait des recherches sur [les planètes](http://en.wikipedia.org/wiki/Planet),créez les vecteurs nécéssaires : `planets`, `type`, `diameter`, `rotation` et `rings`. vous pouvez utiliser la fonction [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) pour créer la data frame?
 
 *** =instructions
-- Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to construct `planets_df`.
-- Make sure that you've actually created a data frame with 8 observations and 5 variables with [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).
+- Utiliser la fonction [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) pour construire `planets_df`.
+- Assurez-vous que vous avez crée une  data frame avec 5 variables et 8 observations avec la focntion [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).
 
 *** =hint
-The [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function takes as arguments the vectors that will become the columns of the data frame, separated by commas. The columns in this case are (in this order): `planet`, `type`, `diameter`, `rotation` and `rings`.
+La fonction [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)  prend en argument les vecteurs déjà définis pour vous. Les vecteurs doivent être séparés par des virgules. Ainsi, au niveau de la data frame, les vecteurs devienront des colonnes ayant l'ordre suivant: `planet`, `type`, `diameter`, `rotation` et `rings`.
 
 *** =pre_exercise_code
 ```{r}
@@ -141,7 +191,7 @@ The [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.
 
 *** =sample_code
 ```{r}
-# Definition of vectors
+# Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
@@ -149,16 +199,16 @@ diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame: planets_df
+# Créer la data frame: planets_df
 
 
-# Display the structure of planets_df
+# Disposer la structure de planets_df
 
 ```
 
 *** =solution
 ```{r}
-# Definition of vectors
+# Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
@@ -166,10 +216,10 @@ diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame: planets_df
+# Créer la data frame: planets_df
 planets_df <- data.frame(planets, type, diameter, rotation, rings)
 
-# Display the structure of planets_df
+# Disposer la structure de planets_df
 str(planets_df)
 ```
 
@@ -177,10 +227,10 @@ str(planets_df)
 ```{r}
 test_correct({
   test_object("planets_df",
-              undefined_msg = "Please make sure to define a variable `planets_df`.",
-              incorrect_msg = "Make sure to assign the correct order of arguments to the data.frame `planets_df`. The correct order is planets, type, diameter, rotation and rings.")  
+              undefined_msg = "Soyez sûre de bien définir `planets_df`.",
+              incorrect_msg = "Soyez sûr d'affecter correctement dans l'ordre les arguments de la fonction data.frame. L'ordre correcte est: planets, type, diameter, rotation and rings.")
 }, {
-  msg = "Do not change anything about the definition of the vector. Only add code to create the `planets_df` data frame!"
+  msg = "Ne changez rien à la définition du vecteur. Ajoutez seulement du code pour créer la data frame `planets_df`!"
   test_object("planets", undefined_msg = msg, incorrect_msg = msg)
   test_object("type", undefined_msg = msg, incorrect_msg = msg)
   test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
@@ -188,31 +238,29 @@ test_correct({
   test_object("rings", undefined_msg = msg, incorrect_msg = msg)
 })
 
-test_output_contains("str(planets_df)", incorrect_msg = "Don't forget to display the structure of `planets_df`!")
+test_output_contains("str(planets_df)", incorrect_msg = "Ne pas oublier d'afficher la structure de `planets_df`!")
 
-success_msg("Great job! The structure of `planets_df` reveals that both the `planets` as the `type` column are factors, and not character vectors. That's not really what you want, right?")
+success_msg("Bon travail! ici les colonnes 'planets' et 'type' sont considérées comme des facteurs et non pas comme des caractères.)
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7090dc3538
-## Creating a data frame (2)
+## Créer une data frame (2)
 
-In the previous exercise, you found out that both the `planets` and `type` columns of `planets_df` are factors. For the `type` column this makes sense, because a planet type is some kind of category. For the `planets` column, however, that contains the planet names, this is less logical.
+Dans l'exercice précédent, vous avez découvert que les deux colonnes `planets` et` type` de `planets_df` sont des facteurs. Pour la colonne `type`, cela a du sens, car un type de planète est une sorte de catégorie. Cependant, pour la colonne `planets` qui contient les noms des planètes, cela est moins logique.
 
-You can set the `stringsAsFactors` argument inside [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to avoid that R automatically converts character vectors to factors:
+Vous pouvez configurer l'argument `stringsAsFactors` dans [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) pour éviter que R convertit automatiquement les chaines de caractère en facteurs.
 
 ```
 data.frame(vec1, vec2, ..., stringsAsFactors = FALSE)
 ```
 
-Up to you now to adapt the way `planets_df` is constructed!
-
 *** =instructions
-- Encode the `type` vector in a factor, called `type_factor`.
-- Next use `planets`, `type_factor`, `diameter`, `rotation` and `rings` to construct `planets_df`. This time, make sure that strings are not converted to factors, by setting `stringsAsFactors = FALSE`.
-- Display the structure of `planets_df` to check you coded things correctly.
+- Encoder le vecteur `type` comme un facteur, nommé `type_factor`.
+- Utiliser `planets`, `type_factor`, `diameter`, `rotation` et `rings` pour construire `planets_df`. Cette fois, soyez sûre que les chaines de carcatères ne sont pas converties à un facteurs. Utilisez l'argument `stringsAsFactors = FALSE`.
+- Afficher la structure de `planets_df` et vérifiez les types de variables.
 
 *** =hint
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to encode `type` as a factor.
+Utiliser la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) pour coder `type`  à un facteur.
 
 *** =pre_exercise_code
 ```{r}
@@ -221,7 +269,7 @@ Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functi
 
 *** =sample_code
 ```{r}
-# Definition of vectors
+# Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet",
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant","Gas giant")
@@ -229,19 +277,19 @@ diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Encode type as a factor: type_factor
+# Encoder le vecteur 'type' comme un facteur: type_factor
 
 
-# Construct planets_df: strings are not converted to factors!
+# Construire planets_df: chaîne de carcatère n'est pas convertie à un facteur!
 
 
-# Display the structure of planets_df
+# Afficher la structure de planets_df
 
 ```
 
 *** =solution
 ```{r}
-# Definition of vectors
+# Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
@@ -249,30 +297,30 @@ diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Encode type as a factor: type_factor
+# Encoder le vecteur 'type' comme un facteur: type_factor
 type_factor <- factor(type)
 
-# Construct planets_df: strings are not converted to factors!
+# Construire planets_df: chaîne de carcatère n'est pas convertie à un facteur!
 planets_df <- data.frame(planets, type_factor, diameter, rotation, rings, stringsAsFactors = FALSE)
 
-# Display the structure of planets_df
+# Afficher la structure de planets_df
 str(planets_df)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not remove or change the definition of all the vectors!"
+msg <- "Ne supprimez pas ou ne modifiez pas la définition de tous les vecteurs!"
 test_object("planets", undefined_msg = msg, incorrect_msg = msg)
 test_object("type", undefined_msg = msg, incorrect_msg = msg)
 test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
 test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("type_factor", incorrect_msg = "Have you correctly created `type_factor`? Simply use the [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) function on `type`.")
-test_object("planets_df", incorrect_msg = "Have you correctly created `planets_df`? Make sure to use `type_factor` instead of `type` and set `stringsAsFactors` to `FALSE` inside [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame).")
-test_output_contains("str(planets_df)", incorrect_msg = "Don't forget to display the structure of `planets_df`.")
+test_object("type_factor", incorrect_msg = "Auriez-vous bien crée `type_factor`? Utilisez la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) sur `type`.")
+test_object("planets_df", incorrect_msg = "Auriez-vous bien crée `planets_df`? Utilisez `type_factor` au lieu de `type` et configurez `stringsAsFactors` à `FALSE` inside [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame).")
+test_output_contains("str(planets_df)", incorrect_msg = "Ne pas oublier d'afficher la structure de `planets_df`.")
 
-success_msg("That looks more like it! Head over to the next exercise.")
+success_msg("Rendez-vous au prochain exercice.")
 ```
 
 
