@@ -1,6 +1,6 @@
 --- 
 title_meta  : Chapter 5
-title       : Lists
+title       : Listes
 description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This chapter will teach you how to create, name and subset these lists!
 attachments : 
   slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch5_slides.pdf
