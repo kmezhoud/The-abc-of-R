@@ -147,7 +147,7 @@ test_object("my_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_super_list",
             incorrect_msg = "Il semble que  `my_super_list` ne contiennt pas les éléments corrects. Il est possible que l'ordre n'est pas juste.")
 test_output_contains("str(my_super_list)", incorrect_msg = "Ne pas oublier d'afficher la structure `my_super_list` en utilisant la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).")
-success_msg("Bien! Pourriez-vous voir les le vecteur, la matrice et le facteur comment ils apparaissent d'abord au premier niveau de la structure, ensuite à un niveau plus bas dans une liste.)
+success_msg("Bien! Pourriez-vous voir le vecteur, la matrice et le facteur comment ils apparaissent d'abord au premier niveau de la structure, ensuite à un niveau plus bas dans une liste.")
 ```
 
 
