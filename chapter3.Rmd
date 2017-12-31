@@ -62,7 +62,7 @@ Dans les exercices suivants, vous analyserez les chiffres du box-office de la fr
 Rappel: regardez cette ligne de code qui construit une matrice avec les numéros 1 à 9, remplie ligne par ligne:
 
 ```
-box <- matrix(1:9, byrow = TRUE, nrow = 3)
+matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
 Dans le script, un vecteur `box` représente les chiffres du box-office des trois premiers films Star Wars. Le premier, le troisième et le cinquième élément correspondent au chiffre d'affaires du box-office américain pour les  3 films. Les deuxième, quatrième et sixième éléments représentent les recettes au box-office non-US.
@@ -88,7 +88,7 @@ Définissez `nrow` à` 3` et `byrow` à` TRUE` dans `matrix ()`.
 box <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 
 # Créer star_wars_matrix
-
+star_wars_matrix <-
 ```
 
 *** =solution

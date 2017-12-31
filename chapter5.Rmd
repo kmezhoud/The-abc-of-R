@@ -881,10 +881,10 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/c
 # planets_df est déjà téléchargée
 
 # Créer l'ordre souhaité de planets_df: positions
-
+positions <-
 
 # Créer une nouvelle data frame ordonnée: smallest_first_df
-
+smallest_first_df <-
 
 # Imprimer smallest_first_df
 ```
