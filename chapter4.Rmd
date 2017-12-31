@@ -46,7 +46,6 @@ theory <- "R uses factors for categorical variables!"
 *** =sct
 ```{r eval=FALSE}
 DM.result <- TRUE
-#DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
 success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
