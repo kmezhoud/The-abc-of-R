@@ -894,6 +894,7 @@ average_us_visitors <-
 *** =solution
 ```{r}
 # Box-office de Star Wars en million (!) 
+mat <- matrix(1:9, byrow=TRUE, nrow=3) 
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 
 # Construire la matrice 
