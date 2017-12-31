@@ -7,52 +7,7 @@ attachments :
   
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:222f614c02
 
-## C'est quoi une matrice?
-
-Une matrice est une collection d'éléments du même type de données (numérique, caractère ou logique), qui est organisée en un nombre fixe de lignes et de colonnes. Une matrice est appelée bidimensionnelle. 
-
-Vous pouvez construire une matrice avec la fonction `matrix`, par exemple: `matrix (1: 9, byrow = TRUE, nrow = 3)`.
-
-Le premier argument est la collection d'éléments que R arrangera dans les lignes et les colonnes de la matrice. Ici, nous utilisons `1: 9` qui construit le vecteur` c (1,2,3,4,5,6,7,8,9) `. 
-
-L'argument `byrow` indique que la matrice est remplie par les lignes. Si nous voulons que le vecteur soit rempli par les colonnes, il suffit de placer `bycol = TRUE` ou` byrow = FALSE`.
-
-Le troisième argument `nrow` indique que la matrice doit avoir trois lignes.
-
-*** =instructions
-
-1. Construire une matrice avec 3 lignes contenant les numéros 1 jusqu'à 9 dans l'éditeur, Cliquer sur le bouton **Submit Answer** et regarder la sortie dans la console. Astuce, utilisez: `matrix (1: 9, byrow = TRUE, nrow = 3)`.
-
-*** =hint
-Lisez attentivement la mission, la réponse est déjà donnée ;-).
-
-*** =sample_code
-```{r eval=FALSE}
-# Construction d'une matrice avec 3 lignes contenant les nombres de 1 jusqu'à 9
-mat <- 
-```
-
-*** =solution
-```{r eval=FALSE}
-# Construction d'une matrice avec 3 lignes contenant les nombres de 1 jusqu'à 9
-mat <- matrix(1:9, byrow=TRUE, nrow=3)
-```
-
-*** =sct
-```{r eval=FALSE}
-test_error()
-msg = "Aviez-vous bien utilisé la fonction 'matrix' pour générer la matrice?"
-test_object("mat <- matrix(1:9, byrow=TRUE, nrow=3)", undefined_msg = msg, incorrect_msg = msg)
-
-success_msg("Bien!")
-```
-
-*** =pre_exercise_code
-```{r eval=FALSE}
-
-```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:834a0e546c
 ## Construire une matrice (1)
@@ -847,3 +802,79 @@ success_msg("Génial! Que vous disent ces résultats? Un nombre stupéfiant de 9
 ```
 
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:57d4c926e3
+## Arithmétique avec des matrices (2)
+
+Comme `2 * my_matrix` multiplie chaque élément de `my_matrix` par 2, `my_matrix1 * my_matrix2` crée une matrice avec chaque élément est le produit des éléments correspondants dans `my_matrix1` et `my_matrix2`. 
+
+Après avoir regardé le résultat de l'exercice précédent, le patron de StarWarsStudios souligne que les prix des billets ont augmenté au fil du temps avec un dollar par film. Il demande à refaire l'analyse en fonction des prix que vous pouvez trouver dans `ticket_prices_matrix` (source: imagination).
+
+_Ceux qui sont familiés avec l'algèbre linéaire: ce n'est pas la multiplication standard de la matrice pour laquelle vous devriez utiliser `%*%` dans R._
+
+*** =instructions
+- Affecter au `visitors` la matrice avec vos estimations de visiteurs US et non-US (in millions) pour les trois films. Utilisez cette fois `ticket_prices_matrix`  pour prendre en considération les prix spécifiques des tickets pour chaque film.
+- extraire la sous-matrice `visitors` pour ne laisser que les visiteurs américains, et calculer la moyenne de cette colonne. vous devriez utiliser [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean); cette fonction vous calcule la moyenne du vecteur numérique. Affecter le résultat dans la variable `average_us_visitors`.
+
+*** =hint
+- Vous pouvez utilisé la fonction [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) pour calculer la moyenne des inputs de la fonction.
+- Pour avoir le nombre de visiteur au US, sélectionner la première colonne de `visitors` en utilisant `visitors[ ,1]`.
+
+*** =pre_exercise_code
+```{r}
+# no pec
+```
+
+*** =sample_code
+```{r}
+# Box-office de Star Wars en million (!)
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+
+# Construire la matrice
+
+movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
+col_titles <- c("US","non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
+
+# La définition de  ticket_prices_matrix
+ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles)) 
+
+# Nombre de visiteurs estimés
+visitors <-
+
+# La moyenne de nombre de visiteurs américains
+
+average_us_visitors <-
+```
+
+*** =solution
+```{r}
+# Box-office de Star Wars en million (!) 
+
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+
+# Construire la matrice 
+
+movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
+col_titles <- c("US","non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
+
+# La définition de  ticket_prices_matrix
+ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, dimnames = list(movie_names,col_titles))
+
+# Nombre de visiteurs estimés
+visitors <- star_wars_matrix / ticket_prices_matrix
+
+# La moyenne de nombre de visiteurs américains
+average_us_visitors <- mean(visitors[ ,1])
+```
+
+*** =sct
+```{r}
+msg <- "Ne changez rien sur les variables prédéfinies!"
+test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("ticket_prices_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("visitors", incorrect_msg = "Il semble que `visitors` ne contienne pas la valeur correcte. Rappelez-vous que vous pouvez diviser deux matrices.")
+test_object("average_us_visitors", incorrect_msg = "Il semble que `average_us_visitors` ne contienne pas la moyenne des visiteurs américains. Utilisez [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) en combinaison avec la sous-matrice `visitors`.")
+success_msg("Vous êtes maintenant prêt pour l'exercice final sur les matrices!")
+```
