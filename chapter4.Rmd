@@ -1,7 +1,7 @@
 ---
 title_meta  : Chapitre 4
 title       : Les facteurs
-description : Very often, data falls into a limited number of categories.In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+description : En plus des données numériques, l'analyse des données peut dépendre aussi des données catégoriques sous forme de chaine de caractère. Compte tenu de l'importance des des catégorielles, R les considère comme des facteurs de variables. Ce chapitre va montere comment créer, subdiviser et comparer les variables de type facteurs.
 attachments :
   slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch4_slides.pdf
 
