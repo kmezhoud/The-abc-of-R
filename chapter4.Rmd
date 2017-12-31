@@ -91,7 +91,7 @@ factor.gender.vector
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- closed_test( "factor.gender.vector", "factor(gender.vector)" )
+
 success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
