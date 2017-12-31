@@ -44,7 +44,7 @@ mat <- matrix(1:9, byrow=TRUE, nrow=3)
 ```{r eval=FALSE}
 test_error()
 msg = "Aviez-vous bien utilisé la fonction 'matrix' pour générer la matrice?"
-test_object("matrix(1:9, byrow=TRUE, nrow=3)", undefined_msg = msg, incorrect_msg = msg)
+test_object("mat <- matrix(1:9, byrow=TRUE, nrow=3)", undefined_msg = msg, incorrect_msg = msg)
 
 success_msg("Bien!")
 ```
@@ -862,7 +862,7 @@ _Ceux qui sont familiés avec l'algèbre linéaire: ce n'est pas la multiplicati
 
 *** =hint
 - Vous pouvez utilisé la fonction [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) pour calculer la moyenne des inputs de la fonction.
-- POur avoir le nombre de visiteur au US, sélectionner la première colonne de `visitors` en utilisant `visitors[ ,1]`.
+- Pour avoir le nombre de visiteur au US, sélectionner la première colonne de `visitors` en utilisant `visitors[ ,1]`.
 
 *** =pre_exercise_code
 ```{r}
@@ -872,9 +872,10 @@ _Ceux qui sont familiés avec l'algèbre linéaire: ce n'est pas la multiplicati
 *** =sample_code
 ```{r}
 # Box-office de Star Wars en million (!)
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 
 # Construire la matrice
-box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
@@ -893,9 +894,10 @@ average_us_visitors <-
 *** =solution
 ```{r}
 # Box-office de Star Wars en million (!) 
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 
 # Construire la matrice 
-box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
