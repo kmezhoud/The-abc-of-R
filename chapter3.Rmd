@@ -13,7 +13,7 @@ attachments :
 
 Une matrice est une collection d'éléments du même type de données (numérique, caractère ou logique), qui est organisée en un nombre fixe de lignes et de colonnes. Une matrice est appelée bidimensionnelle. 
 
-Vous pouvez construire une matrice avec la fonction `matrix`, par exemple: `matrix (1:9, byrow = TRUE, nrow = 3)`.
+Vous pouvez construire une matrice avec la fonction `matrix`, par exemple: `matrix(1:9, byrow = TRUE, nrow = 3)`.
 
 Le premier argument est la collection d'éléments que R arrangera dans les lignes et les colonnes de la matrice. Ici, nous utilisons `1:9` qui construit le vecteur` c (1,2,3,4,5,6,7,8,9) `. 
 
@@ -23,7 +23,7 @@ Le troisième argument `nrow` indique que la matrice doit avoir trois lignes.
 
 *** =instructions
 
-1. Construire une matrice avec 3 lignes contenant les numéros 1 jusqu'à 9 dans l'éditeur, Cliquer sur le bouton **Submit Answer** et regarder la sortie dans la console. Astuce, utilisez: `matrix (1:9, byrow = FALSE, nrow = 3)`.
+1. Construire une matrice avec 3 lignes contenant les numéros 1 jusqu'à 9 dans l'éditeur, Cliquer sur le bouton **Submit Answer** et regarder la sortie dans la console. Astuce, utilisez: `matrix(1:9, byrow = FALSE, nrow = 3)`.
 
 *** =hint
 Lisez attentivement la mission, la réponse est déjà donnée ;-).
