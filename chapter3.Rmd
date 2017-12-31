@@ -39,13 +39,14 @@ Lisez attentivement la mission, la réponse est déjà donnée ;-).
 
 *** =sample_code
 ```{r eval=FALSE}
-# Construction d'une matrice avec 3 lignes contenant les nombres 1 jusqu'à 9
+# Construction d'une matrice avec 3 lignes contenant les nombres de 1 jusqu'à 9
+mat <- 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Construction d'une matrice avec 3 lignes contenant les nombres 1 jusqu'à 9
-matrix(1:9, byrow=TRUE, nrow=3)
+# Construction d'une matrice avec 3 lignes contenant les nombres de 1 jusqu'à 9
+mat <- matrix(1:9, byrow=TRUE, nrow=3)
 ```
 
 *** =sct
