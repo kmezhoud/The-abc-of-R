@@ -812,7 +812,7 @@ rownames(star_wars_matrix) <- c("A New Hope", "The Empire Strikes Back", "Return
 colnames(star_wars_matrix) <- c("US", "non-US")
 
 # Estimation des visiteurs
-
+visitors <-
 
 # Estimation des visiteurs
 
@@ -883,11 +883,11 @@ star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = li
 ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles)) 
 
 # Nombre de visiteurs estimés
-
+visitors <-
 
 # La moyenne de nombre de visiteurs américains
 
-
+average_us_visitors <-
 ```
 
 *** =solution
