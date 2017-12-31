@@ -240,7 +240,7 @@ test_correct({
 
 test_output_contains("str(planets_df)", incorrect_msg = "Ne pas oublier d'afficher la structure de `planets_df`!")
 
-success_msg("Bon travail! ici les colonnes 'planets' et 'type' sont considérées comme des facteurs et non pas comme des caractères.)
+success_msg("Bon travail! ici les colonnes 'planets' et 'type' sont considérées comme des facteurs et non pas comme des caractères.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7090dc3538
