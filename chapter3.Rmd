@@ -523,10 +523,10 @@ Retour à Star Wars avec ces nouvelles connaissances acquises:
 1. Calculez le revenu moyen non-américain par film. Affectez-le à la variable `non.us.all` (en d'autres termes: prenez la moyenne de tous les éléments de la deuxième colonne).
 2. Même question, mais maintenant seulement pour les deux premiers films Star Wars.
 
-Astuce: Utilisez la fonction `mean ()` pour calculer la moyenne.
+Astuce: Utilisez la fonction `mean()` pour calculer la moyenne.
 
 *** =hint
-Vous pouvez utiliser la fonction `mean ()` pour calculer la moyenne des entrées de la fonction. Souvenez-vous que vous pouvez sélectionner toutes les lignes d'une matrice pour une colonne x spécifique, en tapant `my.matrix [, x]`. Non-US est la deuxième colonne.
+Vous pouvez utiliser la fonction `mean()` pour calculer la moyenne des entrées de la fonction. Souvenez-vous que vous pouvez sélectionner toutes les lignes d'une matrice pour une colonne x spécifique, en tapant `my.matrix[, x]`. Non-US est la deuxième colonne.
 
 *** =sample_code
 ```{r eval=FALSE}
@@ -576,7 +576,7 @@ non.us.some
 *** =sct
 ```{r eval=FALSE}
 names  <- c("star.wars.matrix","non.us.all","non.us.some")
-values <- c("star.wars.matrix","mean( star.wars.matrix[,2] )","mean( star.wars.matrix[1:2,2] )") 
+values <- c("star.wars.matrix","mean( star.wars.matrix[,2])","mean( star.wars.matrix[1:2,2] )") 
 success_msg("Bien! Passez à l'exercice suivant")
 
 ```
