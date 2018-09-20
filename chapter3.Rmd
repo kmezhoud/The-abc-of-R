@@ -126,8 +126,8 @@ test_what(
     dim(get("star_wars_matrix", get_solution_env())), 
     dim(get("star_wars_matrix", .GlobalEnv))),
   feedback = 
-    paste("Veillez utiliser les arguments `byrow` et` nrow` de la fonction `matrix()`",
-          "pour former une matrice des dimensions correctes: 3 lignes et 2 colonnes."))
+    paste("Veillez utiliser les arguments `byrow` et `nrow` de la fonction `matrix()`",
+          "pour former une matrice des dimensions correctes: 3 lignes et 2 colonnes.")
 
 test_correct({
   test_object("star_wars_matrix",
