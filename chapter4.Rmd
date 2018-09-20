@@ -1,22 +1,35 @@
 ---
-title_meta  : Chapitre 4
-title       : Les facteurs
-description : En plus des données numériques, l'analyse des données peut dépendre aussi des données catégoriques sous forme de chaine de caractère. Compte tenu de l'importance des des catégorielles, R les considère comme des facteurs de variables. Ce chapitre va montere comment créer, subdiviser et comparer les variables de type facteurs.
-attachments :
-  slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch4_slides.pdf
+title_meta: 'Chapitre 4'
+title: 'Les facteurs'
+description: 'En plus des données numériques, l''analyse des données peut dépendre aussi des données catégoriques sous forme de chaine de caractère. Compte tenu de l''importance des des catégorielles, R les considère comme des facteurs de variables. Ce chapitre va montere comment créer, subdiviser et comparer les variables de type facteurs.'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch4_slides.pdf'
+---
 
---- type:VideoExercise lang:r xp:50 skills:1 key:c9cff655dd
 ## Factors
 
-*** =video_link
-//player.vimeo.com/video/138173962
+```yaml
+type: VideoExercise
+key: c9cff655dd
+lang: r
+xp: 50
+skills: 1
+video_link: //player.vimeo.com/video/138173962
+video_hls: //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch4_1.master.m3u8
+```
 
-*** =video_hls
-//videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch4_1.master.m3u8
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:64aeb6c030
 ## C'est quoi un facteur? (1)
+
+```yaml
+type: NormalExercise
+key: 64aeb6c030
+lang: r
+xp: 100
+skills: 1
+```
 
 Le terme **facteur** fait référence à un type de données statistiques utilisé pour stocker des variables classées par catégories. La différence entre une variable catégorique et une variable continue est qu'une variable catégorique peut appartenir à un ** nombre limité de catégories **. Par contre, une variable continue peut correspondre à un nombre infini de valeurs. 
 
@@ -24,39 +37,46 @@ Il est important que R sache s'il s'agit d'une variable continue ou catégorique
 
 Un bon exemple d`une variable catégorique est la variable «Genre». Comme vous le savez, maintenant, un individu humain peut être soit "Male" ou "Female". Ainsi "Male" et "Female" sont ici les (deux seules) valeurs de la variable catégorique "Gender", et chaque observation peut être affectée soit à la valeur "Male" de "Female".
 
-*** =instructions
-
+`@instructions`
 1. Affecter à la variable `theory` une valeur `"R uses factors for categorical variables!"`
 
-*** =hint
+`@hint`
 Juste cliquer sur le button 'Run Code' et regarder ce qui se passe à la console.
 
-*** =sample_code
+`@pre_exercise_code`
+```{r eval=FALSE}
+
+```
+
+`@sample_code`
 ```{r eval=FALSE}
 # Assignez à la variable `theory` ce dont il consiste ce chapitre!
 
 ```
 
-*** =solution
+`@solution`
 ```{r eval=FALSE}
 # Assignez à la variable `theory` ce dont il consiste ce chapitre!
 theory <- "R uses factors for categorical variables!"
 ```
 
-*** =sct
+`@sct`
 ```{r eval=FALSE}
 DM.result <- TRUE
 success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
-*** =pre_exercise_code
-```{r eval=FALSE}
+---
 
-```
-
-
---- type:NormalExercise lang:r xp:100 skills:1 key:e47a1d6a40
 ## C'est quoi un facteur? (2)
+
+```yaml
+type: NormalExercise
+key: e47a1d6a40
+lang: r
+xp: 100
+skills: 1
+```
 
 Pour créer des facteurs, vous utilisez la fonction `factor ()`. La première chose à faire est de créer un vecteur contenant toutes les observations appartenant à un nombre limité de catégories. Par exemple, le vecteur de genre contient le sexe de 5 individus différents: `gender.vector <- c (" Homme "," Femme "," Femme "," Homme "," Homme ")`.
 
@@ -64,14 +84,18 @@ Il est clair, qu'il y a 2 catégories, ou en termes de language R ** des «facto
 
 La fonction `factor ()` code le vecteur comme facteur: `factor.gender.vector <- factor(gender.vector)`.
 
-*** =instructions
-
+`@instructions`
 1. Affectez à `factor.gender.vector` le vecteur de caractères` gender.vector` converti en ** facteur **. Regardez la console et notez que R imprime les niveaux de facteur en dessous des valeurs réelles.
 
-*** =hint
+`@hint`
 Cliquez simplement sur le bouton `Run Code` et regardez la console.
 
-*** =sample_code
+`@pre_exercise_code`
+```{r eval=FALSE}
+
+```
+
+`@sample_code`
 ```{r eval=FALSE}
 gender.vector <- c("Male","Female","Female","Male","Male")
 
@@ -80,7 +104,7 @@ factor.gender.vector <-
 factor.gender.vector
 ```
 
-*** =solution
+`@solution`
 ```{r eval=FALSE}
 gender.vector <- c("Male","Female","Female","Male","Male")
 
@@ -89,20 +113,23 @@ factor.gender.vector <- factor(gender.vector)
 factor.gender.vector
 ```
 
-*** =sct
+`@sct`
 ```{r eval=FALSE}
 
 success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
-*** =pre_exercise_code
-```{r eval=FALSE}
+---
 
-```
-
-
---- type:NormalExercise lang:r xp:100 skills:1 key:a457bd1de9
 ## C'est quoi un facteur? (3)
+
+```yaml
+type: NormalExercise
+key: a457bd1de9
+lang: r
+xp: 100
+skills: 1
+```
 
 Il existe deux types de variables catégorielles: une ** nominale ** et ** ordinale **.
 
@@ -110,14 +137,18 @@ Une variable nominale est une variable catégorique sans ordre implicite. Cela s
 
 En revanche, les variables ordinales ont un ordre naturel, considérons par exemple la variable catégorique `temperature.vector` avec les catégories:` "Basse" `,` "Moyenne" `et` "Haute" `. Ici, il est facile de voir que «Moyenne» est au-dessus de «Basse», et que «Haute» est au-dessus de «Moyenne».
 
-*** =instructions
-
+`@instructions`
 1. Cliquez sur "Submit Answer" pour vérifier comment R contracte et imprime les variables nominales et ordinales. Ne vous inquiétez pas si vous ne comprenez pas encore tout le code, nous y reviendrons.
 
-*** =hint
+`@hint`
 Cliquez simplement sur le bouton "Submit Answer" et regardez la console. Remarquez comment R indique l'ordre des niveaux de facteur pour les variables catégoriques ordinales.
 
-*** =sample_code
+`@pre_exercise_code`
+```{r eval=FALSE}
+
+```
+
+`@sample_code`
 ```{r eval=FALSE}
 hair.color.vector <- c("Blonde","Blonde","Brunette","Ginger","Grey","Brunette")
 temperature.vector <- c("High","Low","High","Low","Medium")
@@ -129,24 +160,28 @@ factor.temperature.vector
 factor.hair.color.vector
 ```
 
-*** =solution
+`@solution`
 ```{r eval=FALSE}
 DM.result <- TRUE
 ```
 
-*** =sct
+`@sct`
 ```{r eval=FALSE}
 DM.result <- TRUE
 success_msg("Bien! Passez à l'exercice suivant.")
 ```
 
-*** =pre_exercise_code
-```{r eval=FALSE}
+---
 
-```
-
---- type:NormalExercise lang:r xp:100 skills:1 key:56d9d5409e
 ## Les niveaux de facteurs
+
+```yaml
+type: NormalExercise
+key: 56d9d5409e
+lang: r
+xp: 100
+skills: 1
+```
 
 En Biologie, il est souvent possible d'avoir des facteurs expérimentals à plusieurs niveaux (fort/faible, aigus/chronique, grand/petit). Il est possible de modifier les niveaux de facteur avec la fonction [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels). Ou bien, utiliser l'argument `labels`à l'intérieur de la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). Les deux options suivantes sont équilaventes.
 
@@ -167,19 +202,19 @@ Dans la première option, vous devez passer les niveaux dans l'ordre alphabétiq
 
 Vous avez rempli un questionnaire de rue et enregistré la rectitude des répondants en utilisant les lettres «R» et «L». Cette information est stockée dans un vecteur `survey_vector`, qui est déjà codé sur votre droite.
 
-*** =instructions
+`@instructions`
 - Convertir le vecteur `survey_vector` de type caractère à un vecteur de type facteur `survey_vector`, avec les niveaux "Right" et "Left".
 - Imprimer `survey_factor` et inspecter son contenu.
 
-*** =hint
+`@hint`
 Si vous utilisez la première approche décrite ci-dessus, faites attention à l'ordre dans lequel vous devez entrer les niveaux de facteur.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Définition de survey_vector
 survey_vector <- c("R", "L", "L", "R", "R")
@@ -193,7 +228,7 @@ survey_vector <- c("R", "L", "L", "R", "R")
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Définition de survey_vector
 survey_vector <- c("R", "L", "L", "R", "R")
@@ -208,7 +243,7 @@ survey_factor_2 <- factor(survey_vector, levels = c("L", "R"), labels = c("Left"
 survey_factor
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "Ne changez pas la définition de `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -219,9 +254,17 @@ test_output_contains("survey_factor", incorrect_msg = "N'oubliez pas d'imprimer 
 success_msg("Formidable! Passez à l'exercice suivant.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e09996c475
 ## Nominal contre Ordinal, Unordered contre Ordered
+
+```yaml
+type: NormalExercise
+key: e09996c475
+lang: r
+xp: 100
+skills: 1
+```
 
 Rappelez-vous qu'il existe deux types de variables catégoriques? d'une part, il y a _la variable catégorique nominale_, dont les niveaux ne suivent pas un ordre. Et _la variable catégorique ordinale_, dont les niveaux peuvent être ordonnés.
 
@@ -235,20 +278,20 @@ factor(some_vector,
 
 En plaçant l'argument `ordered` à `TRUE`, vous indiquez que le facteur est ordonné. Avec l'argument `levels` vous donnez les valeurs du facteur dans le bon ordre.
 
-*** =instructions
+`@instructions`
 - Convertir `animal_vector` à un facteur sous l'object `animal_factor`. Rendez-le ordonné si c'est approprié.
 - Encoder `temperature_vector` à un facteur nommé `temperature_factor`. Rendre-le si cela a un sens.
 - Imprimez les deux facteurs et comparer les outputs.
 
-*** =hint
+`@hint`
 `animal_factor` ne doit pas être ordonné; `temperature_factor` peut être ordonné!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Définition de animal_vector et temperature_vector
 animal_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
@@ -264,7 +307,7 @@ temperature_vector <- c("High", "Low", "High", "Low", "Medium")
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Définition de animal_vector et temperature_vector
 animal_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
@@ -281,7 +324,7 @@ animal_factor
 temperature_factor
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "Ne modifiez pas ou ne supprimez pas le code qui définit `animal_vector` et` temperature_vector`!"
 test_object("animal_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -300,26 +343,34 @@ test_output_contains("temperature_factor", incorrect_msg = msg)
 success_msg("Impressionnant! Vous avez correctement compris que `animal_factor` ne devrait pas être ordonné alors que` temperature_factor` devrait l'être.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:f6eb0a5c5f
-## La gauche est mieux la droite 
+## La gauche est mieux la droite
+
+```yaml
+type: NormalExercise
+key: f6eb0a5c5f
+lang: r
+xp: 100
+skills: 1
+```
 
 Dans `survey_factor` vous avez un facteur à deux niveaux, contenant "Left" et "Right". Mais comment R les valorise-t-elle les uns par rapport aux autres? En d'autres termes, qui pense que R est meilleur, à gauche ou à droite?
 
-*** =instructions
+`@instructions`
 - Selecter le premier élément de `survey_factor` et enregistre le dans la variable `right`.
 - Selecter le deuxième élément de `survey_factor` et enregistre le dans la variable `left`.
 - En utilisant le signe supérieur `>`, trouverUsing the greater than sign, trouver si `right` est plus grand que `left`.
 
-*** =hint
+`@hint`
 Pour sélectionner le quatrième élément de `survey_factor`, vous pouvez taper` survey_factor[4] `.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Définition de survey_vector et survey_factor
 survey_vector <- c("R", "L", "L", "R", "R")
@@ -335,7 +386,7 @@ survey_factor <- factor(survey_vector, levels = c("R", "L"), labels = c("Right",
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Définition de survey_vector et survey_factor
 survey_vector <- c("R", "L", "L", "R", "R")
@@ -351,7 +402,7 @@ left <- survey_factor[2]
 right > left
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Ne changez rien sur les premières lignes qui définissent `survey_vector` et` survey_factor`."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -360,9 +411,17 @@ test_output_contains("survey_factor[1] > survey_factor[2]", incorrect_msg = "Ass
 success_msg("Ouf, il semble que R est neutre ;-).")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:d65e71390a
 ## Les facteurs ordonnés
+
+```yaml
+type: NormalExercise
+key: d65e71390a
+lang: r
+xp: 100
+skills: 1
+```
 
 Parfois, vous allez traiter des facteurs qui ont un ordre naturel entre ses catégories. Dans ce cas, nous devons en parler à R.
 
@@ -374,22 +433,22 @@ Supposons que vous dirigiez une équipe de recherche composée de cinq analystes
 factor(some_vector, ordered = TRUE, levels = c("Level_1", "Level_2", ...))
 ```
 
-*** =instructions
+`@instructions`
 - Utilisez l'exemple de code ci-dessus pour définir `speed_factor`, qui contient les informations de vitesse en tant que facteur ordonné. Vous pouvez commencer par `speed_vector`, qui est déjà créé pour vous.
 - Imprimez `speed_factor` à la  console.
 - Utilisez [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) pour générer le résumé de `speed_factor`: automagiquement, R imprime les niveaux de facteur dans le bon ordre.
 
-*** =hint
+`@hint`
 - Utilisez la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) pour créer `factor_speed_vector` basé sur `speed_character_vector`.
 - L'argument `ordered` doit être précisé comme `TRUE` étant donné que le facteur a des niveaux ordonnable.
 - L'argument `levels`  être égale à `c("Slow", "OK", "Fast")`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Créer speed_vector
 speed_vector <- c("OK", "Slow", "Slow", "OK", "Fast")
@@ -404,7 +463,7 @@ speed_vector <- c("OK", "Slow", "Slow", "OK", "Fast")
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Créer speed_vector
 speed_vector <- c("OK", "Slow", "Slow", "OK", "Fast")
@@ -419,7 +478,7 @@ speed_factor
 summary(speed_factor)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 msg <- "Ne changez rien à propos de la commande qui définit `speed_vector`."
@@ -437,25 +496,33 @@ success_msg("Génial! Jetez un oeil à la console. Il est maintenant indiqué qu
 success_msg("Un travail bien fait! Continuez à l'exercice suivant.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e23011c42b
 ## Comparaison de facteurs ordonnés
+
+```yaml
+type: NormalExercise
+key: e23011c42b
+lang: r
+xp: 100
+skills: 1
+```
 
 "L'analyste des données numéro deux"  passe une mauvaise journée au travail. Il entre dans votre bureau et commence à se plaindre que "l'analyste de données numéro cinq" ralentit l'ensemble du projet. Puisque vous savez que "l'analyste de données numéro deux" a la réputation d'être un malin, vous décidez d'abord de vérifier si sa déclaration est vraie.
 Le fait que `speed_factor` soit maintenant ordonné, nous permet de comparer différents éléments (les analystes de données dans ce cas). Vous pouvez simplement le faire en utilisant l'opérateur supérieur `>`.
 
-*** =instructions
+`@instructions`
 Vérifiez si "l'analyste de données 2" est plus rapide que "l'analyste de données 5". Imprimez le résultat. Il devrait être logique.
 
-*** =hint
+`@hint`
 `vector[1] > vector[2]` vérifie si le premier élément du vecteur est plus grand que le second.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Définition de speed_vector et speed_factor
 speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
@@ -465,7 +532,7 @@ speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Définition de speed_vector et speed_factor
 speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
@@ -475,7 +542,7 @@ speed_factor <- factor(c("Fast", "Slow", "Slow", "Fast", "Ultra-fast"),
 speed_factor[2] > speed_factor[5]
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "Ne changez rien à propos de la commande qui définit `speed_factor`!"
 test_object("speed_factor", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)

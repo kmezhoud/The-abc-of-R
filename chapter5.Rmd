@@ -1,22 +1,35 @@
---- 
-title_meta  : Chapter 5
-title       : Data Frames
-description : La llus part des données à analyser sont stockées sous forme de data frame. Ce chapitre va permettre au utilisateur de créer, extraire et réordonner les données selon certaines variables selon les beoins.
-attachments : 
-  slides_link: https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch6_slides.pdf
+---
+title_meta: 'Chapter 5'
+title: 'Data Frames'
+description: 'La llus part des données à analyser sont stockées sous forme de data frame. Ce chapitre va permettre au utilisateur de créer, extraire et réordonner les données selon certaines variables selon les beoins.'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/slides/ch6_slides.pdf'
+---
 
---- type:VideoExercise lang:r xp:50 skills:1 key:d4bde604ab
 ## Explore the Data Frame
 
-*** =video_link
-//player.vimeo.com/video/138173996
+```yaml
+type: VideoExercise
+key: d4bde604ab
+lang: r
+xp: 50
+skills: 1
+video_link: //player.vimeo.com/video/138173996
+video_hls: //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch6_1.master.m3u8
+```
 
-*** =video_hls
-//videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch6_1.master.m3u8
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:5c5feafab0
 ## Présentation de la "Data Frame"
+
+```yaml
+type: NormalExercise
+key: 5c5feafab0
+lang: r
+xp: 100
+skills: 1
+```
 
 Selon le chapitre précédent, une matrice peut contenir des éléments de même type. C'était le cas des données de Star Wars qui avaient seulemnt des éléments numériques.
 Cependant, dans d'autres enquêtes, il est souvent possible d'avoir des informations de types:
@@ -30,40 +43,45 @@ Chaque variable est montée dans une colonne et les lignes vont contenir les obs
 Au final une data frame est un tableau à plusieurs variables de types différents.
 D'une manière générale, les tableaux importés d'autre logiciels (SAS, SPSS, Excel) sont des data frame.
 
-
-
-*** =instructions
-
+`@instructions`
 1. Cliquer sur  "Submit Answer" et observer à la console l'example de data frame.
 
-*** =hint
+`@hint`
 Juste cliquer sur "Run"!
 
-*** =sample_code
+`@pre_exercise_code`
+```{r eval=FALSE}
+
+```
+
+`@sample_code`
 ```{r eval=FALSE}
 # Exemple de données sous forme de data frame
 mtcars 
 ```
 
-*** =solution
+`@solution`
 ```{r eval=FALSE}
 # Exemple de données sous forme de data frame
 ```
 
-*** =sct
+`@sct`
 ```{r eval=FALSE}
 DM.result <- TRUE
 success_msg("Passez à l'exercice suivant")
 ```
 
-*** =pre_exercise_code
-```{r eval=FALSE}
+---
 
-```
-
-
---- type:NormalExercise lang:r xp:100 skills:1 key:d4ddcf9a7d
 ## Consulter votre Data Frame (1)
+
+```yaml
+type: NormalExercise
+key: d4ddcf9a7d
+lang: r
+xp: 100
+skills: 1
+```
 
 Il est commun de travailler avec une lage série de donnée. Si vous avez un tableau non visible sur une seul page, il est nécéssaire de le visualiser en partie pour comprendre sa structure et sa contenance. 
 La fonction [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) permet de voir les cinq premiers lignes de la data frame.
@@ -73,20 +91,20 @@ La fonction [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim)
 
 Dans cet exercice vous allez travailler avec le jeu de donné 'mcars' qui existe par defaut dans R.
 
-*** =instructions
+`@instructions`
 - Imprimer la première observation des données [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 - Utiliser la fonction [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) pour afficher les dernières observations.
 - Afficher les dimensions du tableau [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) avec la fonction [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim).
 
-*** =hint
+`@hint`
 Vous avez besoin de [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) pour voir les premières observations de [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Imprimer les premières observations de mtcars
 
@@ -97,7 +115,7 @@ Vous avez besoin de [`head()`](http://www.rdocumentation.org/packages/utils/func
 # Imprimer les dimensions de mtcars
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Imprimer les premières observations de mtcars
 head(mtcars)
@@ -109,7 +127,7 @@ tail(mtcars)
 dim(mtcars)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_function("head", "x", incorrect_msg = "Avez-vous spécifier les bons paramétres dans la fonction [`head()`](http://www.rdocumentation.org/packages/utils/functions/head)? Assurez-vous de lui transmettre le jeu de données `mtcars`.")
@@ -119,9 +137,17 @@ test_output_contains("dim(mtcars)", incorrect_msg = "N'oublier pas la fonction [
 success_msg("OK! vous avez maintenant une idée sur le jeu de données 'mcars'. taper 'mcars' dans la console pour afficher tous les données. Et passer à l'exercice suivant.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:c8f389fdbd
 ## Consulter votre Data Frame (2)
+
+```yaml
+type: NormalExercise
+key: c8f389fdbd
+lang: r
+xp: 100
+skills: 1
+```
 
 Il existe d'autres fonctions qui peuvent donner un aperçu rapide sur les données.
 - La fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) perme de voir la structure de 'mcars':
@@ -134,39 +160,46 @@ Il existe d'autres fonctions qui peuvent donner un aperçu rapide sur les donné
 
 L'un des premiers réflexe à avoir quand vous avez un nouveau jeu de donnée est de voir sa structure avec la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).
 
-*** =instructions
-Explorer la structure de [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). 
+`@instructions`
+Explorer la structure de [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
-
-*** =hint
+`@hint`
 Utiliser la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) avec [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) comme une "input"!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Explorer la structure du jeu de données mtcars
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Explorer la structure du jeu de données mtcars
 str(mtcars)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_function("str","object",incorrect_msg = "Soyez sûr d'explorer les données `mtcars`.")
 test_output_contains("str(mtcars)", incorrect_msg = "Soyez sûr d'utiliser la fonction [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) sur `mtcars`.")
 success_msg("Bon travail! Pouvez-vous trouver toutes les informations énumérées dans l'introduction de cet exercice? Continuez à l'exercice suivant.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:f09c0189ac
 ## Créer une data frame (1)
+
+```yaml
+type: NormalExercise
+key: f09c0189ac
+lang: r
+xp: 100
+skills: 1
+```
 
 Nous allons construire une data frame décrivants les propriétés de huit planètes solaires. Les variables sont les suivantes:
 
@@ -177,19 +210,19 @@ Nous allons construire une data frame décrivants les propriétés de huit plan�
 
 Après avoir fait des recherches sur [les planètes](http://en.wikipedia.org/wiki/Planet),créez les vecteurs nécéssaires : `planets`, `type`, `diameter`, `rotation` et `rings`. vous pouvez utiliser la fonction [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) pour créer la data frame?
 
-*** =instructions
+`@instructions`
 - Utiliser la fonction [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) pour construire `planets_df`.
 - Assurez-vous que vous avez crée une  data frame avec 5 variables et 8 observations avec la focntion [`str()`](http://www.rdocumentation.org/packages/utils/functions/str).
 
-*** =hint
+`@hint`
 La fonction [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)  prend en argument les vecteurs déjà définis pour vous. Les vecteurs doivent être séparés par des virgules. Ainsi, au niveau de la data frame, les vecteurs devienront des colonnes ayant l'ordre suivant: `planet`, `type`, `diameter`, `rotation` et `rings`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -206,7 +239,7 @@ rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -223,7 +256,7 @@ planets_df <- data.frame(planets, type, diameter, rotation, rings)
 str(planets_df)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_correct({
   test_object("planets_df",
@@ -243,8 +276,17 @@ test_output_contains("str(planets_df)", incorrect_msg = "Ne pas oublier d'affich
 success_msg("Bon travail! ici les colonnes 'planets' et 'type' sont considérées comme des facteurs et non pas comme des caractères.")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:7090dc3538
+---
+
 ## Créer une data frame (2)
+
+```yaml
+type: NormalExercise
+key: 7090dc3538
+lang: r
+xp: 100
+skills: 1
+```
 
 Dans l'exercice précédent, vous avez découvert que les deux colonnes `planets` et` type` de `planets_df` sont des facteurs. Pour la colonne `type`, cela a du sens, car un type de planète est une sorte de catégorie. Cependant, pour la colonne `planets` qui contient les noms des planètes, cela est moins logique.
 
@@ -254,20 +296,20 @@ Vous pouvez configurer l'argument `stringsAsFactors` dans [`data.frame()`](http:
 data.frame(vec1, vec2, ..., stringsAsFactors = FALSE)
 ```
 
-*** =instructions
+`@instructions`
 - Encoder le vecteur `type` comme un facteur, nommé `type_factor`.
 - Utiliser `planets`, `type_factor`, `diameter`, `rotation` et `rings` pour construire `planets_df`. Cette fois, soyez sûre que les chaines de carcatères ne sont pas converties à un facteurs. Utilisez l'argument `stringsAsFactors = FALSE`.
 - Afficher la structure de `planets_df` et vérifiez les types de variables.
 
-*** =hint
+`@hint`
 Utiliser la fonction [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) pour coder `type`  à un facteur.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -287,7 +329,7 @@ rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Définition des vecteurs
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -307,7 +349,7 @@ planets_df <- data.frame(planets, type_factor, diameter, rotation, rings, string
 str(planets_df)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "Ne supprimez pas ou ne modifiez pas la définition de tous les vecteurs!"
 test_object("planets", undefined_msg = msg, incorrect_msg = msg)
@@ -323,9 +365,17 @@ test_output_contains("str(planets_df)", incorrect_msg = "Ne pas oublier d'affich
 success_msg("Rendez-vous au prochain exercice.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:a80ae7fbe8
 ## Renommer les colonnes d'une data frame
+
+```yaml
+type: NormalExercise
+key: a80ae7fbe8
+lang: r
+xp: 100
+skills: 1
+```
 
 Une data frame est une liste de vecteurs. chaque vecteur est une colonne. Chaque coloone possède un nom ou 'label'.
 Il est possible de nommer ou ré-nommer les colonnes dans une data frame, comme suit: 
@@ -342,7 +392,7 @@ names(my_df) <- c("name1", "name2", ...)
 
 Certains noms de colonnes s'expliquent pas leurs contenances. nous allons essayer de changer les noms de ceratines colonnes
 
-*** =instructions
+`@instructions`
 Rénommer les colonnes de  `planets_df`. Utiliser la fonction [`names()`](http://www.rdocumentation.org/packages/base/functions/names). 
 
 - Rénommer la colonne `planets` par `name`.
@@ -352,15 +402,15 @@ Rénommer les colonnes de  `planets_df`. Utiliser la fonction [`names()`](http:/
 
 Imprimer `planets_df` (non sa structure!).
 
-*** =hint
+`@hint`
 Vous devriez avoir les vecteur suivants: `"name"`, `"type"`, `"diameter"`, `"rotation"` et `"has_rings"`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Construire planets_df améliorée
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -379,7 +429,7 @@ planets_df <- data.frame(planets, type_factor, diameter, rotation, rings, string
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Construire planets_df améliorée
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -398,7 +448,7 @@ names(planets_df) <- c("name", "type", "diameter", "rotation", "has_rings")
 planets_df
 ```
 
-*** =sct
+`@sct`
 ```{r}
 
 msg <- "Ne supprimez pas ou ne modifiez pas la définition des variables prédéfinies!"
@@ -416,18 +466,32 @@ test_output_contains("planets_df", incorrect_msg = "Ne pas oublier d'imprimer `p
 success_msg("Bien!")
 ```
 
---- type:VideoExercise lang:r xp:50 skills:1 key:9a2f941de8
+---
+
 ## Subset, Extend & Sort Data Frames
 
-*** =video_link
-//player.vimeo.com/video/138174008
+```yaml
+type: VideoExercise
+key: 9a2f941de8
+lang: r
+xp: 50
+skills: 1
+video_link: //player.vimeo.com/video/138174008
+video_hls: //videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch6_2.master.m3u8
+```
 
-*** =video_hls
-//videos.datacamp.com/transcoded/732_intro_to_r/v1/hls-ch6_2.master.m3u8
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:b6125af738
 ## Selectionner un élément de la data frame
+
+```yaml
+type: NormalExercise
+key: b6125af738
+lang: r
+xp: 100
+skills: 1
+```
 
 Similaire aux matrices, vous sélectionnez les éléments d'un bloc de données à l'aide de crochets `[ ]`. En utilisant une virgule, vous pouvez indiquer ce qu'il faut sélectionner parmi les lignes et les colonnes respectivement:
 
@@ -448,21 +512,21 @@ planets_df[1:3,"type"]
 
 Appliquons maintenant cette technique sur `planets_df`! Le data frame est déjà disponible dans l'espace de travail.
 
-*** =instructions
+`@instructions`
 - Selectionner le type de Mars; sauvgarder le dans `mars_type`.
 - Sauvgarder la colonne `rotation` dans le vecteur `rotation`.
 - Créer une data frame, `closest_planets_df`, qui contient des trois premières planétes.
 - De même, créez la data frame `furthest_planets_df` qui contient toutes les données sur les trois dernières planètes.
 
-*** =hint
+`@hint`
 `planets_df[1:3,]` sélectionnera tous les éléments des trois premières lignes.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/chapter6.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -480,7 +544,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/c
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -497,7 +561,7 @@ closest_planets_df <- planets_df[1:3, ]
 furthest_planets_df <- planets_df[6:8, ]
 ```
 
-*** =sct
+`@sct`
 ```{r}
 
 msg <- "Ne supprimez pas et n'écrasez pas le bloc de données `planets_df`!"
@@ -515,8 +579,17 @@ test_object("furthest_planets_df",
 success_msg("Génial! N'hésitez pas à regarder les variables que vous venez de créer. En plus de sélectionner des éléments de votre cadre de données par index, vous pouvez également utiliser les noms de colonnes.")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:7aa0a94261
+---
+
 ## Seulement les planètes avec anneaux (1)
+
+```yaml
+type: NormalExercise
+key: 7aa0a94261
+lang: r
+xp: 100
+skills: 1
+```
 
 Il y a trois façons de sélectionner une colonne entière, les voici:
 
@@ -526,19 +599,19 @@ planets_df[, "diameter"]
 planets_df$diameter
 ```
 
-*** =instructions
+`@instructions`
 - Utilisez le signe `$` pour créer la variable `rings_vector` qui contient toute la colonne` has_rings` dans le cadre de données `planets_df`.
 - Imprimez le vecteur `rings_vector`.
 
-*** =hint
+`@hint`
 `my_df$col_name` est le moyen le plus pratique de sélectionner une colonne dans un bloc de données. Dans ce cas, la data frame est `planets_df` et la variable est` has_rings`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/chapter6.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -549,7 +622,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/c
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -560,7 +633,7 @@ rings_vector <- planets_df$has_rings
 rings_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "Ne supprimez pas et n'écrasez pas le bloc de données `planets_df`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
@@ -572,9 +645,17 @@ test_output_contains("rings_vector", incorrect_msg = "N'oubliez pas d'imprimer `
 success_msg("Génial! Continuez à l'exercice suivant et découvrez encore une autre façon d'extraire des éléments d'une data frame!")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:d6245c1bb1
 ## Seulement les planètes avec anneaux (2)
+
+```yaml
+type: NormalExercise
+key: d6245c1bb1
+lang: r
+xp: 100
+skills: 1
+```
 
 Vous vous souvenez probablement du lycée que certaines planètes dans notre système solaire ont des anneaux et d'autres non. Mais en raison d'autres priorités à ce moment-là. Vous ne pouvez pas rappeler leurs noms, encore moins leurs vitesses de rotation. R pourrait vous aider?
 
@@ -586,19 +667,19 @@ Pour sous-extraire les observations par des vecteurslogiques, placez le vecteur 
 df[,logical_vector]
 ```
 
-*** =instructions
+`@instructions`
 - affectez tous les planètes dans `planets_df` avec anneaux à  `planets_with_rings_df`. `rings_vector` devrait être `TRUE`.
 - Imprimez `planets_with_rings_df`.
 
-*** =hint
-Sélectionnez les éléments de `planets_df` en utilisant les crochets. Le `rings_vector` contient des valeurs booléennes et R sélectionne uniquement les lignes / colonnes où l'élément vectoriel est `TRUE`. 
+`@hint`
+Sélectionnez les éléments de `planets_df` en utilisant les crochets. Le `rings_vector` contient des valeurs booléennes et R sélectionne uniquement les lignes / colonnes où l'élément vectoriel est `TRUE`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/chapter6.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -611,7 +692,7 @@ rings_vector <- planets_df$has_rings
 # Imprimer planets_with_rings_df
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -625,7 +706,7 @@ planets_with_rings_df <- planets_df[rings_vector,]
 planets_with_rings_df
 ```
 
-*** =sct
+`@sct`
 ```{r}
 
 msg <- "Ne pas supprimer ou remplacer `planets_df` ou` rings_vector`!"
@@ -640,9 +721,17 @@ test_output_contains("planets_with_rings_df",
 success_msg("Beau travail, mais c'est une solution plutôt fastidieuse. L'exercice suivant vous apprendra comment le faire de manière plus concise.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:c1a08e245c
 ## Seulement les planètes avec anneaux (3)
+
+```yaml
+type: NormalExercise
+key: c1a08e245c
+lang: r
+xp: 100
+skills: 1
+```
 
 Dans l'exercice précédent, vous avez appris à extraire une partie d'une data frame en sélectionnant la colonne `rings_vector`, ensuite selon un critère logique. 
 
@@ -656,20 +745,19 @@ par exemple: `subset(planets.df, subset=(planets.df$rings == TRUE))`
 
 R vous donnera exactement le même résultat que dans l'exercice précédent. Mais cette fois avec 1 ligne de code!
 
-
-*** =instructions
+`@instructions`
 - Créer une data frame `small_planets_df` avec des planètes dont le diamètre est inférieur à la Terre. Cela signifie que la variable «diamètre» doit être inférieure à 1, car le diamètre est une mesure relative du diamètre de la planète par rapport à la planète Terre.
 - Construire une autre data frame , `slow_planets_df`, ayant une période de rotation plus loangue de celle de la Terre. Cela veut dire que la valeur absolue de la variable `rotation`devrait être plus grande que 1. Utiliser la fonction [`abs()`](http://www.rdocumentation.org/packages/base/functions/MathFun)).
 
-*** =hint
-Utiliser les opérateurs `>` et `<`. Utiliser la fonction [`abs()`](http://www.rdocumentation.org/packages/base/functions/MathFun) pour les valeur absolues. 
+`@hint`
+Utiliser les opérateurs `>` et `<`. Utiliser la fonction [`abs()`](http://www.rdocumentation.org/packages/base/functions/MathFun) pour les valeur absolues.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/chapter6.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -685,7 +773,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/c
  # option 2
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -702,7 +790,7 @@ slow_planets_df <- planets_df[abs(planets_df$rotation) > 1, ]
 slow_planets_df <- subset(planets_df, subset = abs(rotation) > 1) 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 
 msg <- "Ne supprimez pas et n'écrasez pas le bloc de données `planets_df`!"
@@ -717,9 +805,17 @@ test_object("slow_planets_df",
 success_msg("Great! Continuer par l'exercice suivant.")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e9ca3eeb99
 ## Ajouter une variable ou colonne
+
+```yaml
+type: NormalExercise
+key: e9ca3eeb99
+lang: r
+xp: 100
+skills: 1
+```
 
 Il y a beaucoup de cas dans lesquels vous voudriez ajouter plus de variables à votre data frame. Cela signifie qu'il faut ajouter une colonne à la data frame. Les mêmes techniques pour sélectionner des colonnes à partir d'une data frame peuvent être utilisées ici. Pour ajouter une colonne `new_column` à` my_df`, avec les données de `my_vec`, vous pouvez utiliser l'une des lignes suivantes:
 
@@ -731,19 +827,19 @@ my_df <- cbind(my_df, new_column = my_vec)
 Vous avez décidé d'ajouter à `planets_df`, le nombre de lunes qui trournent autour de chaque planète, ainsi que les masses des planètes.
 Les vecteurs `moons`et `masses` sont déjà inclus dans votre espace de travail.
 
-*** =instructions
+`@instructions`
 - ajouter le vecteur `moons` à `planets_df` sous le nom de la variable "moon".
 - ajouter le vecteur `masses` à `planets_df` sous le nom de la variable "mass"`.
 
-*** =hint
+`@hint`
 Pour ajouter une nouvelle colonne nommée "moon", vous pouvez utiliser: `planets_df$moon <- moons`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/chapter6.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df est déjà téléchargé dans votre espace de travail
 
@@ -758,7 +854,7 @@ masses <- c(0.06, 0.82, 1.00, 0.11, 317.8, 95.2, 14.6, 17.2)
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # planets_df est déjà téléchargé dans votre espace de travail
 
@@ -773,7 +869,7 @@ planets_df$moon <- moons
 planets_df$mass <- masses
 ```
 
-*** =sct
+`@sct`
 ```{r}
 
 undef_msg <- "Ne pas effacer `planets_df`!"
@@ -796,9 +892,18 @@ test_object("planets_df", incorrect_msg = "Il semble que vous avez bien spécifi
 success_msg("Bien!")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:8e5ade7078
 ## Trier
+
+```yaml
+type: NormalExercise
+key: 8e5ade7078
+lang: r
+xp: 100
+skills: 1
+```
+
 Au moment de l'analyse, il est possible d'avoir el nesoin de trier les données selon une dès variables. Avec R, la fonction [`order()`](http://www.rdocumentation.org/packages/base/functions/order) peut accomplir le tri. 
 
 [`order()`](http://www.rdocumentation.org/packages/base/functions/order) donne le rank de la position de chaque élément dans un vecteur, par exemple:
@@ -814,26 +919,26 @@ Ce code renvoie le vecteur contenant 2, 1 et 3; C'est parce que 100 est le deuxi
 a[order(a)]
 ```
 
-vous donnera donc le vecteur ordonné (9, 100, 101), puisqu'il choisit d'abord le second élément de `a`, puis le premier puis le dernier. Si vous n'êtes pas sûr, utilisez la console pour jouer avec la fonction [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
+vous donnera donc le vecteur ordonné (9, 100, 101), puisqu'il choisit d'abord le second élément de `a`, puis le premier puis le dernier. Si vous n'êtes pas sûr, utilisez la console pour jouer avec la fonction [`order()`](http://www.rdocumentation.org/packages/base/functions/order).
 
-*** =instructions
+`@instructions`
 Expérimenter avec la fonction [`order()`](http://www.rdocumentation.org/packages/base/functions/order) dans la console. Cliquer 'Submit Answer' quand vous vous sentez prêt pour continuer.
 
-*** =hint
+`@hint`
 Juste tester la fonction [`order()`](http://www.rdocumentation.org/packages/base/functions/order)!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Testez la fonction order dans la console pour voir comment cela fonctionne!
 # quelques exemples:
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Testez la fonction order dans la console pour voir comment cela fonctionne!
 # quelques exemples:
@@ -842,14 +947,22 @@ order(2:11)
 order(c(5,4,6,7))
 ```
 
-*** =sct
+`@sct`
 ```{r}
 success_msg("Bien! Maintenant nous allons utilisé la fonction [`order()`](http://www.rdocumentation.org/packages/base/functions/order) pour trier vos données!")
 ```
 
+---
 
---- type:NormalExercise lang:r xp:100 skills:1 key:ec87541ef1
 ## Trier votre data frame
+
+```yaml
+type: NormalExercise
+key: ec87541ef1
+lang: r
+xp: 100
+skills: 1
+```
 
 Alright, now let us do something useful with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function! 
 
@@ -861,22 +974,22 @@ pos <- order(df$a)
 df[pos, ]
 ```
 
-*** =instructions
+`@instructions`
 - Affecter à la variable `positions` le réarrangement souhaité de la nouvelle data frame que vous allez crée dans l'étape suivante. Vous pouvez utiliser la fonction
  [`order()`](http://www.rdocumentation.org/packages/base/functions/order).
 - Maintenant créer la data frame `smallest_first_df`, qui contient les même donneé que `planets_df`, mais par ordre croissant des diamètres. Utiliser la variable `positions`comme indice de ligne dans des crochets.
 - Imprimer `smallest_first_df` pour voir ce que vous avez accompli.
 
-*** =hint
+`@hint`
 - `order(planets_df$diameter)` vous donnera la variable diamètre ordonnée de moins grand au plus grand. Ce que vous devez affecter à `positions`.
 - Utiliser la variable `positions` pour ordonner la data frame `planets_df`: `planets_df[positions, ]`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/chapter6.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -889,7 +1002,7 @@ smallest_first_df <-
 # Imprimer smallest_first_df
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # planets_df est déjà téléchargée
 
@@ -903,7 +1016,7 @@ smallest_first_df <- planets_df[positions, ]
 smallest_first_df
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Ne supprimez pas et n'écrasez pas le bloc de données `planets_df`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
@@ -914,4 +1027,3 @@ test_object("smallest_first_df",
 test_output_contains("smallest_first_df", incorrect_msg = "Imprimez `smallest_first_df`.")
 success_msg("Formidable! A quoi ressemble la nouvelle data frame?")
 ```
-
